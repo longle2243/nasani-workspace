@@ -2,7 +2,7 @@
   'use strict';
 
   // Change this placeholder before use. A client-side password is visible in the published source.
-  const WORKSPACE_PASSWORD = 'change-this-password';
+  const WORKSPACE_PASSWORD = 'longlenasani';
   const SESSION_KEY = 'my-workspace-authenticated';
 
   window.WorkspaceAuth = Object.freeze({
