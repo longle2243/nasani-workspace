@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101d35">
+  <title>Đăng nhập | MY WORKSPACE</title>
+  <link rel="stylesheet" href="./assets/css/workspace.css">
+  <script src="./assets/js/auth.js" defer></script>
+  <script src="./assets/js/login.js" defer></script>
+</head>
+<body class="login-page">
+  <main class="login-shell">
+    <section class="login-card" aria-labelledby="workspace-title">
+      <a class="wordmark" href="./index.html" aria-label="MY WORKSPACE - Trang đăng nhập">
+        <span class="brand-mark" aria-hidden="true">W</span>
+        <span>MY WORKSPACE</span>
+      </a>
+      <p class="eyebrow">KHÔNG GIAN LÀM VIỆC CỦA BẠN</p>
+      <h1 id="workspace-title">Chào mừng trở lại</h1>
+      <p class="login-copy">Nhập mật khẩu để tiếp tục đến workspace.</p>
+
+      <form id="loginForm" class="login-form">
+        <label for="password">Mật khẩu</label>
+        <div class="password-field">
+          <input id="password" name="password" type="password" autocomplete="current-password" required autofocus>
+          <button id="togglePassword" class="password-toggle" type="button" aria-label="Hiện mật khẩu" aria-pressed="false">Hiện</button>
+        </div>
+        <p id="loginError" class="form-error" role="alert" hidden></p>
+        <button class="button button-primary login-submit" type="submit">Đăng nhập <span aria-hidden="true">→</span></button>
+      </form>
+
+      <p class="security-note">Đây là lớp chặn giao diện phía trình duyệt, không thay thế xác thực bảo mật phía máy chủ.</p>
+    </section>
+    <footer class="login-footer">MY WORKSPACE <span>·</span> Một nơi cho mọi công cụ của bạn</footer>
+  </main>
+</body>
+</html>

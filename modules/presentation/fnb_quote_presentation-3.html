@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#101d35">
+<title>Đề xuất giải pháp website | Báo giá</title>
+<link rel="stylesheet" href="fnb_quote_presentation-3.css">
+</head>
+<body>
+<header class="topbar">
+  <nav class="nav">
+    <div class="brand"><div class="brandmark">W</div><span class="brandname" id="brandName">WEB SOLUTIONS</span></div>
+    <div class="navlinks">
+      <button class="active" data-go="0">01 <span>Dịch vụ</span></button>
+      <button data-go="1">02 <span>Gói giá</span></button>
+      <button data-go="2">03 <span>Quy trình</span></button>
+    </div>
+    <button class="gear" id="openEditor" title="Chỉnh sửa nội dung" aria-label="Chỉnh sửa">⚙</button>
+  </nav>
+  <div class="progress"><i id="progressBar"></i></div>
+</header>
+<main>
+<p id="loadError" class="load-error" role="alert" hidden></p>
+<section class="slide active" id="slide0">
+  <div class="hero">
+    <div class="hero-content">
+      <div class="eyebrow">ĐỀ XUẤT GIẢI PHÁP DIGITAL</div>
+      <h1 id="heroTitle">Giải pháp website<br>cho thương hiệu F&amp;B</h1>
+      <p class="lead" id="heroDesc"></p>
+      <div class="hero-actions"><button class="btn btn-primary" data-go="1">Xem các gói thiết kế →</button></div>
+    </div>
+  </div>
+  <div class="section-intro"><div><div class="eyebrow">01 / PHẠM VI CÔNG VIỆC</div><h2>Bạn nhận được<br>những gì?</h2></div><p id="scopeIntro"></p></div>
+  <div id="scopeGroups"></div>
+  <div class="note">Phạm vi cuối cùng sẽ được xác nhận theo nhu cầu thực tế và thống nhất trước khi bắt đầu triển khai. Những dịch vụ bổ trợ chỉ được tính phí nếu có thỏa thuận riêng.</div>
+  <div class="footer"><span id="footerBrand">WEB SOLUTIONS · ĐỀ XUẤT DỊCH VỤ</span><span>01 / 03</span></div>
+</section>
+<section class="slide" id="slide1">
+  <div class="section-intro"><div><div class="eyebrow">02 / CHI PHÍ THIẾT KẾ</div><h2>Chọn phương án<br>phù hợp với mục tiêu</h2></div><p>Ba gói thiết kế website với phạm vi khác nhau. Giá ở phần này là phí thiết kế; tên miền và hosting là các khoản chi phí riêng.</p></div>
+  <div class="grid" id="priceCards"></div>
+  <div class="extras">
+    <div class="extra"><div class="iconbox">⌁</div><div><h3>Tên miền (Domain)</h3><p>Chi phí riêng để sử dụng địa chỉ website của doanh nghiệp. Sẽ tư vấn lựa chọn phù hợp ở bước triển khai.</p></div></div>
+    <div class="extra"><div class="iconbox">▤</div><div><h3>Hosting</h3><p>Chi phí riêng cho dịch vụ lưu trữ và vận hành website. Cấu hình sẽ được đề xuất theo nhu cầu thực tế.</p></div></div>
+  </div>
+  <div class="note">Domain và hosting chưa cộng vào giá thiết kế trong bảng này. Chi phí cụ thể sẽ được trao đổi và xác nhận ở giai đoạn triển khai.</div>
+  <div class="footer"><span id="footerBrand2">WEB SOLUTIONS · BÁO GIÁ THIẾT KẾ WEBSITE</span><span>02 / 03</span></div>
+</section>
+<section class="slide" id="slide2">
+  <div class="section-intro"><div><div class="eyebrow">03 / LỘ TRÌNH THỰC HIỆN</div><h2>Quy trình rõ ràng.<br>Tiến độ minh bạch.</h2></div><p>Từng giai đoạn có đầu việc, mốc thời gian và điều kiện thanh toán để hai bên chủ động phối hợp.</p></div>
+  <div class="process" id="processSteps"></div>
+  <div class="payment">
+    <div class="paytop"><div><h3>Tiến độ thanh toán 3 đợt</h3><p id="payPkgLine"></p></div><div class="pills" id="payPills"></div></div>
+    <div class="payrow" id="paymentRows"></div>
+    <div class="paytotal"><span>Tổng 3 đợt (phí thiết kế website)</span><strong id="payTotal"></strong></div>
+    <div class="paywarn" id="payWarn"></div>
+  </div>
+  <div class="note" id="processNote"></div>
+  <div class="footer"><span id="footerBrand3">WEB SOLUTIONS · LỘ TRÌNH TRIỂN KHAI</span><span>03 / 03</span></div>
+</section>
+<div class="controls"><button class="controlbtn" id="prevBtn">← Quay lại</button><div class="dots"><span class="dot active"></span><span class="dot"></span><span class="dot"></span></div><button class="controlbtn" id="nextBtn">Tiếp theo →</button></div>
+</main>
+<div class="overlay" id="editorOverlay">
+  <div class="panel">
+    <div class="panelhead"><div><div class="eyebrow">TÙY CHỈNH TẠI CHỖ</div><h2>Chỉnh sửa nội dung báo giá</h2></div><button class="close" id="closeEditor" aria-label="Đóng">×</button></div>
+    <p class="help">Chỉnh sửa theo từng nhóm. Bản lưu trong trình duyệt này chỉ áp dụng trên thiết bị hiện tại; bấm “Xuất JSON” để tải dữ liệu cập nhật và tự tải lên GitHub.</p>
+    <div id="dataStatus" class="data-status" role="status" aria-live="polite"></div>
+    <div class="editor-layout">
+      <nav id="editorNav" class="editor-nav" aria-label="Nhóm nội dung chỉnh sửa"></nav>
+      <section id="editorContent" class="editor-content" aria-live="polite"></section>
+    </div>
+    <div class="panelactions">
+      <button class="controlbtn" id="resetBtn">Khôi phục nội dung mẫu</button>
+      <div class="editor-actions">
+        <button class="controlbtn" id="printBtn">In / Lưu PDF</button>
+        <button class="controlbtn" id="cancelBtn">Hủy</button>
+        <button class="controlbtn" id="exportBtn">Xuất JSON</button>
+        <button class="btn btn-primary" id="saveBtn">Lưu chỉnh sửa</button>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="toast" id="toast"></div>
+<script src="fnb_quote_presentation-3.js"></script>
+</body>
+</html>

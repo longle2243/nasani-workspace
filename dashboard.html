@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f4f6fb">
+  <title>Dashboard | MY WORKSPACE</title>
+  <link rel="stylesheet" href="./assets/css/workspace.css">
+  <script src="./assets/js/auth.js" defer></script>
+  <script src="./assets/js/dashboard.js" defer></script>
+</head>
+<body class="dashboard-page auth-pending">
+  <header class="dashboard-header">
+    <a class="wordmark" href="./dashboard.html">
+      <span class="brand-mark" aria-hidden="true">W</span>
+      <span>MY WORKSPACE</span>
+    </a>
+    <button id="logoutButton" class="button button-secondary" type="button">Đăng xuất</button>
+  </header>
+
+  <main class="dashboard-main">
+    <section class="welcome">
+      <p class="eyebrow">WORKSPACE CỦA BẠN</p>
+      <h1>Xin chào, chào mừng bạn trở lại.</h1>
+      <p>Chọn một chức năng để bắt đầu công việc.</p>
+    </section>
+
+    <section class="module-section" aria-labelledby="modules-title">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">CÔNG CỤ</p>
+          <h2 id="modules-title">Các chức năng</h2>
+        </div>
+        <span class="module-count">02 MODULE ĐANG HOẠT ĐỘNG</span>
+      </div>
+      <div class="module-grid">
+        <a class="module-card income-card" href="./modules/income/index.html">
+          <span class="module-icon" aria-hidden="true">↗</span>
+          <span class="module-status"><i></i> Đang hoạt động</span>
+          <h3>INCOME</h3>
+          <p>Quản lý và tính toán thu nhập</p>
+          <span class="module-link">Mở module <span aria-hidden="true">→</span></span>
+        </a>
+        <a class="module-card presentation-card" href="./modules/presentation/index.html">
+          <span class="module-icon" aria-hidden="true">▤</span>
+          <span class="module-status"><i></i> Đang hoạt động</span>
+          <h3>PRESENTATION</h3>
+          <p>Trình bày dịch vụ, báo giá và quản lý nội dung</p>
+          <span class="module-link">Mở module <span aria-hidden="true">→</span></span>
+        </a>
+        <article class="module-card coming-card" aria-label="Module mới sắp ra mắt">
+          <span class="module-icon" aria-hidden="true">＋</span>
+          <span class="module-status coming-status">Coming soon</span>
+          <h3>MODULE MỚI</h3>
+          <p>Cấu trúc sẵn sàng cho công cụ tiếp theo của bạn.</p>
+          <span class="module-link">Sắp ra mắt</span>
+        </article>
+      </div>
+    </section>
+    <footer class="dashboard-footer">Các module hoạt động độc lập và lưu dữ liệu theo cơ chế riêng.</footer>
+  </main>
+</body>
+</html>

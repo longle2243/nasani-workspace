@@ -1,0 +1,113 @@
+{
+  "brand": "LONG LE NASANI",
+  "client": "",
+  "title": "Giải pháp Digital Marketing",
+  "desc": "Tổng hợp phạm vi triển khai, phương án đầu tư và lộ trình thực hiện — rõ ràng từ đầu để hai bên dễ dàng thống nhất.",
+  "scopeIntro": "Mỗi hạng mục được nêu rõ công việc, số lượng và thời gian hỗ trợ để khách hàng dễ đối chiếu khi nghiệm thu.",
+  "scope": [
+    [
+      "Thiết kế website",
+      "Thiết kế giao diện",
+      "Thiết kế theo nhận diện thương hiệu; hiển thị tốt trên máy tính, máy tính bảng và điện thoại.",
+      "Responsive 3 thiết bị"
+    ],
+    [
+      "Thiết kế website",
+      "Nội dung & SEO cơ bản",
+      "Nhập nội dung, hình ảnh được cung cấp; thiết lập tiêu đề, mô tả SEO và các thông tin cơ bản.",
+      "SEO on-page cơ bản"
+    ],
+    [
+      "Facebook Fanpage",
+      "Setup Fanpage",
+      "Hoàn thiện thông tin doanh nghiệp, ảnh đại diện, ảnh bìa, thông tin liên hệ.",
+      "16/16 hạng mục"
+    ],
+    [
+      "Facebook Fanpage",
+      "Chăm sóc Fanpage",
+      "Lên nội dung theo kế hoạch, gửi khách duyệt trước khi đăng, đăng bài theo lịch đã thống nhất.",
+      "2–3 bài/tuần"
+    ],
+    [
+      "Facebook Fanpage",
+      "Thời gian chăm sóc",
+      "Triển khai theo kế hoạch đã thống nhất.",
+      "3 tháng"
+    ],
+    [
+      "Google Map",
+      "Xác minh doanh nghiệp Map",
+      "",
+      ""
+    ]
+  ],
+  "packages": [
+    {
+      "name": "Phổ thông",
+      "sub": "Nền tảng cần thiết để hiện diện chuyên nghiệp",
+      "price": 7000000,
+      "features": [
+        "Trang cơ bản",
+        "Kèm những hạng mục hỗ trợ"
+      ],
+      "featured": false
+    },
+    {
+      "name": "Ưa thích",
+      "sub": "Cân bằng giữa hình ảnh thương hiệu và tính năng",
+      "price": 9000000,
+      "features": [
+        "Trang Responsive",
+        "Kèm những hạng mục hỗ trợ"
+      ],
+      "featured": true
+    },
+    {
+      "name": "VIP",
+      "sub": "Tùy biến sâu hơn theo yêu cầu thương hiệu",
+      "price": 12000000,
+      "features": [
+        "Trang Responsive SSL",
+        "Kèm những hạng mục hỗ trợ"
+      ],
+      "featured": false
+    }
+  ],
+  "selected": 1,
+  "process": [
+    {
+      "name": "Khởi động dự án",
+      "time": "Ngày 3–5",
+      "desc": "Xác nhận gói, thống nhất phạm vi, nhận nội dung/hình ảnh và tạm ứng đợt 1."
+    },
+    {
+      "name": "Thiết kế & phát triển",
+      "time": "Ngày 5–7",
+      "desc": "Triển khai giao diện, xây dựng các trang và cập nhật bản xem trước cho khách hàng."
+    },
+    {
+      "name": "Hoàn thiện & nghiệm thu",
+      "time": "Ngày 9–12",
+      "desc": "Chỉnh sửa theo phạm vi, kiểm tra trên thiết bị, nghiệm thu và bàn giao."
+    }
+  ],
+  "payments": [
+    {
+      "pct": "50%",
+      "name": "Đợt 1 · Tạm Ứng",
+      "desc": "Khi xác nhận phương án và bắt đầu triển khai."
+    },
+    {
+      "pct": "Đăng Kí Dung Lượng",
+      "name": "Đợt 2 · Duyệt Demo",
+      "desc": "Khi hoàn thành phần thiết kế giao diện."
+    },
+    {
+      "pct": "50%",
+      "name": "Đợt 3 · Nghiệm Thu",
+      "desc": "Hướng dẫn sử dụng trang"
+    }
+  ],
+  "note": "Thời gian triển khai được tính từ khi nhận đủ nội dung, hình ảnh và thông tin cần thiết từ khách hàng. Các mốc có thể thay đổi nếu phạm vi công việc được điều chỉnh hoặc phản hồi bị chậm."
+}
