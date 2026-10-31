@@ -33,9 +33,11 @@ Mở `http://localhost:8000/` hoặc `http://localhost:8000/fnb_quote_presentati
 
 ## Chỉnh sửa và cập nhật JSON
 
-1. Mở bánh răng trên trang, chọn nhóm nội dung và chỉnh sửa.
+1. Mở bánh răng trên trang, chọn nhóm nội dung và chỉnh sửa. Nhóm **Web gói** cho phép cấu hình mẫu website, ảnh/liên kết xem trước, mô tả, hosting và giá; chọn gói thiết kế đối chiếu khi nhập giá. Tab Web gói mặc định được ẩn và chỉ hiện khi bật **Hiển thị tab Web gói**.
 2. Bấm **Lưu chỉnh sửa** để áp dụng lên giao diện và lưu trong `localStorage` của trình duyệt hiện tại.
 3. Bấm **Xuất JSON** để tải toàn bộ dữ liệu thành `fnb_quote_presentation-3.json`.
 4. Tự upload file JSON vừa tải lên repository (ghi đè file cũ), rồi commit/push để website trên Pages nhận dữ liệu mới.
 
 Không có upload tự động tới GitHub. Thay đổi chỉ được lưu trong trình duyệt cho tới khi JSON được xuất và cập nhật thủ công trong repository. Không đưa dữ liệu nhạy cảm vào repository công khai.
+
+Màn hình giá có minh họa nội bộ cho Website cơ bản, Responsive và SSL; không tải website bên ngoài. JSON cũ không có cấu hình mới vẫn được mở với Web gói tắt, danh sách Web gói rỗng và các minh họa bật. Chỉ nhập giá, thông tin hosting, ảnh và liên kết mẫu đã được xác nhận; giá Web gói để trống sẽ hiển thị là chưa cấu hình. Giá đã nhập phải thấp hơn gói thiết kế được chọn làm đối chiếu.

@@ -75,6 +75,21 @@
     }
   ],
   "selected": 1,
+  "pricing": {
+    "webPackageTabEnabled": false
+  },
+  "preDesignedPackages": [],
+  "featurePreviews": {
+    "basic": {
+      "enabled": true
+    },
+    "responsive": {
+      "enabled": true
+    },
+    "ssl": {
+      "enabled": true
+    }
+  },
   "process": [
     {
       "name": "Khởi động dự án",

@@ -37,13 +37,26 @@
   <div class="footer"><span id="footerBrand">WEB SOLUTIONS · ĐỀ XUẤT DỊCH VỤ</span><span>01 / 03</span></div>
 </section>
 <section class="slide" id="slide1">
-  <div class="section-intro"><div><div class="eyebrow">02 / CHI PHÍ THIẾT KẾ</div><h2>Chọn phương án<br>phù hợp với mục tiêu</h2></div><p>Ba gói thiết kế website với phạm vi khác nhau. Giá ở phần này là phí thiết kế; tên miền và hosting là các khoản chi phí riêng.</p></div>
-  <div class="grid" id="priceCards"></div>
-  <div class="extras">
-    <div class="extra"><div class="iconbox">⌁</div><div><h3>Tên miền (Domain)</h3><p>Chi phí riêng để sử dụng địa chỉ website của doanh nghiệp. Sẽ tư vấn lựa chọn phù hợp ở bước triển khai.</p></div></div>
-    <div class="extra"><div class="iconbox">▤</div><div><h3>Hosting</h3><p>Chi phí riêng cho dịch vụ lưu trữ và vận hành website. Cấu hình sẽ được đề xuất theo nhu cầu thực tế.</p></div></div>
+  <div class="section-intro"><div><div class="eyebrow" id="pricingEyebrow">02 / CHI PHÍ THIẾT KẾ</div><h2 id="pricingTitle">Chọn phương án<br>phù hợp với mục tiêu</h2></div><p id="pricingDescription">Ba gói thiết kế website với phạm vi khác nhau. Giá ở phần này là phí thiết kế; tên miền và hosting là các khoản chi phí riêng.</p></div>
+  <div class="pricing-tabs" id="pricingTabs" role="tablist" aria-label="Danh mục website">
+    <button class="pricing-tab active" id="designTab" type="button" role="tab" aria-selected="true" aria-controls="designPricingView" data-pricing-category="design">Gói thiết kế</button>
+    <button class="pricing-tab" id="webPackageTab" type="button" role="tab" aria-selected="false" aria-controls="preDesignedPricingView" data-pricing-category="preDesigned" hidden>Web gói</button>
   </div>
-  <div class="note">Domain và hosting chưa cộng vào giá thiết kế trong bảng này. Chi phí cụ thể sẽ được trao đổi và xác nhận ở giai đoạn triển khai.</div>
+  <div id="designPricingView" role="tabpanel" aria-labelledby="designTab">
+    <div class="grid" id="priceCards"></div>
+    <div class="extras">
+      <div class="extra"><div class="iconbox">⌁</div><div><h3>Tên miền (Domain)</h3><p>Chi phí riêng để sử dụng địa chỉ website của doanh nghiệp. Sẽ tư vấn lựa chọn phù hợp ở bước triển khai.</p></div></div>
+      <div class="extra"><div class="iconbox">▤</div><div><h3>Hosting</h3><p>Chi phí riêng cho dịch vụ lưu trữ và vận hành website. Cấu hình sẽ được đề xuất theo nhu cầu thực tế.</p></div></div>
+    </div>
+    <div class="note">Domain và hosting chưa cộng vào giá thiết kế trong bảng này. Chi phí cụ thể sẽ được trao đổi và xác nhận ở giai đoạn triển khai.</div>
+  </div>
+  <div id="preDesignedPricingView" role="tabpanel" aria-labelledby="webPackageTab" hidden>
+    <div class="web-package-position">
+      <span class="tag">WEBSITE CÓ SẴN</span>
+      <p>Website thiết kế sẵn – triển khai nhanh – tối ưu chi phí.</p>
+    </div>
+    <div class="grid web-package-grid" id="preDesignedPackageCards"></div>
+  </div>
   <div class="footer"><span id="footerBrand2">WEB SOLUTIONS · BÁO GIÁ THIẾT KẾ WEBSITE</span><span>02 / 03</span></div>
 </section>
 <section class="slide" id="slide2">
@@ -79,6 +92,15 @@
       </div>
     </div>
   </div>
+</div>
+<div class="overlay demo-overlay" id="demoOverlay" aria-hidden="true">
+  <section class="demo-dialog" role="dialog" aria-modal="true" aria-labelledby="demoTitle" tabindex="-1">
+    <div class="demo-header">
+      <div><div class="eyebrow">MINH HỌA TÍNH NĂNG</div><h2 id="demoTitle"></h2></div>
+      <button class="close" id="closeDemo" type="button" aria-label="Đóng minh họa">×</button>
+    </div>
+    <div id="demoContent" class="demo-content"></div>
+  </section>
 </div>
 <div class="toast" id="toast"></div>
 <script src="fnb_quote_presentation-3.js"></script>
