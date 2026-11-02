@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="vi">
+<html lang="vi" class="presentation-document">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -7,7 +7,7 @@
 <title>Đề xuất giải pháp website | Báo giá</title>
 <link rel="stylesheet" href="fnb_quote_presentation-3.css">
 </head>
-<body>
+<body class="presentation-page">
 <header class="topbar">
   <nav class="nav">
     <div class="brand"><div class="brandmark">W</div><span class="brandname" id="brandName">WEB SOLUTIONS</span></div>
@@ -20,29 +20,30 @@
   </nav>
   <div class="progress"><i id="progressBar"></i></div>
 </header>
-<main>
+<main class="presentation-main">
 <p id="loadError" class="load-error" role="alert" hidden></p>
-<section class="slide active" id="slide0">
-  <div class="hero">
+<section class="slide active service-slide" id="slide0">
+  <div class="hero service-hero">
     <div class="hero-content">
       <div class="eyebrow">ĐỀ XUẤT GIẢI PHÁP DIGITAL</div>
       <h1 id="heroTitle">Giải pháp website<br>cho thương hiệu F&amp;B</h1>
-      <p class="lead" id="heroDesc"></p>
-      <div class="hero-actions"><button class="btn btn-primary" data-go="1">Xem các gói thiết kế →</button></div>
+      <div class="hero-side"><p class="lead" id="heroDesc"></p>
+        <div class="hero-actions"><button class="btn btn-primary" data-go="1">Xem các gói thiết kế →</button></div>
+      </div>
     </div>
   </div>
-  <div class="section-intro"><div><div class="eyebrow">01 / PHẠM VI CÔNG VIỆC</div><h2>Bạn nhận được<br>những gì?</h2></div><p id="scopeIntro"></p></div>
-  <div id="scopeGroups"></div>
-  <div class="note">Phạm vi cuối cùng sẽ được xác nhận theo nhu cầu thực tế và thống nhất trước khi bắt đầu triển khai. Những dịch vụ bổ trợ chỉ được tính phí nếu có thỏa thuận riêng.</div>
-  <div class="footer"><span id="footerBrand">WEB SOLUTIONS · ĐỀ XUẤT DỊCH VỤ</span><span>01 / 03</span></div>
+  <div class="section-intro service-intro"><div><div class="eyebrow">01 / PHẠM VI CÔNG VIỆC</div><h2>Bạn nhận được những gì?</h2></div><p id="scopeIntro"></p></div>
+  <div id="scopeGroups" class="service-grid"></div>
+  <div class="note service-note">Phạm vi cuối cùng sẽ được xác nhận theo nhu cầu thực tế và thống nhất trước khi bắt đầu triển khai. Những dịch vụ bổ trợ chỉ được tính phí nếu có thỏa thuận riêng.</div>
+  <div class="footer presentation-footer"><span id="footerBrand">WEB SOLUTIONS · ĐỀ XUẤT DỊCH VỤ</span><span>01 / 03</span></div>
 </section>
-<section class="slide" id="slide1">
-  <div class="section-intro"><div><div class="eyebrow" id="pricingEyebrow">02 / CHI PHÍ THIẾT KẾ</div><h2 id="pricingTitle">Chọn phương án<br>phù hợp với mục tiêu</h2></div><p id="pricingDescription">Ba gói thiết kế website với phạm vi khác nhau. Giá ở phần này là phí thiết kế; tên miền và hosting là các khoản chi phí riêng.</p></div>
+<section class="slide pricing-slide" id="slide1">
+  <div class="section-intro pricing-intro"><div><div class="eyebrow" id="pricingEyebrow">02 / CHI PHÍ THIẾT KẾ</div><h2 id="pricingTitle">Chọn phương án phù hợp với mục tiêu</h2></div><p id="pricingDescription">Ba gói thiết kế website với phạm vi khác nhau. Giá ở phần này là phí thiết kế; tên miền và hosting là các khoản chi phí riêng.</p></div>
   <div class="pricing-tabs" id="pricingTabs" role="tablist" aria-label="Danh mục website">
     <button class="pricing-tab active" id="designTab" type="button" role="tab" aria-selected="true" aria-controls="designPricingView" data-pricing-category="design">Gói thiết kế</button>
     <button class="pricing-tab" id="webPackageTab" type="button" role="tab" aria-selected="false" aria-controls="preDesignedPricingView" data-pricing-category="preDesigned" hidden>Web gói</button>
   </div>
-  <div id="designPricingView" role="tabpanel" aria-labelledby="designTab">
+  <div id="designPricingView" class="pricing-view" role="tabpanel" aria-labelledby="designTab">
     <div class="grid" id="priceCards"></div>
     <div class="extras">
       <div class="extra"><div class="iconbox">⌁</div><div><h3>Tên miền (Domain)</h3><p>Chi phí riêng để sử dụng địa chỉ website của doanh nghiệp. Sẽ tư vấn lựa chọn phù hợp ở bước triển khai.</p></div></div>
@@ -50,26 +51,26 @@
     </div>
     <div class="note">Domain và hosting chưa cộng vào giá thiết kế trong bảng này. Chi phí cụ thể sẽ được trao đổi và xác nhận ở giai đoạn triển khai.</div>
   </div>
-  <div id="preDesignedPricingView" role="tabpanel" aria-labelledby="webPackageTab" hidden>
+  <div id="preDesignedPricingView" class="pricing-view" role="tabpanel" aria-labelledby="webPackageTab" hidden>
     <div class="web-package-position">
       <span class="tag">WEBSITE CÓ SẴN</span>
       <p>Website thiết kế sẵn – triển khai nhanh – tối ưu chi phí.</p>
     </div>
     <div class="grid web-package-grid" id="preDesignedPackageCards"></div>
   </div>
-  <div class="footer"><span id="footerBrand2">WEB SOLUTIONS · BÁO GIÁ THIẾT KẾ WEBSITE</span><span>02 / 03</span></div>
+  <div class="footer presentation-footer"><span id="footerBrand2">WEB SOLUTIONS · BÁO GIÁ THIẾT KẾ WEBSITE</span><span>02 / 03</span></div>
 </section>
-<section class="slide" id="slide2">
-  <div class="section-intro"><div><div class="eyebrow">03 / LỘ TRÌNH THỰC HIỆN</div><h2>Quy trình rõ ràng.<br>Tiến độ minh bạch.</h2></div><p>Từng giai đoạn có đầu việc, mốc thời gian và điều kiện thanh toán để hai bên chủ động phối hợp.</p></div>
-  <div class="process" id="processSteps"></div>
+<section class="slide process-slide" id="slide2">
+  <div class="section-intro process-intro"><div><div class="eyebrow">03 / LỘ TRÌNH THỰC HIỆN</div><h2>Quy trình rõ ràng. Tiến độ minh bạch.</h2></div><p>Từng giai đoạn có đầu việc, mốc thời gian và điều kiện thanh toán để hai bên chủ động phối hợp.</p></div>
+  <div class="process process-steps" id="processSteps"></div>
   <div class="payment">
     <div class="paytop"><div><h3>Tiến độ thanh toán 3 đợt</h3><p id="payPkgLine"></p></div><div class="pills" id="payPills"></div></div>
     <div class="payrow" id="paymentRows"></div>
     <div class="paytotal"><span>Tổng 3 đợt (phí thiết kế website)</span><strong id="payTotal"></strong></div>
     <div class="paywarn" id="payWarn"></div>
   </div>
-  <div class="note" id="processNote"></div>
-  <div class="footer"><span id="footerBrand3">WEB SOLUTIONS · LỘ TRÌNH TRIỂN KHAI</span><span>03 / 03</span></div>
+  <div class="note process-note" id="processNote"></div>
+  <div class="footer presentation-footer"><span id="footerBrand3">WEB SOLUTIONS · LỘ TRÌNH TRIỂN KHAI</span><span>03 / 03</span></div>
 </section>
 <div class="controls"><button class="controlbtn" id="prevBtn">← Quay lại</button><div class="dots"><span class="dot active"></span><span class="dot"></span><span class="dot"></span></div><button class="controlbtn" id="nextBtn">Tiếp theo →</button></div>
 </main>

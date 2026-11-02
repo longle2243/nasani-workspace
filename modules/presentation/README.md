@@ -14,6 +14,8 @@ Website tĩnh HTML, CSS, JavaScript thuần. Không cần build, package manager
 
 Các tài nguyên được tham chiếu bằng đường dẫn tương đối để hoạt động tại cả domain gốc lẫn URL GitHub Pages dạng `/ten-repository/`.
 
+Trên desktop đủ chiều rộng và chiều cao, mỗi màn hình được bố trí vừa một viewport; trên tablet, mobile hoặc màn hình thấp, nội dung chuyển sang luồng cuộn để giữ khả năng đọc. Mỗi bản ghi trong `scope` được hiển thị thành một thẻ dịch vụ.
+
 ## Chạy thử trên máy
 
 Trong thư mục dự án, chạy:

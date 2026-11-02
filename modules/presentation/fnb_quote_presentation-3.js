@@ -61,13 +61,29 @@ function replay(){
  slides.forEach(x=>x.classList.remove("enter"));void s.offsetWidth;s.classList.add("enter");
  clearTimeout(enterTimer);enterTimer=setTimeout(()=>s.classList.remove("enter"),1700);
 }
+function layoutServiceGrid(){
+ if(!data)return;
+ const count=data.scope.length;
+ const columnLimit=window.innerWidth>=1800?4:window.innerWidth>900?3:window.innerWidth>760?2:1;
+ let columns=Math.max(1,Math.min(count||1,columnLimit));
+ if(count>columns&&count%columns!==0)columns=Math.min(columns,Math.ceil(count/2));
+ const rows=Math.max(1,Math.ceil(count/columns));
+ $("scopeGroups").style.setProperty("--service-columns",columns);
+ $("scopeGroups").style.setProperty("--service-rows",rows);
+}
+window.addEventListener("resize",layoutServiceGrid);
 function render(anim){
  const pkg=data.packages[data.selected]||data.packages[0];
  $("brandName").textContent=data.brand;$("footerBrand").textContent=data.brand+" · ĐỀ XUẤT DỊCH VỤ";$("footerBrand2").textContent=data.brand+" · BÁO GIÁ THIẾT KẾ WEBSITE";$("footerBrand3").textContent=data.brand+" · LỘ TRÌNH TRIỂN KHAI";
  $("heroTitle").innerHTML=escapeHTML(data.title).replace(/\n/g,"<br>");$("heroDesc").textContent=data.desc;$("scopeIntro").textContent=data.scopeIntro;
- // Màn 1: gom theo nhóm
- const groups=[];data.scope.forEach(r=>{let g=groups.find(x=>x.name===r[0]);if(!g){g={name:r[0],rows:[]};groups.push(g)}g.rows.push(r)});
- $("scopeGroups").innerHTML=groups.map((g,gi)=>`<article class="svc-group" style="--i:${gi}"><div class="svc-head"><div class="iconbox">${String.fromCharCode(65+gi)}</div><h3>${escapeHTML(g.name)}</h3></div><div class="svc-cols"><span>Hạng mục</span><span>Nội dung</span><span>Số lượng / thời gian</span></div>${g.rows.map(r=>`<div class="svc-row"><div class="svc-name">${escapeHTML(r[1])}</div><div class="svc-desc">${escapeHTML(r[2])}</div><div>${r[3]?`<span class="svc-qty">${escapeHTML(r[3])}</span>`:""}</div></div>`).join("")}</article>`).join("");
+ // Màn 1: mỗi hạng mục dịch vụ là một thẻ riêng, giữ nguyên các trường JSON.
+ const categoryIcons=new Map();
+ const serviceIcons=["◈","◎","⌖","✳","↗"];
+ data.scope.forEach(row=>{
+  if(!categoryIcons.has(row[0]))categoryIcons.set(row[0],serviceIcons[categoryIcons.size%serviceIcons.length]);
+ });
+ $("scopeGroups").innerHTML=data.scope.map((row,index)=>`<article class="service-card" tabindex="0" style="--i:${index}"><div class="service-card-meta"><span class="iconbox" aria-hidden="true">${categoryIcons.get(row[0])}</span><span class="tag">${escapeHTML(row[0])}</span></div><h3>${escapeHTML(row[1])}</h3><p class="service-description">${escapeHTML(row[2])}</p>${row[3]?`<span class="svc-qty">${escapeHTML(row[3])}</span>`:""}</article>`).join("");
+ layoutServiceGrid();
  // Màn 2
  $("priceCards").innerHTML=data.packages.map((p,i)=>`<article style="--i:${i}" class="card price-card ${p.featured?"featured":""} ${i===data.selected?"selected":""}">${p.featured?'<span class="ribbon">ĐƯỢC ĐỀ XUẤT</span>':""}<span class="tag">${i===0?"PHỔ THÔNG":i===1?"ƯA THÍCH":i===2?"CAO CẤP":"GÓI DỊCH VỤ"}</span><h3>${escapeHTML(p.name)}</h3><p>${escapeHTML(p.sub)}</p><div class="price">${money(p.price)}<br><small>/ phí thiết kế website</small></div><ul class="scope-list">${p.features.map(f=>`<li><span>${escapeHTML(f)}</span>${previewButtons(f)}</li>`).join("")}</ul><button class="btn" data-package-select="${i}">${i===data.selected?"Đang chọn ✓":"Chọn gói "+escapeHTML(p.name)+" →"}</button></article>`).join("");
  renderPricingCategory();
@@ -75,7 +91,8 @@ function render(anim){
   ?data.preDesignedPackages.map((item,index)=>renderPreDesignedPackage(item,index)).join("")
   :'<p class="web-package-empty">Chưa có website thiết kế sẵn được cấu hình. Người trình bày có thể thêm mẫu, hosting và giá trong phần chỉnh sửa.</p>';
  // Màn 3
- $("processSteps").innerHTML=data.process.map((p,i)=>`<div class="step" style="--i:${i}"><div class="step-head"><div class="num">0${i+1}</div></div><h3>${escapeHTML(p.name)}</h3><div class="time">${escapeHTML(p.time)}</div><p>${escapeHTML(p.desc)}</p></div>`).join("");
+ $("processSteps").style.setProperty("--process-columns",Math.max(1,data.process.length));
+ $("processSteps").innerHTML=data.process.map((p,i)=>`<div class="step" style="--i:${i}"><div class="step-head"><div class="num">${String(i+1).padStart(2,"0")}</div></div><h3>${escapeHTML(p.name)}</h3><div class="time">${escapeHTML(p.time)}</div><p>${escapeHTML(p.desc)}</p></div>`).join("");
  const inst=installments(pkg.price);
  $("payPkgLine").textContent="Gói "+pkg.name+" · "+money(pkg.price)+" (chưa gồm tên miền, hosting)";
  $("payPills").innerHTML=data.packages.map((p,i)=>`<button class="pill ${i===data.selected?"active":""}" data-package-select="${i}">${escapeHTML(p.name)}</button>`).join("");
@@ -100,7 +117,7 @@ function previewButtons(feature){
 function renderPricingCategory(){
  const enabled=data.pricing.webPackageTabEnabled;
  if(!enabled)activePricingCategory="design";
- $("pricingTabs").hidden=false;
+ $("pricingTabs").hidden=!enabled;
  $("webPackageTab").hidden=!enabled;
  $("designPricingView").hidden=activePricingCategory!=="design";
  $("preDesignedPricingView").hidden=!enabled||activePricingCategory!=="preDesigned";
@@ -109,7 +126,7 @@ function renderPricingCategory(){
  $("designTab").setAttribute("aria-selected",String(activePricingCategory==="design"));
  $("webPackageTab").setAttribute("aria-selected",String(enabled&&activePricingCategory==="preDesigned"));
  $("pricingEyebrow").textContent=activePricingCategory==="design"?"02 / CHI PHÍ THIẾT KẾ":"02 / WEBSITE CÓ SẴN";
- $("pricingTitle").innerHTML=activePricingCategory==="design"?"Chọn phương án<br>phù hợp với mục tiêu":"Website thiết kế sẵn<br>triển khai nhanh";
+ $("pricingTitle").textContent=activePricingCategory==="design"?"Chọn phương án phù hợp với mục tiêu":"Website thiết kế sẵn triển khai nhanh";
  $("pricingDescription").textContent=activePricingCategory==="design"
   ?"Ba gói thiết kế website với phạm vi khác nhau. Giá ở phần này là phí thiết kế; tên miền và hosting là các khoản chi phí riêng."
   :"Website thiết kế sẵn – triển khai nhanh – tối ưu chi phí. Hosting đi kèm theo thông tin cấu hình của từng gói.";
