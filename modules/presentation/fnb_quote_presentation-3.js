@@ -64,9 +64,7 @@ function replay(){
 function layoutServiceGrid(){
  if(!data)return;
  const count=data.scope.length;
- const columnLimit=window.innerWidth>=1800?4:window.innerWidth>900?3:window.innerWidth>760?2:1;
- let columns=Math.max(1,Math.min(count||1,columnLimit));
- if(count>columns&&count%columns!==0)columns=Math.min(columns,Math.ceil(count/2));
+ const columns=Math.max(1,Math.min(count||1,window.innerWidth>900?3:window.innerWidth>760?2:1));
  const rows=Math.max(1,Math.ceil(count/columns));
  $("scopeGroups").style.setProperty("--service-columns",columns);
  $("scopeGroups").style.setProperty("--service-rows",rows);
@@ -76,13 +74,9 @@ function render(anim){
  const pkg=data.packages[data.selected]||data.packages[0];
  $("brandName").textContent=data.brand;$("footerBrand").textContent=data.brand+" · ĐỀ XUẤT DỊCH VỤ";$("footerBrand2").textContent=data.brand+" · BÁO GIÁ THIẾT KẾ WEBSITE";$("footerBrand3").textContent=data.brand+" · LỘ TRÌNH TRIỂN KHAI";
  $("heroTitle").innerHTML=escapeHTML(data.title).replace(/\n/g,"<br>");$("heroDesc").textContent=data.desc;$("scopeIntro").textContent=data.scopeIntro;
- // Màn 1: mỗi hạng mục dịch vụ là một thẻ riêng, giữ nguyên các trường JSON.
- const categoryIcons=new Map();
- const serviceIcons=["◈","◎","⌖","✳","↗"];
- data.scope.forEach(row=>{
-  if(!categoryIcons.has(row[0]))categoryIcons.set(row[0],serviceIcons[categoryIcons.size%serviceIcons.length]);
- });
- $("scopeGroups").innerHTML=data.scope.map((row,index)=>`<article class="service-card" tabindex="0" style="--i:${index}"><div class="service-card-meta"><span class="iconbox" aria-hidden="true">${categoryIcons.get(row[0])}</span><span class="tag">${escapeHTML(row[0])}</span></div><h3>${escapeHTML(row[1])}</h3><p class="service-description">${escapeHTML(row[2])}</p>${row[3]?`<span class="svc-qty">${escapeHTML(row[3])}</span>`:""}</article>`).join("");
+ // Màn 1: mỗi nhóm gom các đầu việc liên quan thành một thẻ.
+ const serviceIcons=["◈","◎","⌖"];
+ $("scopeGroups").innerHTML=data.scope.map((group,index)=>`<article class="service-card" tabindex="0" style="--i:${index}"><div class="service-card-meta"><span class="iconbox" aria-hidden="true">${serviceIcons[index%serviceIcons.length]}</span><span class="tag">${escapeHTML(group.title)}</span></div><div class="service-items">${group.items.map(item=>`<div class="service-item"><h3>${escapeHTML(item.name)}</h3>${item.description?`<p class="service-description">${escapeHTML(item.description)}</p>`:""}${item.detail?`<span class="svc-qty">${escapeHTML(item.detail)}</span>`:""}</div>`).join("")}</div></article>`).join("");
  layoutServiceGrid();
  // Màn 2
  $("priceCards").innerHTML=data.packages.map((p,i)=>`<article style="--i:${i}" class="card price-card ${p.featured?"featured":""} ${i===data.selected?"selected":""}">${p.featured?'<span class="ribbon">ĐƯỢC ĐỀ XUẤT</span>':""}<span class="tag">${i===0?"PHỔ THÔNG":i===1?"ƯA THÍCH":i===2?"CAO CẤP":"GÓI DỊCH VỤ"}</span><h3>${escapeHTML(p.name)}</h3><p>${escapeHTML(p.sub)}</p><div class="price">${money(p.price)}<br><small>/ phí thiết kế website</small></div><ul class="scope-list">${p.features.map(f=>`<li><span>${escapeHTML(f)}</span>${previewButtons(f)}</li>`).join("")}</ul><button class="btn" data-package-select="${i}">${i===data.selected?"Đang chọn ✓":"Chọn gói "+escapeHTML(p.name)+" →"}</button></article>`).join("");
@@ -243,8 +237,11 @@ function editorSectionMarkup(){
   return `<h3>Thông tin thương hiệu &amp; khách hàng</h3><p class="editor-description">Nội dung hiển thị ở phần mở đầu và chân trang.</p><div class="editor-fields">${editorField("Tên công ty / thương hiệu","brand",editorDraft.brand)}${editorField("Tên khách hàng / dự án","client",editorDraft.client)}${editorField("Tiêu đề chính","title",editorDraft.title,{full:true})}${editorField("Mô tả mở đầu","desc",editorDraft.desc,{full:true,multiline:true})}${editorField("Giới thiệu phạm vi dịch vụ","scopeIntro",editorDraft.scopeIntro,{full:true,multiline:true})}<label class="field"><span class="field-label">Gói đang chọn</span><select data-path="selected">${packageOptions}</select></label></div>`;
  }
  if(editorSection==="scope"){
-  const cards=editorDraft.scope.map((item,index)=>editorCard(item[1],index,"scope",`${editorField("Nhóm dịch vụ",`scope.${index}.0`,item[0])}${editorField("Tên hạng mục",`scope.${index}.1`,item[1])}${editorField("Nội dung công việc",`scope.${index}.2`,item[2],{full:true,multiline:true})}${editorField("Số lượng / thời gian",`scope.${index}.3`,item[3],{full:true})}`)).join("");
-  return `<h3>Dịch vụ &amp; hạng mục</h3><p class="editor-description">Mỗi mục gồm nhóm dịch vụ, tên, nội dung và số lượng / thời gian như trong dữ liệu JSON.</p><div class="editor-list">${cards}</div><button class="controlbtn editor-add" type="button" data-action="add-scope">+ Thêm hạng mục dịch vụ</button>`;
+  const cards=editorDraft.scope.map((group,index)=>{
+   const items=group.items.map((item,itemIndex)=>`<article class="editor-card"><div class="editor-card-head"><strong>${escapeHTML(item.name||"Chưa đặt tên")}</strong><button class="controlbtn" type="button" data-action="remove-scope-item" data-group-index="${index}" data-index="${itemIndex}" aria-label="Xóa ${escapeHTML(item.name||"hạng mục")}">Xóa</button></div><div class="editor-card-fields">${editorField("Tên hạng mục",`scope.${index}.items.${itemIndex}.name`,item.name)}${editorField("Nội dung công việc",`scope.${index}.items.${itemIndex}.description`,item.description,{full:true,multiline:true})}${editorField("Số lượng / thời gian",`scope.${index}.items.${itemIndex}.detail`,item.detail,{full:true})}</div></article>`).join("");
+   return `<section class="editor-scope-group"><h4>${escapeHTML(group.title||"Nhóm dịch vụ")}</h4>${editorField("Tên nhóm dịch vụ",`scope.${index}.title`,group.title,{full:true})}<div class="editor-list">${items}</div><button class="controlbtn editor-add" type="button" data-action="add-scope-item" data-group-index="${index}">+ Thêm đầu việc</button></section>`;
+  }).join("");
+  return `<h3>Dịch vụ &amp; hạng mục</h3><p class="editor-description">Chỉnh sửa các đầu việc trong từng nhóm dịch vụ. Dữ liệu được lưu và xuất theo cấu trúc nhóm.</p><div class="editor-list">${cards}</div>`;
  }
  if(editorSection==="packages"){
   const cards=editorDraft.packages.map((pkg,index)=>editorCard(pkg.name,index,"package",`${editorField("Tên gói",`packages.${index}.name`,pkg.name)}${editorField("Giá (VNĐ)",`packages.${index}.price`,pkg.price,{type:"number",required:true})}${editorField("Mô tả ngắn",`packages.${index}.sub`,pkg.sub,{full:true})}${editorField("Hạng mục gói (mỗi dòng một mục)",`packages.${index}.features`,pkg.features.join("\n"),{full:true,multiline:true,format:"lines"})}<label class="editor-featured"><input type="checkbox" data-path="packages.${index}.featured"${pkg.featured?" checked":""}> Đánh dấu là gói được đề xuất</label>`)).join("");
@@ -311,7 +308,7 @@ function validateData(value){
  value=normalizeData(value);
  if(!isObject(value))throw new Error("Dữ liệu phải là một đối tượng JSON.");
  for(const key of ["brand","client","title","desc","scopeIntro","note"])if(!string(value[key]))throw new Error(`Trường "${key}" phải là chuỗi.`);
- if(!Array.isArray(value.scope)||value.scope.some(item=>!Array.isArray(item)||item.length<4||item.slice(0,4).some(part=>!string(part))))throw new Error('Dữ liệu "scope" không đúng cấu trúc 4 trường.');
+ if(!Array.isArray(value.scope)||value.scope.length!==3||value.scope.some(group=>!isObject(group)||!string(group.title)||!Array.isArray(group.items)||group.items.some(item=>!isObject(item)||!string(item.name)||!string(item.description)||!string(item.detail))))throw new Error('Dữ liệu "scope" phải gồm ba nhóm dịch vụ với các đầu việc hợp lệ.');
  if(!Array.isArray(value.packages)||value.packages.length===0||value.packages.some(item=>!isObject(item)||!string(item.name)||!string(item.sub)||!Number.isFinite(item.price)||item.price<0||!Array.isArray(item.features)||item.features.some(feature=>!string(feature))||typeof item.featured!=="boolean"))throw new Error('Dữ liệu "packages" không hợp lệ.');
  if(!Number.isInteger(value.selected)||value.selected<0||value.selected>=value.packages.length)throw new Error('Gói đang chọn trong "selected" không hợp lệ.');
  for(const key of ["process","payments"]){
@@ -336,8 +333,20 @@ function normalizeData(value){
  if(!Array.isArray(packages))throw new Error('Dữ liệu "preDesignedPackages" phải là danh sách.');
  const previewDefaults={basic:{enabled:true},responsive:{enabled:true},ssl:{enabled:true}};
  const webPackageDefaults={name:"",description:"",hosting:"",previewImage:"",demoUrl:"",price:null,designPackageIndex:null,paymentTerms:"Thanh toán 100% một lần; không trả góp hoặc thanh toán theo mốc."};
+ const scope=Array.isArray(value.scope)&&value.scope.every(item=>Array.isArray(item))
+  ?(()=>{
+    const groups=[{title:"WEBSITE",items:[]},{title:"FACEBOOK PAGE",items:[]},{title:"Google Map",items:[]}];
+    value.scope.forEach(row=>{
+     const category=String(row[0]??"");
+     const group=/facebook|fanpage|page/i.test(category)?groups[1]:/website|\bweb\b/i.test(category)?groups[0]:groups[2];
+     group.items.push({name:String(row[1]??""),description:String(row[2]??""),detail:String(row[3]??"")});
+    });
+    return groups;
+   })()
+  :value.scope;
  return {
   ...value,
+  scope,
   pricing:{webPackageTabEnabled:false,...pricing},
   featurePreviews:Object.fromEntries(Object.entries(previewDefaults).map(([key,defaults])=>{
    const configured=previews[key];
@@ -418,7 +427,8 @@ $("editorContent").addEventListener("click",event=>{
  const button=event.target.closest("[data-action]");
  if(!button)return;
  const action=button.dataset.action,index=Number(button.dataset.index);
- if(action==="add-scope")editorDraft.scope.push(["","","",""]);
+ const groupIndex=Number(button.dataset.groupIndex);
+ if(action==="add-scope-item")editorDraft.scope[groupIndex].items.push({name:"",description:"",detail:""});
  if(action==="add-package"){
   editorDraft.packages.push({name:"",sub:"",price:0,features:[],featured:false});
  }
@@ -427,7 +437,7 @@ $("editorContent").addEventListener("click",event=>{
  }
  if(action==="add-payment")editorDraft.payments.push({pct:"",name:"",desc:""});
  if(action==="add-process")editorDraft.process.push({name:"",time:"",desc:""});
- if(action==="remove-scope")editorDraft.scope.splice(index,1);
+ if(action==="remove-scope-item")editorDraft.scope[groupIndex].items.splice(index,1);
  if(action==="remove-package"){
    if(editorDraft.packages.length<=1){showToast("Cần giữ lại ít nhất một gói giá.");return}
    editorDraft.packages.splice(index,1);

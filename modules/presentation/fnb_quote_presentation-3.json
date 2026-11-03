@@ -5,42 +5,51 @@
   "desc": "Tổng hợp phạm vi triển khai, phương án đầu tư và lộ trình thực hiện — rõ ràng từ đầu để hai bên dễ dàng thống nhất.",
   "scopeIntro": "Mỗi hạng mục được nêu rõ công việc, số lượng và thời gian hỗ trợ để khách hàng dễ đối chiếu khi nghiệm thu.",
   "scope": [
-    [
-      "Thiết kế website",
-      "Thiết kế giao diện",
-      "Thiết kế theo nhận diện thương hiệu; hiển thị tốt trên máy tính, máy tính bảng và điện thoại.",
-      "Responsive 3 thiết bị"
-    ],
-    [
-      "Thiết kế website",
-      "Nội dung & SEO cơ bản",
-      "Nhập nội dung, hình ảnh được cung cấp; thiết lập tiêu đề, mô tả SEO và các thông tin cơ bản.",
-      "SEO on-page cơ bản"
-    ],
-    [
-      "Facebook Fanpage",
-      "Setup Fanpage",
-      "Hoàn thiện thông tin doanh nghiệp, ảnh đại diện, ảnh bìa, thông tin liên hệ.",
-      "16/16 hạng mục"
-    ],
-    [
-      "Facebook Fanpage",
-      "Chăm sóc Fanpage",
-      "Lên nội dung theo kế hoạch, gửi khách duyệt trước khi đăng, đăng bài theo lịch đã thống nhất.",
-      "2–3 bài/tuần"
-    ],
-    [
-      "Facebook Fanpage",
-      "Thời gian chăm sóc",
-      "Triển khai theo kế hoạch đã thống nhất.",
-      "3 tháng"
-    ],
-    [
-      "Google Map",
-      "Xác minh doanh nghiệp Map",
-      "",
-      ""
-    ]
+    {
+      "title": "WEBSITE",
+      "items": [
+        {
+          "name": "Thiết kế giao diện",
+          "description": "Thiết kế theo nhận diện thương hiệu; hiển thị tốt trên máy tính, máy tính bảng và điện thoại.",
+          "detail": "Responsive 3 thiết bị"
+        },
+        {
+          "name": "Nội dung & SEO cơ bản",
+          "description": "Nhập nội dung, hình ảnh được cung cấp; thiết lập tiêu đề, mô tả SEO và các thông tin cơ bản.",
+          "detail": "SEO on-page cơ bản"
+        }
+      ]
+    },
+    {
+      "title": "FACEBOOK PAGE",
+      "items": [
+        {
+          "name": "Setup Fanpage",
+          "description": "Hoàn thiện thông tin doanh nghiệp, ảnh đại diện, ảnh bìa, thông tin liên hệ.",
+          "detail": "16/16 hạng mục"
+        },
+        {
+          "name": "Chăm sóc Fanpage",
+          "description": "Lên nội dung theo kế hoạch, gửi khách duyệt trước khi đăng, đăng bài theo lịch đã thống nhất.",
+          "detail": "2–3 bài/tuần"
+        },
+        {
+          "name": "Thời gian chăm sóc",
+          "description": "Triển khai theo kế hoạch đã thống nhất.",
+          "detail": "3 tháng"
+        }
+      ]
+    },
+    {
+      "title": "Google Map",
+      "items": [
+        {
+          "name": "Xác minh doanh nghiệp Map",
+          "description": "",
+          "detail": ""
+        }
+      ]
+    }
   ],
   "packages": [
     {

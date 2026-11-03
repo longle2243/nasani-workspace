@@ -14,7 +14,7 @@ Website tĩnh HTML, CSS, JavaScript thuần. Không cần build, package manager
 
 Các tài nguyên được tham chiếu bằng đường dẫn tương đối để hoạt động tại cả domain gốc lẫn URL GitHub Pages dạng `/ten-repository/`.
 
-Trên desktop đủ chiều rộng và chiều cao, mỗi màn hình được bố trí vừa một viewport; trên tablet, mobile hoặc màn hình thấp, nội dung chuyển sang luồng cuộn để giữ khả năng đọc. Mỗi bản ghi trong `scope` được hiển thị thành một thẻ dịch vụ.
+Trên desktop đủ chiều rộng và chiều cao, mỗi màn hình được bố trí vừa một viewport; trên tablet, mobile hoặc màn hình thấp, nội dung chuyển sang luồng cuộn để giữ khả năng đọc. Mỗi nhóm trong `scope` được hiển thị thành một thẻ; các đầu việc liên quan nằm trong nhóm tương ứng. Dữ liệu `scope` dạng danh sách hạng mục cũ được chuyển đổi khi đọc dữ liệu đã lưu trong trình duyệt.
 
 ## Chạy thử trên máy
 
