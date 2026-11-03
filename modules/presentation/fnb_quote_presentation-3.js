@@ -75,7 +75,11 @@ function render(anim){
  $("brandName").textContent=data.brand;$("footerBrand").textContent=data.brand+" · ĐỀ XUẤT DỊCH VỤ";$("footerBrand2").textContent=data.brand+" · BÁO GIÁ THIẾT KẾ WEBSITE";$("footerBrand3").textContent=data.brand+" · LỘ TRÌNH TRIỂN KHAI";
  $("heroTitle").innerHTML=escapeHTML(data.title).replace(/\n/g,"<br>");$("heroDesc").textContent=data.desc;$("scopeIntro").textContent=data.scopeIntro;
  // Màn 1: mỗi nhóm gom các đầu việc liên quan thành một thẻ.
- const serviceIcons=["◈","◎","⌖"];
+ const serviceIcons=[
+  '<svg viewBox="0 0 24 24" fill="none"><rect x="3.5" y="4.5" width="17" height="15" rx="2.5" stroke="currentColor" stroke-width="1.7"/><path d="M3.5 9h17M7 6.8h.01M9.5 6.8h.01M8 13h8M8 16h5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>',
+  '<svg viewBox="0 0 24 24" fill="none"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3h11A2.5 2.5 0 0 1 20 5.5v9a2.5 2.5 0 0 1-2.5 2.5H10l-5 4v-5.3A2.5 2.5 0 0 1 4 13.5v-8Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="M8 8h8M8 12h5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>',
+  '<svg viewBox="0 0 24 24" fill="none"><path d="M19 10c0 5-7 11-7 11S5 15 5 10a7 7 0 1 1 14 0Z" stroke="currentColor" stroke-width="1.7"/><circle cx="12" cy="10" r="2.3" stroke="currentColor" stroke-width="1.7"/></svg>'
+ ];
  $("scopeGroups").innerHTML=data.scope.map((group,index)=>`<article class="service-card" tabindex="0" style="--i:${index}"><div class="service-card-meta"><span class="iconbox" aria-hidden="true">${serviceIcons[index%serviceIcons.length]}</span><span class="tag">${escapeHTML(group.title)}</span></div><div class="service-items">${group.items.map(item=>`<div class="service-item"><h3>${escapeHTML(item.name)}</h3>${item.description?`<p class="service-description">${escapeHTML(item.description)}</p>`:""}${item.detail?`<span class="svc-qty">${escapeHTML(item.detail)}</span>`:""}</div>`).join("")}</div></article>`).join("");
  layoutServiceGrid();
  // Màn 2
