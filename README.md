@@ -48,6 +48,8 @@ Portfolio cá nhân của Long Lê có ba landing page độc lập, mỗi ngàn
 
 Menu ngành dùng liên kết tương đối để hỗ trợ GitHub Pages project site. Danh sách case study nằm trong `portfolio/data/projects.json` theo từng ngành; mỗi mục có thể gồm `name`, `industry`, `image`, `imageAlt`, `problem`, `solution`, `conversionPoints` (mảng) và `result` đã xác minh. Chỉ thêm dự án, ảnh, kết quả và thông tin khách hàng đã được xác nhận quyền sử dụng. Khi chưa có dữ liệu, trang hiển thị trạng thái placeholder thay vì dự án hoặc kết quả giả. Bổ sung kênh liên hệ đã xác nhận vào các trang ngành trước khi gửi Portfolio cho khách hàng.
 
+Portfolio Manager có tại `portfolio-manager.html` trong Dashboard. Không có API hoặc quyền ghi vào repository từ trình duyệt: bản nháp văn bản nằm trong `localStorage`, ảnh nháp trong IndexedDB trên thiết bị hiện tại. **Xuất file chỉ tải `content.json`, `projects.json` và ảnh về máy; không publish.** Tự thay hai JSON trong `portfolio/data/`, chép ảnh theo đúng đường dẫn hiển thị trong Manager, kiểm tra site rồi commit/push để Pages nhận cập nhật. Nếu xóa dữ liệu trình duyệt, sao lưu/export trước; không thể khôi phục bản nháp từ server. Login hiện tại chỉ là lớp chặn giao diện phía client và không bảo vệ Manager hoặc dữ liệu công khai.
+
 ### Dữ liệu và lưu trữ hiện tại
 
 - INCOME tiếp tục dùng `localStorage` key `sales-desk-v2`; `config.json` được giữ nguyên cùng module. Cấu hình mặc định và công thức hiện tại vẫn nằm trong `script.js`.

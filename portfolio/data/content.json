@@ -1,0 +1,214 @@
+{
+  "schemaVersion": 1,
+  "industries": {
+    "fnb": {
+      "name": "F&B",
+      "hero": {
+        "kicker": "GIẢI PHÁP DIGITAL CHO F&B",
+        "title": "Từ một thực đơn đẹp\ntới một bàn đã đặt.",
+        "description": "Tôi là Long Lê. Tôi tập trung thiết kế website giúp thương hiệu ẩm thực kể câu chuyện của mình và đưa khách đến đúng hành động — xem món, đặt bàn hay gửi yêu cầu đặt tiệc.",
+        "cta": "Trao đổi bài toán F&B",
+        "secondaryCta": "Xem cách tôi tiếp cận",
+        "industries": "Nhà hàng · Cafe · Catering · Tiệc & hội nghị",
+        "image": { "path": "", "alt": "Minh họa định hướng thị giác F&B" }
+      },
+      "sections": [
+        {
+          "id": "challenge",
+          "enabled": true,
+          "label": "BÀI TOÁN KINH DOANH",
+          "title": "Khách đang đói.\nĐừng để họ phải đoán.",
+          "intro": "Website F&B nên trả lời thật nhanh: món gì đáng thử, không gian ra sao, còn bàn không — và đặt tiệc thì cần trao đổi những gì?",
+          "items": [
+            { "title": "Thực đơn khó xem", "body": "Món ngon, giá và hình ảnh cần được sắp xếp để khách chọn nhanh trên điện thoại." },
+            { "title": "Đặt bàn nhiều bước", "body": "Đưa số khách, ngày giờ và cách xác nhận đến gần nhau, thay vì bắt khách tự tìm thông tin." },
+            { "title": "Đặt tiệc cần tư vấn", "body": "Thu thập ngày tổ chức, số lượng khách và nhu cầu để cuộc trao đổi bắt đầu đủ rõ." }
+          ]
+        },
+        {
+          "id": "solutions",
+          "enabled": true,
+          "label": "GIẢI PHÁP WEBSITE",
+          "title": "Mỗi ý định\nmột lối đi.",
+          "intro": "Không phải mọi lượt truy cập đều có cùng mục tiêu. Cấu trúc website cần mở đúng đường cho khách đang chọn món lẫn người đang lên kế hoạch một buổi tiệc.",
+          "cta": "Cùng xác định hành trình phù hợp",
+          "items": [
+            { "title": "Khách muốn đến ăn", "label": "ĐẶT BÀN", "steps": ["Xem món & khoảng giá", "Chọn ngày, giờ, số khách", "Gửi đặt bàn, nhận xác nhận"], "detail": "Mục tiêu: hành động nhanh, ít bước." },
+            { "title": "Khách cần một phương án", "label": "ĐẶT TIỆC", "steps": ["Khám phá không gian & gói tiệc", "Chia sẻ ngày, quy mô, nhu cầu", "Nhận tư vấn phù hợp"], "detail": "Mục tiêu: thu thập thông tin để tư vấn sâu." }
+          ]
+        },
+        {
+          "id": "work",
+          "enabled": true,
+          "label": "SELECTED WORK",
+          "title": "Dự án thực tế,\nkhông phải lời hứa.",
+          "intro": "Chỉ hiển thị case study khi có thông tin và quyền sử dụng đã xác nhận."
+        },
+        {
+          "id": "approach",
+          "enabled": true,
+          "label": "CONVERSION THINKING",
+          "quote": "Một website tốt không ép khách bấm. Nó làm cho bước tiếp theo trở nên tự nhiên.",
+          "note": "Điểm chuyển đổi cần rõ ràng, đúng thời điểm và phù hợp với mục tiêu kinh doanh của từng trang."
+        },
+        {
+          "id": "process",
+          "enabled": true,
+          "label": "CÁCH PHỐI HỢP",
+          "title": "Từ câu hỏi đúng\nđến website sẵn sàng.",
+          "items": [
+            { "title": "Làm rõ mục tiêu", "body": "Trao đổi mô hình kinh doanh, nhóm khách và hành động website cần hỗ trợ." },
+            { "title": "Định hình hành trình", "body": "Ưu tiên nội dung, thông tin và điểm chuyển đổi theo từng loại nhu cầu." },
+            { "title": "Triển khai & rà soát", "body": "Thống nhất phạm vi, hoàn thiện giao diện và kiểm tra trên thiết bị thực tế." }
+          ]
+        },
+        {
+          "id": "contact",
+          "enabled": true,
+          "label": "BẮT ĐẦU TỪ BÀI TOÁN CỦA BẠN",
+          "title": "Đang cần một website\ncho thương hiệu F&B?",
+          "description": "Thay bằng kênh liên hệ chính thức của Long Lê trước khi công bố Portfolio.",
+          "cta": "Kênh liên hệ",
+          "contactUrl": ""
+        }
+      ]
+    },
+    "spa": {
+      "name": "Spa & Beauty",
+      "hero": {
+        "kicker": "WEBSITE & CONVERSION — SPA / BEAUTY / WELLNESS",
+        "title": "Một khoảng lặng\nđể lắng nghe làn da.",
+        "description": "Tôi là Long Lê. Tôi thiết kế trải nghiệm website giúp spa giới thiệu dịch vụ một cách tinh tế, tạo đủ tin cậy để khách hiểu lựa chọn của mình và bắt đầu một cuộc tư vấn.",
+        "cta": "Trao đổi nhu cầu",
+        "secondaryCta": "",
+        "industries": "SPA / BEAUTY / WELLNESS",
+        "image": { "path": "", "alt": "Minh họa không gian spa tối giản" }
+      },
+      "sections": [
+        {
+          "id": "approach",
+          "enabled": true,
+          "label": "TRẢI NGHIỆM BẮT ĐẦU TỪ SỰ RÕ RÀNG",
+          "title": "Đẹp để dừng lại.\nRõ để an tâm.",
+          "intro": "Khách thường muốn hiểu liệu trình nào phù hợp, buổi hẹn diễn ra ra sao và ai sẽ đồng hành cùng họ. Website nên trả lời điều đó bằng nhịp điệu nhẹ nhàng, không tạo thêm áp lực."
+        },
+        {
+          "id": "solutions",
+          "enabled": true,
+          "label": "01 / THE DIGITAL EXPERIENCE",
+          "title": "Thông tin có trật tự.\nNiềm tin có chỗ lớn lên.",
+          "items": [
+            { "title": "Dịch vụ & liệu trình", "body": "Nhóm dịch vụ theo nhu cầu, mô tả rõ mục tiêu và thông tin cần biết trước khi đặt lịch." },
+            { "title": "Không gian & con người", "body": "Giới thiệu trải nghiệm, đội ngũ và quy trình bằng nội dung đã được cơ sở xác nhận." },
+            { "title": "Đặt lịch & tư vấn", "body": "Hướng khách đến kênh đặt lịch hoặc tư vấn phù hợp với từng dịch vụ." },
+            { "title": "Thông tin sau buổi hẹn", "body": "Trình bày lưu ý, hướng dẫn và cách kết nối lại mà không làm quá tải giao diện." }
+          ]
+        },
+        {
+          "id": "booking",
+          "enabled": true,
+          "label": "02 / BOOKING JOURNEY",
+          "title": "Không thúc giục.\nGỡ từng băn khoăn.",
+          "intro": "Hành trình chuyển đổi bắt đầu từ hiểu biết và sự đồng thuận: xem dịch vụ, nắm quy trình, chọn thời gian rồi gửi yêu cầu tư vấn hoặc đặt lịch.",
+          "cta": "Cùng phác thảo hành trình",
+          "items": [
+            { "title": "Khám phá", "detail": "Dịch vụ & không gian" },
+            { "title": "Tìm hiểu", "detail": "Liệu trình & quy trình" },
+            { "title": "Chọn lịch", "detail": "Đặt hẹn hoặc tư vấn" }
+          ]
+        },
+        {
+          "id": "work",
+          "enabled": true,
+          "label": "03 / SELECTED WORK",
+          "title": "Những dự án\nđược xác nhận.",
+          "intro": "Chỉ giới thiệu công việc có thông tin thực tế và quyền sử dụng đã được xác nhận."
+        },
+        {
+          "id": "process",
+          "enabled": true,
+          "label": "04 / A CONSIDERED PROCESS",
+          "title": "Chậm một nhịp\nđể đúng hướng.",
+          "items": [
+            { "title": "Lắng nghe", "body": "Hiểu dịch vụ, khách hàng, cách tư vấn và điều cơ sở muốn khách cảm nhận." },
+            { "title": "Định hình", "body": "Sắp xếp nội dung, hình ảnh và điểm đặt lịch theo hành trình phù hợp." },
+            { "title": "Hoàn thiện", "body": "Rà soát khả năng đọc, trải nghiệm trên điện thoại và các bước liên hệ." }
+          ]
+        },
+        {
+          "id": "contact",
+          "enabled": true,
+          "label": "LET'S BEGIN WITH A CONVERSATION",
+          "title": "Website tiếp theo\ncó thể bắt đầu từ đây.",
+          "description": "Thay bằng kênh liên hệ chính thức của Long Lê trước khi công bố Portfolio.",
+          "cta": "Trao đổi nhu cầu",
+          "contactUrl": ""
+        }
+      ]
+    },
+    "karaoke": {
+      "name": "Karaoke & Entertainment",
+      "hero": {
+        "kicker": "DIGITAL EXPERIENCE / ENTERTAINMENT",
+        "title": "ĐÊM NAY.\nCHỌN PHÒNG.\nĐI THÔI.",
+        "description": "Tôi là Long Lê. Tôi tập trung xây dựng trải nghiệm website giúp địa điểm giải trí đưa không gian lên trước — để khách xem phòng, hiểu sức chứa và tiện ích rồi chủ động gửi yêu cầu.",
+        "cta": "BẮT ĐẦU CUỘC TRÒ CHUYỆN",
+        "secondaryCta": "",
+        "industries": "KARAOKE / PRIVATE ROOMS / NIGHT OUT",
+        "image": { "path": "", "alt": "Minh họa không gian giải trí về đêm" }
+      },
+      "sections": [
+        {
+          "id": "experience",
+          "enabled": true,
+          "label": "02 / ROOM EXPLORER",
+          "title": "Đừng chỉ bán\nmột căn phòng.",
+          "intro": "Hãy cho khách thấy lựa chọn nào phù hợp với nhóm của họ — bằng hình ảnh không gian, sức chứa và tiện ích được trình bày rõ.",
+          "items": [
+            { "title": "ROOM / 01", "detail": "PRIVATE SESSION" },
+            { "title": "THÔNG TIN NÊN CÓ", "features": ["Phân loại phòng & sức chứa", "Tiện ích và cấu hình âm thanh", "Ưu đãi đang áp dụng", "Thông tin đặt phòng & xác nhận"] }
+          ]
+        },
+        {
+          "id": "solutions",
+          "enabled": true,
+          "label": "03 / A CLEAR WAY IN",
+          "title": "Khách thấy phòng.\nBiết mình chọn gì.\nRồi mới đặt.",
+          "cta": "THIẾT KẾ HÀNH TRÌNH ĐẶT PHÒNG",
+          "items": [
+            { "title": "Khám phá", "body": "Hình ảnh và mô tả giúp khách cảm nhận không gian." },
+            { "title": "So sánh", "body": "Sức chứa, tiện ích và ưu đãi hỗ trợ chọn đúng phòng." },
+            { "title": "Gửi yêu cầu", "body": "Ngày giờ, số khách và cách xác nhận được nói rõ." }
+          ]
+        },
+        {
+          "id": "work",
+          "enabled": true,
+          "label": "04 / SELECTED WORK",
+          "title": "Chỉ những dự án\ncó thật.",
+          "intro": "Không sử dụng hình ảnh ngẫu nhiên như bằng chứng công việc."
+        },
+        {
+          "id": "process",
+          "enabled": true,
+          "label": "05 / BUILD THE EXPERIENCE",
+          "title": "Clarity first.\nThen turn it up.",
+          "items": [
+            { "title": "Khám phá mô hình", "body": "Hiểu loại hình giải trí, khách mục tiêu và cách tiếp nhận đặt phòng." },
+            { "title": "Thiết kế đường đi", "body": "Ưu tiên trải nghiệm xem phòng, thông tin và CTA phù hợp." },
+            { "title": "Rà soát thực tế", "body": "Kiểm tra hình ảnh, nội dung, responsive và cách gửi yêu cầu." }
+          ]
+        },
+        {
+          "id": "contact",
+          "enabled": true,
+          "label": "MAKE ROOM FOR THE NEXT STEP",
+          "title": "Sẵn sàng để khách\nchọn phòng của bạn?",
+          "description": "Thay bằng kênh liên hệ chính thức của Long Lê trước khi công bố Portfolio.",
+          "cta": "TRAO ĐỔI NGAY",
+          "contactUrl": ""
+        }
+      ]
+    }
+  }
+}

@@ -16,9 +16,10 @@
   <meta property="og:image:alt" content="Minh họa đĩa gốm và nhành thảo mộc trong bảng màu ấm F&amp;B">
   <link rel="icon" href="../assets/og-fnb.svg" type="image/svg+xml">
   <link rel="stylesheet" href="./style.css">
+  <script src="../../assets/js/auth.js" defer></script>
   <script src="../industry-menu.js" defer></script>
 </head>
-<body class="fnb">
+<body class="fnb" data-industry="fnb">
   <header class="fnb-header">
     <a class="fnb-wordmark" href="./" aria-label="Long Lê, Portfolio F&B">
       <span class="fnb-monogram" aria-hidden="true">L</span>
@@ -38,22 +39,25 @@
         </ul>
       </div>
     </nav>
-    <a class="fnb-staff" href="../../login.html"><span aria-hidden="true">⌑</span> Nhân viên</a>
+    <a class="fnb-staff portfolio-login-link" href="../../login.html"><span aria-hidden="true">⌑</span> Nhân viên</a>
+    <a class="fnb-staff portfolio-workspace-link" href="../../dashboard.html" hidden>Workspace <span aria-hidden="true">↗</span></a>
   </header>
 
   <main>
-    <section class="fnb-hero" aria-labelledby="fnb-title">
+    <p id="portfolio-data-error" class="portfolio-data-error" role="alert" hidden></p>
+    <section class="fnb-hero" data-portfolio-hero aria-labelledby="fnb-title">
       <div class="fnb-hero-copy">
-        <p class="fnb-kicker"><span></span> GIẢI PHÁP DIGITAL CHO F&amp;B</p>
+        <p class="fnb-kicker"><span></span> <span data-hero-kicker>GIẢI PHÁP DIGITAL CHO F&amp;B</span></p>
         <h1 id="fnb-title">Từ một thực đơn đẹp<br>đến <em>một bàn đã đặt.</em></h1>
-        <p class="fnb-lede">Tôi là Long Lê. Tôi tập trung thiết kế website giúp thương hiệu ẩm thực kể câu chuyện của mình và đưa khách đến đúng hành động — xem món, đặt bàn hay gửi yêu cầu đặt tiệc.</p>
+        <p class="fnb-lede" data-hero-description>Tôi là Long Lê. Tôi tập trung thiết kế website giúp thương hiệu ẩm thực kể câu chuyện của mình và đưa khách đến đúng hành động — xem món, đặt bàn hay gửi yêu cầu đặt tiệc.</p>
         <div class="fnb-actions">
-          <a class="fnb-button" href="#contact">Trao đổi bài toán F&amp;B <span aria-hidden="true">↗</span></a>
-          <a class="fnb-text-link" href="#approach">Xem cách tôi tiếp cận <span aria-hidden="true">↓</span></a>
+          <a class="fnb-button" data-hero-cta href="#contact">Trao đổi bài toán F&amp;B <span aria-hidden="true">↗</span></a>
+          <a class="fnb-text-link" data-hero-secondary href="#approach">Xem cách tôi tiếp cận <span aria-hidden="true">↓</span></a>
         </div>
-        <p class="fnb-caption">Nhà hàng · Cafe · Catering · Tiệc &amp; hội nghị</p>
+        <p class="fnb-caption" data-hero-industries>Nhà hàng · Cafe · Catering · Tiệc &amp; hội nghị</p>
       </div>
       <figure class="fnb-still-life">
+        <img class="portfolio-custom-image" hidden>
         <svg viewBox="0 0 640 610" role="img" aria-labelledby="fnb-art-title fnb-art-desc">
           <title id="fnb-art-title">Minh họa bàn ăn và đĩa gốm</title>
           <desc id="fnb-art-desc">Minh họa trang trí mang tính khái niệm, không phải hình ảnh dự án khách hàng.</desc>
@@ -78,7 +82,7 @@
       <span class="fnb-hero-index" aria-hidden="true">01 / 06</span>
     </section>
 
-    <section class="fnb-issue section-wrap" id="challenge">
+    <section class="fnb-issue section-wrap" id="challenge" data-portfolio-section="challenge">
       <div class="fnb-section-label"><span>01</span><p>BÀI TOÁN KINH DOANH</p></div>
       <div class="fnb-issue-heading"><h2>Khách đang đói.<br><em>Đừng để họ phải đoán.</em></h2><p>Website F&amp;B nên trả lời thật nhanh: món gì đáng thử, không gian ra sao, còn bàn không — và đặt tiệc thì cần trao đổi những gì?</p></div>
       <div class="fnb-issue-list">
@@ -88,7 +92,7 @@
       </div>
     </section>
 
-    <section class="fnb-offer" id="solutions">
+    <section class="fnb-offer" id="solutions" data-portfolio-section="solutions">
       <div class="fnb-offer-inner">
         <div class="fnb-section-label"><span>02</span><p>GIẢI PHÁP WEBSITE</p></div>
         <h2>Mỗi ý định<br>một lối đi.</h2>
@@ -112,14 +116,14 @@
       <div class="fnb-menu-mark" aria-hidden="true"><span>MENU</span><i>01</i><i>02</i><i>03</i><i>04</i></div>
     </section>
 
-    <section class="fnb-work section-wrap" id="work" data-projects="fnb">
+    <section class="fnb-work section-wrap" id="work" data-portfolio-section="work">
       <div class="fnb-section-label"><span>03</span><p>SELECTED WORK</p></div>
       <div class="fnb-work-heading"><h2>Dự án thực tế,<br><em>không phải lời hứa.</em></h2><p>Chỉ hiển thị case study khi có thông tin và quyền sử dụng đã xác nhận.</p></div>
       <div class="project-list"></div>
       <p class="project-status" role="status">Chưa có case study được xác minh. Thay thế bằng dự án thực tế sau khi xác nhận thông tin và quyền sử dụng.</p>
     </section>
 
-    <section class="fnb-thinking" id="approach">
+    <section class="fnb-thinking" id="approach" data-portfolio-section="approach">
       <div class="fnb-thinking-inner">
         <p class="fnb-section-label"><span>04</span><span>CONVERSION THINKING</span></p>
         <blockquote>“Một website tốt không ép khách bấm. Nó làm cho <em>bước tiếp theo trở nên tự nhiên.</em>”</blockquote>
@@ -127,7 +131,7 @@
       </div>
     </section>
 
-    <section class="fnb-process section-wrap" id="process">
+    <section class="fnb-process section-wrap" id="process" data-portfolio-section="process">
       <div class="fnb-section-label"><span>05</span><p>CÁCH PHỐI HỢP</p></div>
       <h2>Từ câu hỏi đúng<br>đến website sẵn sàng.</h2>
       <div class="fnb-steps">
@@ -137,11 +141,12 @@
       </div>
     </section>
 
-    <section class="fnb-contact" id="contact">
+    <section class="fnb-contact" id="contact" data-portfolio-section="contact">
       <div><p class="fnb-kicker"><span></span> BẮT ĐẦU TỪ BÀI TOÁN CỦA BẠN</p><h2>Đang cần một website<br>cho thương hiệu F&amp;B?</h2><p class="contact-placeholder">Thay bằng kênh liên hệ chính thức của Long Lê trước khi công bố Portfolio.</p></div>
-      <span class="fnb-contact-action">Kênh liên hệ<br><span>Chờ cập nhật</span></span>
+      <span class="fnb-contact-action contact-placeholder-link">Kênh liên hệ<br><span>Chờ cập nhật</span></span>
+      <a class="fnb-contact-action" data-contact-link hidden href="#"><span data-contact-label>Kênh liên hệ</span></a>
     </section>
   </main>
-  <footer class="fnb-footer"><a href="./" class="fnb-footer-name">LONG LÊ</a><span>Website &amp; Conversion · F&amp;B</span><a href="../../login.html">Nhân viên <span aria-hidden="true">⌑</span></a></footer>
+  <footer class="fnb-footer"><a href="./" class="fnb-footer-name">LONG LÊ</a><span>Website &amp; Conversion · F&amp;B</span><a class="portfolio-login-link" href="../../login.html">Nhân viên <span aria-hidden="true">⌑</span></a><a class="portfolio-workspace-link" href="../../dashboard.html" hidden>Workspace ↗</a></footer>
 </body>
 </html>

@@ -67,6 +67,7 @@ button:focus-visible, a:focus-visible, input:focus-visible {
 .dashboard-page { background: #f6f7fb; }
 .auth-pending { visibility: hidden; }
 .dashboard-header { height: 76px; display: flex; align-items: center; justify-content: space-between; padding: 0 max(28px, calc((100vw - 1180px) / 2)); border-bottom: 1px solid var(--line); background: rgba(255,255,255,.88); }
+.dashboard-actions { display: flex; align-items: center; gap: 9px; }
 .dashboard-header .brand-mark { width: 35px; height: 35px; }
 .dashboard-main { width: min(100% - 48px, 1120px); margin: 0 auto; padding: 65px 0 32px; }
 .welcome { padding: 0 0 54px; }
@@ -81,6 +82,7 @@ button:focus-visible, a:focus-visible, input:focus-visible {
 a.module-card:hover { transform: translateY(-4px); border-color: #cbd7f1; box-shadow: 0 16px 35px rgba(26,45,82,.08); }
 .module-icon { display: grid; width: 42px; height: 42px; place-items: center; border-radius: 13px; background: #edf2ff; color: #426ce0; font-size: 21px; font-weight: 700; }
 .presentation-card .module-icon { background: #eaf8f5; color: #16866b; }
+.portfolio-manager-card .module-icon { background: #fff3e5; color: #a45b25; }
 .coming-card .module-icon { background: #f1f3f7; color: #8792a4; }
 .module-status { position: absolute; top: 28px; right: 21px; display: inline-flex; align-items: center; gap: 6px; color: #77849a; font-size: 9px; font-weight: 700; }
 .module-status i { width: 6px; height: 6px; border-radius: 50%; background: #31a879; }
@@ -89,11 +91,14 @@ a.module-card:hover { transform: translateY(-4px); border-color: #cbd7f1; box-sh
 .module-card p { max-width: 260px; margin: 0; color: var(--muted); font-size: 12px; line-height: 1.65; }
 .module-link { display: flex; align-items: center; gap: 8px; margin-top: auto; padding-top: 22px; color: #426ce0; font-size: 11px; font-weight: 800; }
 .presentation-card .module-link { color: #16866b; }
+.portfolio-manager-card .module-link { color: #a45b25; }
 .coming-card .module-link { color: #98a2b3; }
 .dashboard-footer { margin-top: 36px; padding-top: 17px; border-top: 1px solid var(--line); color: #929caf; font-size: 10px; }
 
 @media (max-width: 760px) {
   .dashboard-header { padding: 0 20px; }
+  .dashboard-actions { gap: 6px; }
+  .dashboard-actions .button { min-height: 38px; padding: 0 11px; font-size: 10px; }
   .dashboard-main { width: min(100% - 36px, 560px); padding-top: 43px; }
   .welcome { padding-bottom: 39px; }
   .module-grid { grid-template-columns: 1fr; }
@@ -104,5 +109,6 @@ a.module-card:hover { transform: translateY(-4px); border-color: #cbd7f1; box-sh
   .login-card .eyebrow { margin-top: 34px; }
   .login-card h1 { font-size: 26px; }
   .dashboard-header .wordmark { font-size: 11px; }
+  .dashboard-actions .button { padding: 0 8px; font-size: 9px; }
   .section-heading { align-items: flex-start; flex-direction: column; }
 }

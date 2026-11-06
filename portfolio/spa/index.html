@@ -16,9 +16,10 @@
   <meta property="og:image:alt" content="Minh họa kiến trúc tĩnh lặng và nhành lá trong bảng màu spa">
   <link rel="icon" href="../assets/og-spa.svg" type="image/svg+xml">
   <link rel="stylesheet" href="./style.css">
+  <script src="../../assets/js/auth.js" defer></script>
   <script src="../industry-menu.js" defer></script>
 </head>
-<body class="spa">
+<body class="spa" data-industry="spa">
   <header class="spa-header">
     <a class="spa-wordmark" href="./"><span class="spa-monogram">L.</span><span>LONG LÊ <small>PERSONAL PORTFOLIO</small></span></a>
     <div class="spa-header-right">
@@ -30,18 +31,21 @@
           <li><a href="../karaoke/"><span>Karaoke</span><small>Không gian, phòng hát &amp; đặt phòng</small></a></li>
         </ul>
       </div>
-      <a class="spa-staff" href="../../login.html">Nhân viên <span aria-hidden="true">↗</span></a>
+      <a class="spa-staff portfolio-login-link" href="../../login.html">Nhân viên <span aria-hidden="true">↗</span></a>
+      <a class="spa-staff portfolio-workspace-link" href="../../dashboard.html" hidden>Workspace <span aria-hidden="true">↗</span></a>
     </div>
   </header>
   <main>
-    <section class="spa-hero" aria-labelledby="spa-title">
+    <p id="portfolio-data-error" class="portfolio-data-error" role="alert" hidden></p>
+    <section class="spa-hero" data-portfolio-hero aria-labelledby="spa-title">
       <div class="spa-hero-copy">
-        <p class="spa-kicker">WEBSITE &amp; CONVERSION <span>— SPA / BEAUTY / WELLNESS</span></p>
+        <p class="spa-kicker"><span data-hero-kicker>WEBSITE &amp; CONVERSION — SPA / BEAUTY / WELLNESS</span></p>
         <h1 id="spa-title">Một khoảng lặng<br>để <em>lắng nghe làn da.</em></h1>
-        <p class="spa-lede">Tôi là Long Lê. Tôi thiết kế trải nghiệm website giúp spa giới thiệu dịch vụ một cách tinh tế, tạo đủ tin cậy để khách hiểu lựa chọn của mình và bắt đầu một cuộc tư vấn.</p>
-        <a href="#contact" class="spa-cta">Trao đổi nhu cầu <span aria-hidden="true">↗</span></a>
+        <p class="spa-lede" data-hero-description>Tôi là Long Lê. Tôi thiết kế trải nghiệm website giúp spa giới thiệu dịch vụ một cách tinh tế, tạo đủ tin cậy để khách hiểu lựa chọn của mình và bắt đầu một cuộc tư vấn.</p>
+        <a href="#contact" class="spa-cta" data-hero-cta>Trao đổi nhu cầu <span aria-hidden="true">↗</span></a>
       </div>
       <figure class="spa-art">
+        <img class="portfolio-custom-image" hidden>
         <svg viewBox="0 0 570 700" role="img" aria-labelledby="spa-art-title spa-art-desc">
           <title id="spa-art-title">Minh họa không gian spa tối giản</title>
           <desc id="spa-art-desc">Minh họa kiến trúc và thực vật mang tính khái niệm, không phải ảnh của một cơ sở spa thực tế.</desc>
@@ -62,14 +66,14 @@
       <span class="spa-hero-note">01 — 05 <i></i> TIN CẬY TRƯỚC KHI ĐẶT LỊCH</span>
     </section>
 
-    <section class="spa-belief" id="approach">
+    <section class="spa-belief" id="approach" data-portfolio-section="approach">
       <p class="spa-kicker">TRẢI NGHIỆM BẮT ĐẦU TỪ SỰ RÕ RÀNG</p>
       <h2>Đẹp để dừng lại.<br><em>Rõ để an tâm.</em></h2>
       <p>Khách thường muốn hiểu liệu trình nào phù hợp, buổi hẹn diễn ra ra sao và ai sẽ đồng hành cùng họ. Website nên trả lời điều đó bằng nhịp điệu nhẹ nhàng, không tạo thêm áp lực.</p>
       <span class="spa-ornament" aria-hidden="true">✳</span>
     </section>
 
-    <section class="spa-experience" id="solutions">
+    <section class="spa-experience" id="solutions" data-portfolio-section="solutions">
       <div class="spa-experience-heading"><span>01 / THE DIGITAL EXPERIENCE</span><h2>Thông tin có trật tự.<br>Niềm tin có chỗ lớn lên.</h2></div>
       <div class="spa-experience-grid">
         <article class="spa-service"><span>01</span><div><h3>Dịch vụ &amp; liệu trình</h3><p>Nhóm dịch vụ theo nhu cầu, mô tả rõ mục tiêu và thông tin cần biết trước khi đặt lịch.</p></div><b aria-hidden="true">↗</b></article>
@@ -79,24 +83,24 @@
       </div>
     </section>
 
-    <section class="spa-ritual">
+    <section class="spa-ritual" data-portfolio-section="booking">
       <div class="spa-ritual-copy"><p class="spa-kicker">02 / BOOKING JOURNEY</p><h2>Không thúc giục.<br><em>Gỡ từng băn khoăn.</em></h2><p>Hành trình chuyển đổi bắt đầu từ hiểu biết và sự đồng thuận: xem dịch vụ, nắm quy trình, chọn thời gian rồi gửi yêu cầu tư vấn hoặc đặt lịch.</p><a href="#contact">Cùng phác thảo hành trình <span aria-hidden="true">↗</span></a></div>
       <ol class="spa-ritual-steps"><li><span>01</span><div><b>Khám phá</b><small>Dịch vụ &amp; không gian</small></div></li><li><span>02</span><div><b>Tìm hiểu</b><small>Liệu trình &amp; quy trình</small></div></li><li><span>03</span><div><b>Chọn lịch</b><small>Đặt hẹn hoặc tư vấn</small></div></li></ol>
     </section>
 
-    <section class="spa-work" id="work" data-projects="spa">
+    <section class="spa-work" id="work" data-portfolio-section="work">
       <div class="spa-section-head"><span>03 / SELECTED WORK</span><h2>Những dự án<br>được xác nhận.</h2><p>Chỉ giới thiệu công việc có thông tin thực tế và quyền sử dụng đã được xác nhận.</p></div>
       <div class="project-list"></div>
       <p class="project-status" role="status">Chưa có case study được xác minh. Thay thế bằng dự án thực tế sau khi xác nhận thông tin và quyền sử dụng.</p>
     </section>
 
-    <section class="spa-process" id="process">
+    <section class="spa-process" id="process" data-portfolio-section="process">
       <p class="spa-kicker">04 / A CONSIDERED PROCESS</p><h2>Chậm một nhịp<br>để đúng hướng.</h2>
       <div class="spa-process-grid"><article><span>01</span><h3>Lắng nghe</h3><p>Hiểu dịch vụ, khách hàng, cách tư vấn và điều cơ sở muốn khách cảm nhận.</p></article><article><span>02</span><h3>Định hình</h3><p>Sắp xếp nội dung, hình ảnh và điểm đặt lịch theo hành trình phù hợp.</p></article><article><span>03</span><h3>Hoàn thiện</h3><p>Rà soát khả năng đọc, trải nghiệm trên điện thoại và các bước liên hệ.</p></article></div>
     </section>
 
-    <section class="spa-contact" id="contact"><div><p class="spa-kicker">LET'S BEGIN WITH A CONVERSATION</p><h2>Website tiếp theo<br>có thể bắt đầu từ đây.</h2><p class="contact-placeholder">Thay bằng kênh liên hệ chính thức của Long Lê trước khi công bố Portfolio.</p></div><span class="spa-contact-action">Trao đổi nhu cầu<br><small>Chờ cập nhật</small></span></section>
+    <section class="spa-contact" id="contact" data-portfolio-section="contact"><div><p class="spa-kicker">LET'S BEGIN WITH A CONVERSATION</p><h2>Website tiếp theo<br>có thể bắt đầu từ đây.</h2><p class="contact-placeholder">Thay bằng kênh liên hệ chính thức của Long Lê trước khi công bố Portfolio.</p></div><span class="spa-contact-action contact-placeholder-link">Trao đổi nhu cầu<br><small>Chờ cập nhật</small></span><a class="spa-contact-action" data-contact-link hidden href="#"><span data-contact-label>Trao đổi nhu cầu</span></a></section>
   </main>
-  <footer class="spa-footer"><span>LONG LÊ <small>WEBSITE &amp; CONVERSION</small></span><span>SPA &amp; BEAUTY · PERSONAL PORTFOLIO</span><a href="../../login.html">Nhân viên <span aria-hidden="true">↗</span></a></footer>
+  <footer class="spa-footer"><span>LONG LÊ <small>WEBSITE &amp; CONVERSION</small></span><span>SPA &amp; BEAUTY · PERSONAL PORTFOLIO</span><a class="portfolio-login-link" href="../../login.html">Nhân viên <span aria-hidden="true">↗</span></a><a class="portfolio-workspace-link" href="../../dashboard.html" hidden>Workspace <span aria-hidden="true">↗</span></a></footer>
 </body>
 </html>

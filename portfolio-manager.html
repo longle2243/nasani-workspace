@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f4f6fb">
+  <title>Portfolio Manager | MY WORKSPACE</title>
+  <link rel="stylesheet" href="./assets/css/workspace.css">
+  <link rel="stylesheet" href="./assets/css/portfolio-manager.css">
+  <script src="./assets/js/auth.js" defer></script>
+  <script src="./assets/js/portfolio-manager.js" defer></script>
+</head>
+<body class="portfolio-manager-page dashboard-page auth-pending">
+  <header class="dashboard-header">
+    <a class="wordmark" href="./dashboard.html">
+      <span class="brand-mark" aria-hidden="true">N</span>
+      <span>NASANI XIN CHÀO</span>
+    </a>
+    <nav class="pm-header-actions" aria-label="Điều hướng workspace">
+      <a class="button button-secondary" href="./portfolio/fnb/">Xem Portfolio ↗</a>
+      <a class="button button-secondary" href="./dashboard.html">Workspace</a>
+      <button id="logoutButton" class="button button-secondary" type="button">Đăng xuất</button>
+    </nav>
+  </header>
+
+  <main class="pm-main">
+    <section class="pm-heading">
+      <div>
+        <p class="eyebrow">PORTFOLIO / NỘI DUNG</p>
+        <h1>Quản lý Portfolio</h1>
+        <p>Chỉnh sửa bản nháp theo ngành, xem trước trên giao diện public và xuất file để tự cập nhật website.</p>
+      </div>
+      <a class="pm-public-link" href="./portfolio/fnb/">Mở Portfolio F&amp;B <span aria-hidden="true">↗</span></a>
+    </section>
+
+    <aside class="pm-limit-note" role="note">
+      <strong>Chế độ không API</strong>
+      <span>Bản nháp và ảnh chỉ lưu trong trình duyệt này. Xuất file không tự cập nhật website; cần tự thay file trong repository rồi commit/push. Login hiện tại chỉ là lớp chặn giao diện, không phải xác thực bảo mật.</span>
+    </aside>
+
+    <section class="pm-overview" aria-labelledby="pm-overview-title">
+      <div class="pm-section-title">
+        <div><p class="eyebrow">TỔNG QUAN</p><h2 id="pm-overview-title">Các ngành Portfolio</h2></div>
+        <span id="pm-storage-status" class="pm-save-state" role="status">Đang tải dữ liệu…</span>
+      </div>
+      <div id="pm-industry-cards" class="pm-industry-grid"></div>
+    </section>
+
+    <section class="pm-editor-section" aria-labelledby="pm-editor-title">
+      <div class="pm-section-title">
+        <div><p class="eyebrow">EDITOR</p><h2 id="pm-editor-title">Chỉnh sửa nội dung</h2></div>
+        <label class="pm-industry-select">Ngành
+          <select id="pm-industry">
+            <option value="fnb">F&amp;B</option>
+            <option value="spa">Spa &amp; Beauty</option>
+            <option value="karaoke">Karaoke &amp; Entertainment</option>
+          </select>
+        </label>
+      </div>
+
+      <div class="pm-workspace">
+        <div class="pm-editor-column">
+          <div class="pm-editor-toolbar">
+            <span id="pm-draft-state" class="pm-draft-state" role="status">Đang tải bản nháp…</span>
+            <div>
+              <button id="pm-reset" class="button button-secondary" type="button">Bỏ bản nháp</button>
+              <button id="pm-export" class="button button-primary" type="button">Xuất file cập nhật</button>
+            </div>
+          </div>
+
+          <div id="pm-validation" class="pm-validation" role="alert" hidden></div>
+          <div id="pm-editor" class="pm-editor" aria-live="polite"></div>
+
+          <section class="pm-projects" aria-labelledby="pm-projects-title">
+            <div class="pm-section-title">
+              <div><p class="eyebrow">CASE STUDIES</p><h2 id="pm-projects-title">Dự án Portfolio</h2></div>
+              <button id="pm-add-project" class="button button-primary" type="button">＋ Thêm dự án</button>
+            </div>
+            <div id="pm-project-list" class="pm-project-list"></div>
+          </section>
+
+          <section class="pm-images" aria-labelledby="pm-images-title">
+            <div class="pm-section-title">
+              <div><p class="eyebrow">MEDIA</p><h2 id="pm-images-title">Thư viện ảnh ngành</h2></div>
+            </div>
+            <p class="pm-helper">Ảnh được giữ trong IndexedDB của trình duyệt. Khi xuất, tải ảnh riêng và đặt đúng đường dẫn hiển thị bên dưới trong repository.</p>
+            <div id="pm-image-library" class="pm-image-library"></div>
+          </section>
+        </div>
+
+        <aside class="pm-preview-column" aria-label="Xem trước Portfolio">
+          <div class="pm-preview-head"><strong>Xem trước trang public</strong><span>Bản nháp trong phiên này</span></div>
+          <iframe id="pm-preview" title="Xem trước Portfolio theo ngành" src="./portfolio/fnb/?managerPreview=1"></iframe>
+        </aside>
+      </div>
+    </section>
+
+    <section id="pm-export-panel" class="pm-export-panel" aria-labelledby="pm-export-title" hidden>
+      <div class="pm-section-title">
+        <div><p class="eyebrow">MANUAL UPDATE</p><h2 id="pm-export-title">Các file cần cập nhật thủ công</h2></div>
+        <button id="pm-close-export" class="button button-secondary" type="button">Đóng</button>
+      </div>
+      <ol>
+        <li>Tải hai file JSON bên dưới và thay file tương ứng trong <code>portfolio/data/</code>.</li>
+        <li>Tải từng ảnh mới và đặt vào đúng đường dẫn repository hiển thị cạnh ảnh.</li>
+        <li>Kiểm tra trang public sau khi thay file, rồi tự commit/push để GitHub Pages cập nhật.</li>
+      </ol>
+      <div id="pm-json-downloads" class="pm-download-list"></div>
+      <div id="pm-asset-downloads" class="pm-download-list"></div>
+      <p class="pm-export-warning">Chưa có nội dung nào được publish bởi thao tác này. Không tải ảnh inline/base64 trong JSON.</p>
+    </section>
+
+    <footer class="pm-footer">Bản nháp cục bộ được tách khỏi dữ liệu public. Hãy sao lưu file xuất trước khi xóa dữ liệu trình duyệt.</footer>
+  </main>
+</body>
+</html>
