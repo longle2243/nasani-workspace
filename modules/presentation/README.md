@@ -6,7 +6,7 @@ Website tĩnh HTML, CSS, JavaScript thuần. Không cần build, package manager
 
 | Tệp | Vai trò |
 |---|---|
-| `index.html` | Trang vào mặc định của GitHub Pages, chuyển tới bản trình bày báo giá |
+| `index.html` | Điểm vào độc lập của module, chuyển tới bản trình bày báo giá |
 | `fnb_quote_presentation-3.html` | Giao diện trình bày gồm 4 màn hình: giới thiệu, cấu trúc chi phí, gói giá và quy trình |
 | `fnb_quote_presentation-3.css` | Giao diện và kiểu in |
 | `fnb_quote_presentation-3.js` | Chuyển màn hình, chỉnh sửa, lưu và xuất JSON |
@@ -31,7 +31,7 @@ Mở `http://localhost:8000/` hoặc `http://localhost:8000/fnb_quote_presentati
 1. Đẩy các tệp trong repository lên nhánh `main`.
 2. Trên GitHub, mở **Settings → Pages**.
 3. Trong **Build and deployment**, chọn **Deploy from a branch**, chọn nhánh `main` và thư mục `/(root)`, rồi bấm **Save**.
-4. Sau khi GitHub Pages hoàn tất deploy, mở `https://<username>.github.io/<ten-repository>/`. Trang `index.html` sẽ chuyển tới bản trình bày. Có thể mở trực tiếp `https://<username>.github.io/<ten-repository>/fnb_quote_presentation-3.html`.
+4. Sau khi GitHub Pages hoàn tất deploy, mở `https://<username>.github.io/<ten-repository>/modules/presentation/`. Trang `index.html` trong thư mục module sẽ chuyển tới bản trình bày. Có thể mở trực tiếp `https://<username>.github.io/<ten-repository>/modules/presentation/fnb_quote_presentation-3.html`.
 
 ## Chỉnh sửa và cập nhật JSON
 

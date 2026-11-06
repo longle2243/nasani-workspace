@@ -21,18 +21,32 @@ Mở <http://localhost:8000/>. Cần dùng HTTP server để module PRESENTATION
 
 ## Triển khai GitHub Pages
 
-Không cần cài package, build step, backend hoặc database. Tất cả trang dùng đường dẫn tương đối để hỗ trợ URL dạng `/my-workspace/`.
+Không cần cài package, build step, backend hoặc database. Tất cả trang dùng đường dẫn tương đối để hỗ trợ URL dạng `/nasani-workspace/`.
 
 1. Đẩy nội dung repository lên nhánh `main` (không tự động upload/push từ ứng dụng).
 2. Vào **Settings → Pages** trên GitHub.
 3. Chọn **Deploy from a branch**, nhánh `main`, thư mục `/(root)`, rồi lưu.
-4. Mở `https://longle2243.github.io/my-workspace/`.
+4. Mở `https://longle2243.github.io/nasani-workspace/`. Trang gốc chuyển tới Portfolio F&B; các trang ngành có URL riêng trong `portfolio/`.
+
+GitHub Pages phải được bật cho repository này. Nếu dùng custom domain hoặc đổi tên repository, hãy cập nhật canonical URL và Open Graph metadata trong các trang `portfolio/{fnb,spa,karaoke}/index.html` cùng URL trong trang gốc.
+
+Login nội bộ vẫn hoạt động tại [`login.html`](./login.html); Dashboard và các module tiếp tục dùng cùng cơ chế đăng nhập hiện tại.
 
 ## Module
 
 Mỗi module tự chứa điểm khởi chạy `index.html` cùng CSS, JavaScript và dữ liệu riêng. INCOME và PRESENTATION không được nhúng chung vào dashboard; đường dẫn từ dashboard mở ứng dụng độc lập.
 
 Để thêm module, sao chép `modules/_template/` thành thư mục mới dưới `modules/`, cập nhật nội dung và tham chiếu tài nguyên tương đối. Sau đó thêm một card và đường dẫn tương ứng trong `dashboard.html`. Giữ CSS/JS riêng của module để tránh ảnh hưởng các ứng dụng khác.
+
+### Personal Portfolio
+
+Portfolio cá nhân của Long Lê có ba landing page độc lập, mỗi ngành có thiết kế và nội dung riêng:
+
+- F&B: `portfolio/fnb/`
+- Spa & Beauty: `portfolio/spa/`
+- Karaoke & Entertainment: `portfolio/karaoke/`
+
+Menu ngành dùng liên kết tương đối để hỗ trợ GitHub Pages project site. Danh sách case study nằm trong `portfolio/data/projects.json` theo từng ngành; mỗi mục có thể gồm `name`, `industry`, `image`, `imageAlt`, `problem`, `solution`, `conversionPoints` (mảng) và `result` đã xác minh. Chỉ thêm dự án, ảnh, kết quả và thông tin khách hàng đã được xác nhận quyền sử dụng. Khi chưa có dữ liệu, trang hiển thị trạng thái placeholder thay vì dự án hoặc kết quả giả. Bổ sung kênh liên hệ đã xác nhận vào các trang ngành trước khi gửi Portfolio cho khách hàng.
 
 ### Dữ liệu và lưu trữ hiện tại
 

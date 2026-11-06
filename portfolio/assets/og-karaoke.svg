@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#111019"/>
+  <path d="m668 120 248-65 246 69v384l-494-23z" fill="#222031" stroke="#77708b" stroke-width="2"/>
+  <path d="m710 163 205-51 205 57v318l-410-17z" fill="#302b43" stroke="#9e8cae" stroke-width="2"/>
+  <path d="m755 201 161-38 161 44v231l-322-13z" fill="#171620"/>
+  <path d="M755 201h322v24H755z" fill="#ff5796"/>
+  <path d="M783 251h114v151H783z" fill="#493657"/><path d="M912 242h132v166H912z" fill="#533950"/>
+  <path d="M668 493h494v25H668z" fill="#f45b9a"/>
+  <circle cx="1075" cy="122" r="7" fill="#def05e"/>
+  <text x="89" y="180" fill="#def05e" font-family="Arial,sans-serif" font-size="20" letter-spacing="7">PERSONAL WEBSITE / CONVERSION</text>
+  <text x="83" y="308" fill="#f3f0f8" font-family="Arial,sans-serif" font-size="83" font-weight="700">Long Lê</text>
+  <text x="88" y="394" fill="#ff5796" font-family="Arial,sans-serif" font-size="52" font-weight="700">KARAOKE</text>
+  <text x="90" y="465" fill="#aaa5b7" font-family="Arial,sans-serif" font-size="23">Rooms · Entertainment · Booking</text>
+  <text x="90" y="548" fill="#def05e" font-family="Arial,sans-serif" font-size="16" letter-spacing="4">SPACE / DISCOVERY / RESERVATION</text>
+</svg>
