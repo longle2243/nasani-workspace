@@ -9,14 +9,14 @@
       "title": "WEBSITE",
       "items": [
         {
-          "name": "Thiết kế giao diện",
-          "description": "Thiết kế theo nhận diện thương hiệu; hiển thị tốt trên máy tính, máy tính bảng và điện thoại.",
-          "detail": "Responsive 3 thiết bị"
+          "name": "Thiết kế",
+          "description": "Giới thiệu không gian, sản phẩm, dịch vụ giúp khách hàng dễ dàng tìm hiểu và liên hệ",
+          "detail": "Vĩnh viễn"
         },
         {
-          "name": "Nội dung & SEO cơ bản",
-          "description": "Nhập nội dung, hình ảnh được cung cấp; thiết lập tiêu đề, mô tả SEO và các thông tin cơ bản.",
-          "detail": "SEO on-page cơ bản"
+          "name": "Viết bài & SEO",
+          "description": "Cập nhật viết bài, SEO từ khoá local, quán ăn, nhà hàng quận 1, đặt tiệc tất niên,...",
+          "detail": "Theo gói chăm sóc"
         }
       ]
     },
@@ -24,19 +24,19 @@
       "title": "FACEBOOK PAGE",
       "items": [
         {
-          "name": "Setup Fanpage",
-          "description": "Hoàn thiện thông tin doanh nghiệp, ảnh đại diện, ảnh bìa, thông tin liên hệ.",
-          "detail": "16/16 hạng mục"
+          "name": "Setup",
+          "description": "Thiết lập trang chuẩn thuật toán Facebook",
+          "detail": "16/16 trường"
         },
         {
           "name": "Chăm sóc Fanpage",
-          "description": "Lên nội dung theo kế hoạch, gửi khách duyệt trước khi đăng, đăng bài theo lịch đã thống nhất.",
+          "description": "Lên kế hoạch viết bài theo chủ đề, gửi bài cho khách hàng duyệt, sắp xếp đăng bài theo khung giờ vàng",
           "detail": "2–3 bài/tuần"
         },
         {
-          "name": "Thời gian chăm sóc",
-          "description": "Triển khai theo kế hoạch đã thống nhất.",
-          "detail": "3 tháng"
+          "name": "Meta Pixel",
+          "description": "",
+          "detail": "Tăng tỉ lệ chuyển đổi khách hàng | Liên kết Website - Facebook"
         }
       ]
     },
@@ -44,9 +44,14 @@
       "title": "Google Map",
       "items": [
         {
-          "name": "Xác minh doanh nghiệp Map",
-          "description": "",
-          "detail": ""
+          "name": "Xác minh doanh nghiệp",
+          "description": "Đề xuất tốt hơn khi khách tìm kiếm, phản hồi được Feedback từ phía khách hàng",
+          "detail": "Vĩnh viễn"
+        },
+        {
+          "name": "Đề xuất đánh giá",
+          "description": "Tăng sao duy trì ở mức trên 4.0, hỗ trợ seeding từ khoá mập nhà hàng quận 1, đặt tiệc tất niên,...",
+          "detail": "10-20 đánh giá"
         }
       ]
     }
@@ -54,7 +59,7 @@
   "packages": [
     {
       "name": "Phổ thông",
-      "sub": "Nền tảng cần thiết để hiện diện chuyên nghiệp",
+      "sub": "Trang cơ bản để hiện diện trên google",
       "price": 7000000,
       "features": [
         "Trang cơ bản",
@@ -64,7 +69,7 @@
     },
     {
       "name": "Ưa thích",
-      "sub": "Cân bằng giữa hình ảnh thương hiệu và tính năng",
+      "sub": "Đa giao diện, hình ảnh trực quan hơn xem rõ trên từng thiết bị",
       "price": 9000000,
       "features": [
         "Trang Responsive",
@@ -74,7 +79,7 @@
     },
     {
       "name": "VIP",
-      "sub": "Tùy biến sâu hơn theo yêu cầu thương hiệu",
+      "sub": "Bảo mật thông tin, nhận diện Google tốt hơn",
       "price": 12000000,
       "features": [
         "Trang Responsive SSL",
@@ -85,12 +90,23 @@
   ],
   "selected": 1,
   "pricing": {
-    "webPackageTabEnabled": false
+    "webPackageTabEnabled": true
   },
-  "preDesignedPackages": [],
+  "preDesignedPackages": [
+    {
+      "name": "Cơ Bản",
+      "description": "Không kèm hậu mãi chăm sóc",
+      "hosting": "5GB",
+      "previewImage": "",
+      "demoUrl": "",
+      "price": 7500000,
+      "designPackageIndex": 2,
+      "paymentTerms": "Thanh toán 100% một lần; không trả góp hoặc thanh toán theo mốc."
+    }
+  ],
   "featurePreviews": {
     "basic": {
-      "enabled": true
+      "enabled": false
     },
     "responsive": {
       "enabled": true
@@ -101,26 +117,26 @@
   },
   "process": [
     {
-      "name": "Khởi động dự án",
-      "time": "Ngày 3–5",
-      "desc": "Xác nhận gói, thống nhất phạm vi, nhận nội dung/hình ảnh và tạm ứng đợt 1."
+      "name": "Tạm Ứng",
+      "time": "Ngay khi kí hợp đồng",
+      "desc": "Xác nhận gói triển khai, phạm vi các hạng mục hỗ trợ, lấy ý tưởng khách hàng và tạm ứng 50%."
     },
     {
-      "name": "Thiết kế & phát triển",
-      "time": "Ngày 5–7",
-      "desc": "Triển khai giao diện, xây dựng các trang và cập nhật bản xem trước cho khách hàng."
+      "name": "Duyệt Demo",
+      "time": "Ngày 3-5",
+      "desc": "Duyệt demo, các hạng mục đã hỗ trợ triển khai trong đợt 1 & đăng kí dung lượng chạy từ khoá trang"
     },
     {
-      "name": "Hoàn thiện & nghiệm thu",
-      "time": "Ngày 9–12",
-      "desc": "Chỉnh sửa theo phạm vi, kiểm tra trên thiết bị, nghiệm thu và bàn giao."
+      "name": "Bàn Giao",
+      "time": "Ngày 5-7",
+      "desc": "Hoàn thiện trang, hướng dẫn sử dụng, mở index trang bắt đầu đẩy từ khoá, nghiệm thu 50% còn lại"
     }
   ],
   "payments": [
     {
       "pct": "50%",
       "name": "Đợt 1 · Tạm Ứng",
-      "desc": "Khi xác nhận phương án và bắt đầu triển khai."
+      "desc": "Khi chốt gói triển khai & tiến hành lên ý tưởng"
     },
     {
       "pct": "Đăng Kí Dung Lượng",
@@ -130,7 +146,7 @@
     {
       "pct": "50%",
       "name": "Đợt 3 · Nghiệm Thu",
-      "desc": "Hướng dẫn sử dụng trang"
+      "desc": "Khi hoàn thành trang, hướng dẫn sử dụng"
     }
   ],
   "note": "Thời gian triển khai được tính từ khi nhận đủ nội dung, hình ảnh và thông tin cần thiết từ khách hàng. Các mốc có thể thay đổi nếu phạm vi công việc được điều chỉnh hoặc phản hồi bị chậm."
