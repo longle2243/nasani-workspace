@@ -7,7 +7,7 @@ Website tĩnh HTML, CSS, JavaScript thuần. Không cần build, package manager
 | Tệp | Vai trò |
 |---|---|
 | `index.html` | Trang vào mặc định của GitHub Pages, chuyển tới bản trình bày báo giá |
-| `fnb_quote_presentation-3.html` | Giao diện trình bày gồm 3 màn hình |
+| `fnb_quote_presentation-3.html` | Giao diện trình bày gồm 4 màn hình: giới thiệu, cấu trúc chi phí, gói giá và quy trình |
 | `fnb_quote_presentation-3.css` | Giao diện và kiểu in |
 | `fnb_quote_presentation-3.js` | Chuyển màn hình, chỉnh sửa, lưu và xuất JSON |
 | `fnb_quote_presentation-3.json` | Dữ liệu báo giá mặc định |

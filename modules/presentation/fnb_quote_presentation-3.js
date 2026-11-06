@@ -72,7 +72,7 @@ function layoutServiceGrid(){
 window.addEventListener("resize",layoutServiceGrid);
 function render(anim){
  const pkg=data.packages[data.selected]||data.packages[0];
- $("brandName").textContent=data.brand;$("footerBrand").textContent=data.brand+" · ĐỀ XUẤT DỊCH VỤ";$("footerBrand2").textContent=data.brand+" · BÁO GIÁ THIẾT KẾ WEBSITE";$("footerBrand3").textContent=data.brand+" · LỘ TRÌNH TRIỂN KHAI";
+ $("brandName").textContent=data.brand;$("footerBrand").textContent=data.brand+" · ĐỀ XUẤT DỊCH VỤ";$("footerBrandCost").textContent=data.brand+" · CẤU TRÚC CHI PHÍ WEBSITE";$("footerBrand2").textContent=data.brand+" · BÁO GIÁ THIẾT KẾ WEBSITE";$("footerBrand3").textContent=data.brand+" · LỘ TRÌNH TRIỂN KHAI";
  $("heroTitle").innerHTML=escapeHTML(data.title).replace(/\n/g,"<br>");$("heroDesc").textContent=data.desc;$("scopeIntro").textContent=data.scopeIntro;
  // Màn 1: mỗi nhóm gom các đầu việc liên quan thành một thẻ.
  const serviceIcons=[
@@ -82,13 +82,13 @@ function render(anim){
  ];
  $("scopeGroups").innerHTML=data.scope.map((group,index)=>`<article class="service-card" tabindex="0" style="--i:${index}"><div class="service-card-meta"><span class="iconbox" aria-hidden="true">${serviceIcons[index%serviceIcons.length]}</span><span class="tag">${escapeHTML(group.title)}</span></div><div class="service-items">${group.items.map(item=>`<div class="service-item"><h3>${escapeHTML(item.name)}</h3>${item.description?`<p class="service-description">${escapeHTML(item.description)}</p>`:""}${item.detail?`<span class="svc-qty">${escapeHTML(item.detail)}</span>`:""}</div>`).join("")}</div></article>`).join("");
  layoutServiceGrid();
- // Màn 2
+ // Màn 3
  $("priceCards").innerHTML=data.packages.map((p,i)=>`<article style="--i:${i}" class="card price-card ${p.featured?"featured":""} ${i===data.selected?"selected":""}">${p.featured?'<span class="ribbon">ĐƯỢC ĐỀ XUẤT</span>':""}<span class="tag">${i===0?"PHỔ THÔNG":i===1?"ƯA THÍCH":i===2?"CAO CẤP":"GÓI DỊCH VỤ"}</span><h3>${escapeHTML(p.name)}</h3><p>${escapeHTML(p.sub)}</p><div class="price">${money(p.price)}<br><small>/ phí thiết kế website</small></div><ul class="scope-list">${p.features.map(f=>`<li><span>${escapeHTML(f)}</span>${previewButtons(f)}</li>`).join("")}</ul><button class="btn" data-package-select="${i}">${i===data.selected?"Đang chọn ✓":"Chọn gói "+escapeHTML(p.name)+" →"}</button></article>`).join("");
  renderPricingCategory();
  $("preDesignedPackageCards").innerHTML=data.preDesignedPackages.length
   ?data.preDesignedPackages.map((item,index)=>renderPreDesignedPackage(item,index)).join("")
   :'<p class="web-package-empty">Chưa có website thiết kế sẵn được cấu hình. Người trình bày có thể thêm mẫu, hosting và giá trong phần chỉnh sửa.</p>';
- // Màn 3
+ // Màn 4
  $("processSteps").style.setProperty("--process-columns",Math.max(1,data.process.length));
  $("processSteps").innerHTML=data.process.map((p,i)=>`<div class="step" style="--i:${i}"><div class="step-head"><div class="num">${String(i+1).padStart(2,"0")}</div></div><h3>${escapeHTML(p.name)}</h3><div class="time">${escapeHTML(p.time)}</div><p>${escapeHTML(p.desc)}</p></div>`).join("");
  const inst=installments(pkg.price);
@@ -99,10 +99,11 @@ function render(anim){
  if(anim){document.querySelectorAll("#paymentRows strong[data-v]").forEach(el=>countUp(el,Number(el.dataset.v)));countUp($("payTotal"),inst.total)}
  $("payWarn").textContent=Math.abs(inst.sum-100)<0.001?"":"Lưu ý: tổng tỷ lệ các đợt đang là "+inst.sum+"%, cần bằng 100%.";
  $("processNote").textContent=data.note;
+ const slideCount=document.querySelectorAll(".slide").length;
  document.querySelectorAll(".navlinks button").forEach((b,i)=>b.classList.toggle("active",i===current));
  document.querySelectorAll(".dot").forEach((d,i)=>d.classList.toggle("active",i===current));
- $("prevBtn").disabled=current===0;$("nextBtn").disabled=current===2;
- $("progressBar").style.width=((current+1)/3*100)+"%";
+ $("prevBtn").disabled=current===0;$("nextBtn").disabled=current===slideCount-1;
+ $("progressBar").style.width=((current+1)/slideCount*100)+"%";
 }
 function previewButtons(feature){
  const text=feature.toLocaleLowerCase("vi");
@@ -123,7 +124,7 @@ function renderPricingCategory(){
  $("webPackageTab").classList.toggle("active",activePricingCategory==="preDesigned");
  $("designTab").setAttribute("aria-selected",String(activePricingCategory==="design"));
  $("webPackageTab").setAttribute("aria-selected",String(enabled&&activePricingCategory==="preDesigned"));
- $("pricingEyebrow").textContent=activePricingCategory==="design"?"02 / CHI PHÍ THIẾT KẾ":"02 / WEBSITE CÓ SẴN";
+ $("pricingEyebrow").textContent=activePricingCategory==="design"?"03 / CHI PHÍ THIẾT KẾ":"03 / WEBSITE CÓ SẴN";
  $("pricingTitle").textContent=activePricingCategory==="design"?"Chọn phương án phù hợp với mục tiêu":"Website thiết kế sẵn triển khai nhanh";
  $("pricingDescription").textContent=activePricingCategory==="design"
   ?"Ba gói thiết kế website với phạm vi khác nhau. Giá ở phần này là phí thiết kế; tên miền và hosting là các khoản chi phí riêng."
@@ -193,7 +194,7 @@ function renderResponsiveExample(kind,title,subtitle){
  const fixed=kind==="fixed";
  return `<article class="responsive-example ${fixed?"is-fixed":"is-adaptive"}"><div class="responsive-example-heading"><div><strong>${title}</strong><span>${subtitle}</span></div><span class="example-indicator">${fixed?"↔":"✓"}</span></div><div class="demo-viewport"><div class="mock-browser"><span>●　●　●</span><span>example.local</span><span>⋯</span></div><div class="mock-site ${fixed?"mock-site-fixed":"mock-site-adaptive"}"><div class="mock-site-nav"><b>BRAND</b><span>TRANG CHỦ　 GIỚI THIỆU　 DỊCH VỤ　 LIÊN HỆ</span></div><div class="mock-site-hero"><div><small>GIẢI PHÁP CHO DOANH NGHIỆP</small><strong>Chào mừng bạn</strong><span>Thông tin nổi bật được trình bày rõ ràng.</span></div><i aria-hidden="true"></i></div><div class="mock-site-cards"><div><b>01</b><strong>Giới thiệu</strong></div><div><b>02</b><strong>Dịch vụ</strong></div><div><b>03</b><strong>Liên hệ</strong></div></div></div></div><p class="responsive-caption">${fixed?"Ở màn hình nhỏ, một phần nội dung có thể nằm ngoài khung xem.":"Các khối nội dung tự sắp xếp để phù hợp với màn hình."}</p></article>`;
 }
-function go(i){const prev=current;current=Math.max(0,Math.min(2,i));document.querySelectorAll(".slide").forEach((s,j)=>s.classList.toggle("active",j===current));render(current===2&&prev!==2);replay();window.scrollTo({top:0,behavior:"smooth"})}
+function go(i){const slides=document.querySelectorAll(".slide"),prev=current;current=Math.max(0,Math.min(slides.length-1,i));slides.forEach((s,j)=>s.classList.toggle("active",j===current));render(current===slides.length-1&&prev!==slides.length-1);replay();window.scrollTo({top:0,behavior:"smooth"})}
 function selectPackage(i,silent){
  if(!data.packages[i])return;
  data.selected=i;
@@ -203,7 +204,7 @@ function selectPackage(i,silent){
   try{saveData(data);refreshDataStatus()}
   catch(error){setDataStatus("Đã đổi gói trong phiên này nhưng không lưu được vào trình duyệt: "+error.message,"error")}
  }
- render(current===2);
+ render(current===document.querySelectorAll(".slide").length-1);
  if(!silent)showToast("Đã chọn gói "+data.packages[i].name+". Bấm Tiếp theo để xem quy trình và số tiền từng đợt.");
 }
 document.addEventListener("click",event=>{
