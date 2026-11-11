@@ -1,0 +1,389 @@
+.theme-switcher{
+  display:grid;
+  gap:8px;
+  margin:16px 0;
+  padding:13px 15px 15px;
+  border:1px solid #dce5ef;
+  border-radius:14px;
+  background:#f8fafd;
+}
+.theme-switcher legend{padding:0 6px;color:#152642;font-size:13px;font-weight:800}
+.theme-switcher>p{margin:0;color:#697990;font-size:12px}
+.theme-options{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.theme-option{
+  display:flex;
+  min-width:0;
+  align-items:center;
+  gap:10px;
+  padding:10px;
+  border:1px solid #dce5ef;
+  border-radius:12px;
+  background:#fff;
+  color:#1c2b43;
+  cursor:pointer;
+}
+.theme-option:has(input:checked){border-color:#526ce5;box-shadow:0 0 0 2px rgba(82,108,229,.12)}
+.theme-option input{margin:0;accent-color:#526ce5}
+.theme-option>span:last-child{display:grid;gap:2px}
+.theme-option strong{font-size:12px}
+.theme-option small{color:#697990;font-size:11px}
+.theme-preview{width:43px;height:34px;flex-shrink:0;border:1px solid #dce5ef;border-radius:8px}
+.theme-preview-default{background:linear-gradient(145deg,#172b4b 0 42%,#edf2fb 42% 100%)}
+.theme-preview-verdelo{border-color:#385a49;background:linear-gradient(145deg,#0b2018 0 42%,#173b2b 42% 76%,#8fe0b0 76% 100%)}
+.theme-status{min-height:0}
+.theme-status:empty{display:none}
+
+html[data-theme="verdelo-inspired"]{
+  color-scheme:dark;
+  --navy:#d9f0e2;
+  --navy2:#b8d9c6;
+  --blue:#91e4b2;
+  --cyan:#a7f0c5;
+  --ink:#e7f1e9;
+  --muted:#a3b8aa;
+  --line:rgba(193,223,202,.17);
+  --paper:#081710;
+  --white:#12251b;
+  --green:#9be7b8;
+  --shadow:0 24px 70px rgba(0,0,0,.32);
+  --surface:#12251b;
+  --surface-blue:#193527;
+  --surface-mint:#183a2b;
+  --surface-amber:#3a3321;
+  --radius-card:22px;
+  --shadow-card:0 18px 42px rgba(0,0,0,.2);
+}
+
+html[data-theme="verdelo-inspired"] body.presentation-page{
+  background:
+    radial-gradient(ellipse at 86% 6%,rgba(68,140,96,.18),transparent 30%),
+    radial-gradient(ellipse at 8% 44%,rgba(45,99,68,.12),transparent 34%),
+    #081710;
+  color:var(--ink);
+}
+html[data-theme="verdelo-inspired"] .topbar{
+  border-color:rgba(198,229,207,.14);
+  background:rgba(7,22,15,.88);
+  box-shadow:0 8px 30px rgba(0,0,0,.16);
+}
+html[data-theme="verdelo-inspired"] .brand,
+html[data-theme="verdelo-inspired"] .navlinks button.active,
+html[data-theme="verdelo-inspired"] .navlinks button:hover{color:#e8f6ec}
+html[data-theme="verdelo-inspired"] .brandmark{
+  border-radius:12px;
+  background:linear-gradient(145deg,#a8efc2,#57cd8a);
+  color:#103321;
+  box-shadow:0 5px 20px rgba(108,220,151,.2);
+}
+html[data-theme="verdelo-inspired"] .navlinks button.active,
+html[data-theme="verdelo-inspired"] .navlinks button:hover{
+  background:rgba(133,222,165,.12);
+}
+html[data-theme="verdelo-inspired"] .gear,
+html[data-theme="verdelo-inspired"] .controlbtn{
+  border-color:var(--line);
+  background:linear-gradient(145deg,#183226,#10241a);
+  color:#e4f0e7;
+  box-shadow:0 5px 18px rgba(0,0,0,.16);
+}
+html[data-theme="verdelo-inspired"] .eyebrow{color:#9fe8b7}
+html[data-theme="verdelo-inspired"] .eyebrow:before{background:#84db9f}
+html[data-theme="verdelo-inspired"] h2,
+html[data-theme="verdelo-inspired"] h3{color:#e1f1e5}
+html[data-theme="verdelo-inspired"] .presentation-main .section-intro h2{color:#e1f1e5}
+html[data-theme="verdelo-inspired"] .section-intro p,
+html[data-theme="verdelo-inspired"] .service-description,
+html[data-theme="verdelo-inspired"] .price-card>p,
+html[data-theme="verdelo-inspired"] .extra p,
+html[data-theme="verdelo-inspired"] .step p,
+html[data-theme="verdelo-inspired"] .web-package-position p{color:#a7b9ac}
+html[data-theme="verdelo-inspired"] .hero{
+  border:1px solid rgba(198,237,207,.19);
+  border-radius:26px;
+  background:
+    radial-gradient(circle at 87% 14%,rgba(119,225,158,.2),transparent 30%),
+    radial-gradient(circle at 18% 110%,rgba(48,123,76,.28),transparent 38%),
+    linear-gradient(125deg,#0c2118,#163729 68%,#1d4932);
+  box-shadow:0 24px 58px rgba(0,0,0,.27),inset 0 1px rgba(255,255,255,.06);
+}
+html[data-theme="verdelo-inspired"] .hero:after{
+  border-color:rgba(202,239,210,.16);
+  box-shadow:0 0 0 30px rgba(202,239,210,.025),0 0 0 65px rgba(202,239,210,.018);
+}
+html[data-theme="verdelo-inspired"] .hero .eyebrow{color:#aaf1c1}
+html[data-theme="verdelo-inspired"] .lead{color:#c8dfce}
+html[data-theme="verdelo-inspired"] .btn-primary{
+  background:linear-gradient(120deg,#a8efc2,#70d997);
+  color:#10291b;
+  box-shadow:0 7px 20px rgba(91,205,129,.18);
+}
+html[data-theme="verdelo-inspired"] .btn-primary:hover{
+  background:#b9f4cc;
+  box-shadow:0 10px 24px rgba(91,205,129,.26);
+}
+html[data-theme="verdelo-inspired"] .presentation-main .note,
+html[data-theme="verdelo-inspired"] .service-note,
+html[data-theme="verdelo-inspired"] .pricing-view>.note,
+html[data-theme="verdelo-inspired"] .process-note,
+html[data-theme="verdelo-inspired"] .cost-next{
+  border:1px solid rgba(196,230,204,.14);
+  background:linear-gradient(110deg,rgba(26,57,40,.88),rgba(17,43,30,.88));
+  color:#c0d7c6;
+}
+html[data-theme="verdelo-inspired"] .service-card,
+html[data-theme="verdelo-inspired"] .price-card,
+html[data-theme="verdelo-inspired"] .web-package-card,
+html[data-theme="verdelo-inspired"] .cost-card,
+html[data-theme="verdelo-inspired"] .process-steps .step{
+  border:1px solid rgba(197,228,204,.17);
+  border-radius:var(--radius-card);
+  background:linear-gradient(150deg,rgba(24,49,35,.96),rgba(15,35,25,.96));
+  box-shadow:0 14px 36px rgba(0,0,0,.2),inset 0 1px rgba(255,255,255,.035);
+}
+html[data-theme="verdelo-inspired"] .service-card:nth-child(2),
+html[data-theme="verdelo-inspired"] .price-card:nth-child(2),
+html[data-theme="verdelo-inspired"] .process-steps .step:nth-child(2){
+  background:linear-gradient(150deg,rgba(27,58,40,.98),rgba(15,36,25,.98));
+}
+html[data-theme="verdelo-inspired"] .service-card:nth-child(3),
+html[data-theme="verdelo-inspired"] .price-card:nth-child(3),
+html[data-theme="verdelo-inspired"] .process-steps .step:nth-child(3){
+  background:linear-gradient(150deg,rgba(35,55,37,.98),rgba(19,38,27,.98));
+}
+html[data-theme="verdelo-inspired"] .service-card:before{
+  background:linear-gradient(90deg,#67d58f,rgba(166,240,191,.45));
+}
+html[data-theme="verdelo-inspired"] .service-card .iconbox,
+html[data-theme="verdelo-inspired"] .cost-card .iconbox,
+html[data-theme="verdelo-inspired"] .pricing-view .extra .iconbox{
+  border-color:rgba(158,231,178,.18);
+  background:rgba(125,215,153,.1);
+  color:#a0e9b6;
+  box-shadow:none;
+}
+html[data-theme="verdelo-inspired"] .service-card .tag,
+html[data-theme="verdelo-inspired"] .tag{
+  border:1px solid rgba(153,225,171,.13);
+  background:rgba(124,211,148,.1);
+  color:#a6eabc;
+}
+html[data-theme="verdelo-inspired"] .service-item,
+html[data-theme="verdelo-inspired"] .scope-list li{border-color:rgba(195,225,201,.12)}
+html[data-theme="verdelo-inspired"] .service-item h3,
+html[data-theme="verdelo-inspired"] .scope-list li{color:#d5e6d9}
+html[data-theme="verdelo-inspired"] .service-card .svc-qty{
+  border:1px solid rgba(153,225,171,.15);
+  background:rgba(124,211,148,.11);
+  color:#a6eabc;
+}
+html[data-theme="verdelo-inspired"] .service-card:hover,
+html[data-theme="verdelo-inspired"] .price-card:hover,
+html[data-theme="verdelo-inspired"] .process-steps .step:hover{
+  border-color:rgba(158,231,178,.4);
+  box-shadow:0 20px 46px rgba(0,0,0,.29),0 0 0 1px rgba(158,231,178,.06);
+}
+html[data-theme="verdelo-inspired"] .price-card.featured{
+  border-color:rgba(165,229,180,.45);
+  box-shadow:0 18px 42px rgba(0,0,0,.22),0 0 30px rgba(96,196,126,.08);
+}
+html[data-theme="verdelo-inspired"] .price-card.selected,
+html[data-theme="verdelo-inspired"] .price-card.selected.featured{
+  border-color:#84d99e;
+  box-shadow:0 0 0 1px rgba(132,217,158,.22),0 18px 42px rgba(0,0,0,.25);
+}
+html[data-theme="verdelo-inspired"] .price-card .price{
+  border:1px solid rgba(171,224,184,.12);
+  border-radius:14px;
+  background:rgba(9,27,17,.42);
+  color:#dff3e4;
+}
+html[data-theme="verdelo-inspired"] .price-card .price small,
+html[data-theme="verdelo-inspired"] .price small{color:#a8bdad}
+html[data-theme="verdelo-inspired"] .price-card .btn,
+html[data-theme="verdelo-inspired"] .web-package-demo{
+  background:linear-gradient(120deg,#244c34,#1a3b29);
+  color:#e5f4e8;
+}
+html[data-theme="verdelo-inspired"] .price-card.selected .btn{
+  background:linear-gradient(120deg,#9be7b5,#70d394);
+  color:#112c1c;
+}
+html[data-theme="verdelo-inspired"] .price-card .ribbon{
+  border:1px solid rgba(167,235,184,.2);
+  background:rgba(133,222,165,.12);
+  color:#b3efc4;
+}
+html[data-theme="verdelo-inspired"] .pricing-tab{
+  border-color:var(--line);
+  background:rgba(20,43,30,.78);
+  color:#b2c4b7;
+}
+html[data-theme="verdelo-inspired"] .pricing-tab.active{
+  border-color:rgba(159,231,179,.35);
+  background:rgba(121,208,147,.14);
+  color:#b1edc1;
+}
+html[data-theme="verdelo-inspired"] .pricing-tab:hover{border-color:rgba(159,231,179,.5)}
+html[data-theme="verdelo-inspired"] .pricing-view .extra{
+  border-color:rgba(197,228,204,.13);
+  background:linear-gradient(130deg,rgba(25,51,36,.94),rgba(16,39,27,.94));
+  box-shadow:0 8px 22px rgba(0,0,0,.13);
+}
+html[data-theme="verdelo-inspired"] .pricing-view .extra:nth-child(2){
+  background:linear-gradient(130deg,rgba(29,57,39,.94),rgba(17,40,28,.94));
+}
+html[data-theme="verdelo-inspired"] .process-steps .step:after{
+  background:linear-gradient(90deg,rgba(153,224,172,.55),rgba(153,224,172,.08));
+}
+html[data-theme="verdelo-inspired"] .process-steps .num{
+  border-color:rgba(176,233,190,.25);
+  background:linear-gradient(145deg,#254a33,#173725);
+  box-shadow:0 8px 22px rgba(0,0,0,.22);
+  color:#c8efd1;
+}
+html[data-theme="verdelo-inspired"] .process-steps .step:last-child .num,
+html[data-theme="verdelo-inspired"] .process-steps .step:nth-child(3) .num{
+  background:linear-gradient(145deg,#6dc986,#398a58);
+  color:#092013;
+}
+html[data-theme="verdelo-inspired"] .process-steps .step .time{color:#a4e7b6}
+html[data-theme="verdelo-inspired"] .payment{
+  border:1px solid rgba(190,230,201,.17);
+  background:
+    radial-gradient(circle at 95% 0,rgba(113,211,145,.17),transparent 34%),
+    linear-gradient(125deg,#10291b,#183b29);
+  box-shadow:0 22px 50px rgba(0,0,0,.27);
+}
+html[data-theme="verdelo-inspired"] .payment .payitem{
+  border-color:rgba(199,231,205,.15);
+  background:rgba(220,244,225,.055);
+}
+html[data-theme="verdelo-inspired"] .payment .payitem:hover{
+  border-color:rgba(161,233,181,.4);
+  background:rgba(220,244,225,.1);
+}
+html[data-theme="verdelo-inspired"] .payment .payitem .pct,
+html[data-theme="verdelo-inspired"] .payment .payitem strong{color:#a9edbd}
+html[data-theme="verdelo-inspired"] .payment .pill.active{
+  border-color:#a1eab7;
+  background:#a1eab7;
+  color:#10301d;
+}
+html[data-theme="verdelo-inspired"] .payment .paytotal{border-color:rgba(199,231,205,.19)}
+html[data-theme="verdelo-inspired"] .presentation-footer{color:#829889}
+html[data-theme="verdelo-inspired"] .web-package-empty{
+  border-color:rgba(197,228,204,.22);
+  background:rgba(20,43,30,.7);
+  color:#a9bdad;
+}
+html[data-theme="verdelo-inspired"] .web-package-preview{background:#183326}
+html[data-theme="verdelo-inspired"] .overlay{
+  background:rgba(2,12,7,.76);
+  backdrop-filter:blur(8px);
+}
+html[data-theme="verdelo-inspired"] .panel,
+html[data-theme="verdelo-inspired"] .demo-dialog{
+  border:1px solid rgba(191,225,200,.17);
+  background:linear-gradient(150deg,#14291d,#0e2017);
+  color:#e2eee5;
+  box-shadow:0 30px 90px rgba(0,0,0,.52);
+}
+html[data-theme="verdelo-inspired"] .panel h2,
+html[data-theme="verdelo-inspired"] .demo-dialog h2,
+html[data-theme="verdelo-inspired"] .panel h3,
+html[data-theme="verdelo-inspired"] .panel h4{color:#e1f1e5}
+html[data-theme="verdelo-inspired"] .panel .help,
+html[data-theme="verdelo-inspired"] .editor-description,
+html[data-theme="verdelo-inspired"] .demo-intro,
+html[data-theme="verdelo-inspired"] .demo-caption{color:#a5b9aa}
+html[data-theme="verdelo-inspired"] .panelhead,
+html[data-theme="verdelo-inspired"] .editor-nav,
+html[data-theme="verdelo-inspired"] .editor-card,
+html[data-theme="verdelo-inspired"] .editor-scope-group,
+html[data-theme="verdelo-inspired"] .field input,
+html[data-theme="verdelo-inspired"] .field textarea,
+html[data-theme="verdelo-inspired"] .field select{
+  border-color:rgba(191,225,200,.16);
+  background:#10231a;
+  color:#e2eee5;
+}
+html[data-theme="verdelo-inspired"] .editor-nav button{color:#afc2b4}
+html[data-theme="verdelo-inspired"] .editor-nav button.active{
+  background:rgba(131,216,155,.13);
+  color:#b1edc1;
+}
+html[data-theme="verdelo-inspired"] .data-status,
+html[data-theme="verdelo-inspired"] .editor-featured,
+html[data-theme="verdelo-inspired"] .web-package-toggle{
+  border-color:rgba(191,225,200,.15);
+  background:rgba(124,211,148,.08);
+  color:#c2d8c8;
+}
+html[data-theme="verdelo-inspired"] .controlbtn:not(:disabled):hover,
+html[data-theme="verdelo-inspired"] .gear:hover{
+  border-color:rgba(161,233,181,.4);
+  background:rgba(124,211,148,.14);
+  color:#c2f0ce;
+}
+html[data-theme="verdelo-inspired"] .theme-switcher{
+  border-color:rgba(191,225,200,.16);
+  background:rgba(11,31,20,.62);
+}
+html[data-theme="verdelo-inspired"] .theme-switcher legend,
+html[data-theme="verdelo-inspired"] .theme-option{color:#e0eee4}
+html[data-theme="verdelo-inspired"] .theme-switcher>p,
+html[data-theme="verdelo-inspired"] .theme-option small{color:#a5b9aa}
+html[data-theme="verdelo-inspired"] .theme-option{
+  border-color:rgba(191,225,200,.16);
+  background:rgba(26,52,36,.7);
+}
+html[data-theme="verdelo-inspired"] .theme-option:has(input:checked){
+  border-color:#88dca2;
+  box-shadow:0 0 0 2px rgba(136,220,162,.15);
+}
+html[data-theme="verdelo-inspired"] .theme-option input{accent-color:#8de0a7}
+html[data-theme="verdelo-inspired"] .theme-status{color:#b4edc4}
+html[data-theme="verdelo-inspired"] .service-card,
+html[data-theme="verdelo-inspired"] .price-card,
+html[data-theme="verdelo-inspired"] .process-steps .step,
+html[data-theme="verdelo-inspired"] .btn,
+html[data-theme="verdelo-inspired"] .controlbtn,
+html[data-theme="verdelo-inspired"] .pricing-tab,
+html[data-theme="verdelo-inspired"] .payment .payitem{
+  transition:transform .24s ease,border-color .24s ease,background-color .24s ease,box-shadow .24s ease,color .24s ease;
+}
+@media(max-width:760px){
+  .theme-options{grid-template-columns:1fr}
+}
+@media(min-width:901px) and (min-height:660px){
+  html[data-theme="verdelo-inspired"] body.presentation-page{height:auto;min-height:100svh;overflow-y:auto}
+  html[data-theme="verdelo-inspired"] .presentation-main{height:auto;min-height:calc(100svh - 67px)}
+  html[data-theme="verdelo-inspired"] .presentation-main .slide.active{
+    min-height:calc(100svh - 120px);
+    flex:0 0 auto;
+  }
+  html[data-theme="verdelo-inspired"] .service-grid{
+    flex:0 0 auto;
+    grid-template-rows:repeat(var(--service-rows,1),minmax(155px,auto));
+  }
+  html[data-theme="verdelo-inspired"] .service-card{padding-block:10px}
+  html[data-theme="verdelo-inspired"] .service-card .iconbox{width:42px;height:42px}
+  html[data-theme="verdelo-inspired"] .service-item{padding:7px 0}
+  html[data-theme="verdelo-inspired"] .service-item h3{margin-bottom:3px;font-size:clamp(12px,.95vw,14px)}
+  html[data-theme="verdelo-inspired"] .service-item .service-description{
+    margin-bottom:4px;
+    font-size:clamp(11px,.8vw,12px);
+    line-height:1.35;
+  }
+}
+@media(prefers-reduced-motion:reduce){
+  html[data-theme="verdelo-inspired"],
+  html[data-theme="verdelo-inspired"] *,
+  html[data-theme="verdelo-inspired"] *:before,
+  html[data-theme="verdelo-inspired"] *:after{
+    scroll-behavior:auto!important;
+    animation-duration:.01ms!important;
+    animation-iteration-count:1!important;
+    transition-duration:.01ms!important;
+  }
+}

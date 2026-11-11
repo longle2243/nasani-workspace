@@ -1,7 +1,11 @@
 const STORE_KEY="webQuoteDataV2";
+const THEME_STORE_KEY="fnbQuotePresentationThemeV1";
 const DATA_FILE="fnb_quote_presentation-3.json";
+const THEMES=["default","verdelo-inspired"];
 let DEFAULTS;
 let data;
+let currentTheme="default";
+let themeWarning="";
 let current=0;
 let editorDraft=null;
 let editorSection="brand";
@@ -13,6 +17,34 @@ let activeDemo="";
 let activeDemoDevice="desktop";
 let demoReturnFocus=null;
 const $=id=>document.getElementById(id);
+function initializeTheme(){
+ try{
+  const saved=localStorage.getItem(THEME_STORE_KEY);
+  if(saved!==null){
+   if(THEMES.includes(saved))currentTheme=saved;
+   else themeWarning="Lựa chọn giao diện đã lưu không hợp lệ; đang dùng Default.";
+  }
+ }catch(error){
+  themeWarning="Không đọc được lựa chọn giao diện đã lưu: "+error.message;
+ }
+ document.documentElement.dataset.theme=currentTheme;
+}
+function refreshThemePicker(){
+ document.querySelectorAll('input[name="presentation-theme"]').forEach(input=>{
+  input.checked=input.value===currentTheme;
+ });
+ $("themeStatus").textContent=themeWarning;
+}
+function selectTheme(theme){
+ const nextTheme=THEMES.includes(theme)?theme:"default";
+ currentTheme=nextTheme;
+ document.documentElement.dataset.theme=nextTheme;
+ themeWarning=nextTheme===theme?"":"Lựa chọn giao diện không hợp lệ; đã chuyển về Default.";
+ try{localStorage.setItem(THEME_STORE_KEY,nextTheme)}
+ catch(error){themeWarning="Giao diện đã đổi trong phiên này nhưng không lưu được lựa chọn: "+error.message}
+ refreshThemePicker();
+}
+initializeTheme();
 function money(n){return Number(n||0).toLocaleString("vi-VN")+" VNĐ"}
 function escapeHTML(s){return String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]))}
 function isSafeWebUrl(value){
@@ -298,6 +330,7 @@ function openEditor(){
  editorDraft=structuredClone(data);
  editorStartSnapshot=snapshot(editorDraft);
  editorSection="brand";
+ refreshThemePicker();
  renderEditor();
  $("editorOverlay").classList.add("open");
 }
@@ -413,6 +446,10 @@ function exportData(){
  }
 }
 $("openEditor").onclick=openEditor;
+$("themeOptions").addEventListener("change",event=>{
+ const input=event.target.closest('input[name="presentation-theme"]');
+ if(input?.checked)selectTheme(input.value);
+});
 $("closeEditor").onclick=()=>closeEditor();
 $("cancelBtn").onclick=()=>closeEditor();
 $("editorOverlay").addEventListener("click",event=>{if(event.target===$("editorOverlay"))closeEditor()});

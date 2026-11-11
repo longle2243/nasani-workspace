@@ -6,6 +6,7 @@
 <meta name="theme-color" content="#101d35">
 <title>Đề xuất giải pháp website | Báo giá</title>
 <link rel="stylesheet" href="fnb_quote_presentation-3.css">
+<link rel="stylesheet" href="fnb_quote_presentation-themes.css">
 </head>
 <body class="presentation-page">
 <header class="topbar">
@@ -117,6 +118,23 @@
     <div class="panelhead"><div><div class="eyebrow">TÙY CHỈNH TẠI CHỖ</div><h2>Chỉnh sửa nội dung báo giá</h2></div><button class="close" id="closeEditor" aria-label="Đóng">×</button></div>
     <p class="help">Chỉnh sửa theo từng nhóm. Bản lưu trong trình duyệt này chỉ áp dụng trên thiết bị hiện tại; bấm “Xuất JSON” để tải dữ liệu cập nhật và tự tải lên GitHub.</p>
     <div id="dataStatus" class="data-status" role="status" aria-live="polite"></div>
+    <fieldset class="theme-switcher">
+      <legend>Giao diện trình bày</legend>
+      <p>Chỉ thay đổi cách hiển thị. Nội dung báo giá và file JSON không bị ảnh hưởng.</p>
+      <div class="theme-options" id="themeOptions">
+        <label class="theme-option">
+          <input type="radio" name="presentation-theme" value="default">
+          <span class="theme-preview theme-preview-default" aria-hidden="true"></span>
+          <span><strong>Default</strong><small>Giao diện hiện tại</small></span>
+        </label>
+        <label class="theme-option">
+          <input type="radio" name="presentation-theme" value="verdelo-inspired">
+          <span class="theme-preview theme-preview-verdelo" aria-hidden="true"></span>
+          <span><strong>Verdelo Inspired</strong><small>Xanh rừng &amp; mint</small></span>
+        </label>
+      </div>
+      <p class="theme-status" id="themeStatus" role="status" aria-live="polite"></p>
+    </fieldset>
     <div class="editor-layout">
       <nav id="editorNav" class="editor-nav" aria-label="Nhóm nội dung chỉnh sửa"></nav>
       <section id="editorContent" class="editor-content" aria-live="polite"></section>

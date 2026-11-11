@@ -9,10 +9,13 @@ Website tĩnh HTML, CSS, JavaScript thuần. Không cần build, package manager
 | `index.html` | Điểm vào độc lập của module, chuyển tới bản trình bày báo giá |
 | `fnb_quote_presentation-3.html` | Giao diện trình bày gồm 4 màn hình: giới thiệu, cấu trúc chi phí, gói giá và quy trình |
 | `fnb_quote_presentation-3.css` | Giao diện và kiểu in |
+| `fnb_quote_presentation-themes.css` | Bộ chọn theme và giao diện bổ sung, cô lập theo theme |
 | `fnb_quote_presentation-3.js` | Chuyển màn hình, chỉnh sửa, lưu và xuất JSON |
 | `fnb_quote_presentation-3.json` | Dữ liệu báo giá mặc định |
 
 Các tài nguyên được tham chiếu bằng đường dẫn tương đối để hoạt động tại cả domain gốc lẫn URL GitHub Pages dạng `/ten-repository/`.
+
+Mở **Chỉnh sửa nội dung báo giá** để chọn **Default** hoặc **Verdelo Inspired**. Lựa chọn giao diện được lưu riêng trong `localStorage` bằng key `fnbQuotePresentationThemeV1`; lựa chọn theme không thay đổi nội dung báo giá, key `webQuoteDataV2` hoặc cấu trúc JSON xuất ra. Theme mặc định giữ nguyên stylesheet và hành vi trước đó; các style của Verdelo Inspired chỉ áp dụng khi theme này được chọn. Chuyển động của theme mới tôn trọng tùy chọn `prefers-reduced-motion`.
 
 Trên desktop đủ chiều rộng và chiều cao, mỗi màn hình được bố trí vừa một viewport; trên tablet, mobile hoặc màn hình thấp, nội dung chuyển sang luồng cuộn để giữ khả năng đọc. Mỗi nhóm trong `scope` được hiển thị thành một thẻ; các đầu việc liên quan nằm trong nhóm tương ứng. Dữ liệu `scope` dạng danh sách hạng mục cũ được chuyển đổi khi đọc dữ liệu đã lưu trong trình duyệt.
 
