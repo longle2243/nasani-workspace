@@ -94,12 +94,22 @@
   },
   "preDesignedPackages": [
     {
-      "name": "Cơ Bản",
+      "name": "Tiết Kiệm",
       "description": "Không kèm hậu mãi chăm sóc",
       "hosting": "5GB",
       "previewImage": "",
       "demoUrl": "",
-      "price": 7500000,
+      "price": 7614280,
+      "designPackageIndex": 1,
+      "paymentTerms": "Thanh toán 100% một lần; không trả góp hoặc thanh toán theo mốc."
+    },
+    {
+      "name": "Ưa Dùng",
+      "description": "",
+      "hosting": "5GB",
+      "previewImage": "",
+      "demoUrl": "",
+      "price": 10614280,
       "designPackageIndex": 2,
       "paymentTerms": "Thanh toán 100% một lần; không trả góp hoặc thanh toán theo mốc."
     }
