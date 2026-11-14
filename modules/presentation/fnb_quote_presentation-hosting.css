@@ -1,0 +1,209 @@
+.hosting-explorer{
+ display:grid;
+ gap:18px;
+ margin-top:clamp(20px,3vh,32px);
+ padding:clamp(18px,2.4vw,30px);
+ border:1px solid var(--line);
+ border-radius:var(--screen-radius);
+ background:var(--surface);
+ box-shadow:var(--shadow-card);
+}
+.hosting-explorer-heading{display:flex;align-items:center;justify-content:space-between;gap:18px}
+.hosting-explorer-heading h2{margin:5px 0;font-size:clamp(22px,2.5vw,32px)}
+.hosting-explorer-heading p{margin:0;color:var(--muted);font-size:13px}
+.hosting-edit-button{flex:none}
+.hosting-service-tabs,.hosting-group-tabs{display:flex;gap:8px;flex-wrap:wrap}
+.hosting-service-tab,.hosting-group-tab{
+ border:1px solid var(--line);
+ border-radius:999px;
+ padding:9px 15px;
+ background:var(--surface);
+ color:var(--muted);
+ font-size:13px;
+ font-weight:800;
+ transition:background .18s ease,border-color .18s ease,color .18s ease,transform .18s ease;
+}
+.hosting-service-tab:hover,.hosting-group-tab:hover{transform:translateY(-1px);border-color:var(--blue)}
+.hosting-service-tab.active,.hosting-group-tab.active{border-color:var(--blue);background:var(--surface-blue);color:var(--blue)}
+.hosting-display{min-width:0}
+.hosting-group-panel{display:grid;gap:14px;animation:hostingFade .22s ease}
+@keyframes hostingFade{from{opacity:0;transform:translateY(5px)}to{opacity:1;transform:none}}
+.hosting-plan-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:13px}
+.hosting-plan-card{
+ display:flex;
+ min-width:0;
+ flex-direction:column;
+ padding:17px;
+ border:1px solid var(--line);
+ border-radius:16px;
+ background:var(--surface);
+ box-shadow:0 6px 18px rgba(27,48,78,.045);
+ transition:border-color .18s ease,box-shadow .18s ease,transform .18s ease;
+}
+.hosting-plan-card:hover{transform:translateY(-2px);box-shadow:var(--shadow-card)}
+.hosting-plan-card.selected{border-color:var(--green);box-shadow:0 0 0 2px color-mix(in srgb,var(--green) 18%,transparent)}
+.hosting-plan-card-head{display:flex;align-items:flex-start;justify-content:space-between;gap:12px}
+.hosting-plan-card h3{margin:0;color:var(--navy);font-size:23px;letter-spacing:-.04em}
+.hosting-care-badge{align-self:flex-start;border-radius:999px;padding:5px 8px;background:var(--surface-mint);color:var(--green);font-size:10px;font-weight:800}
+.hosting-plan-prices{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:12px 0}
+.hosting-price{padding:10px;border-radius:12px;background:var(--surface-blue)}
+.hosting-price span{display:block;color:var(--muted);font-size:10px;font-weight:750}
+.hosting-price strong{display:block;margin-top:3px;color:var(--navy);font-size:17px;line-height:1.25}
+.hosting-spec-list{display:grid;grid-template-columns:1fr 1fr;gap:7px;margin:0 0 14px}
+.hosting-spec-list div{min-width:0;padding:7px 9px;border-radius:10px;background:color-mix(in srgb,var(--surface-blue) 56%,transparent)}
+.hosting-spec-list dt{color:var(--muted);font-size:10px}
+.hosting-spec-list dd{overflow-wrap:anywhere;margin:1px 0 0;color:var(--ink);font-size:12px;font-weight:800}
+.hosting-plan-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:auto}
+.hosting-plan-actions button{flex:1}
+.hosting-select-plan,.hosting-view-care{
+ min-height:38px;
+ border:1px solid var(--line);
+ border-radius:10px;
+ padding:8px 10px;
+ background:var(--surface);
+ color:var(--navy);
+ font-size:12px;
+ font-weight:800;
+}
+.hosting-plan-card.selected .hosting-select-plan{border-color:var(--green);background:var(--surface-mint);color:var(--green)}
+.hosting-view-care{border-color:transparent;background:var(--navy);color:#fff}
+.hosting-plan-card:not(.has-care) .hosting-view-care{display:none}
+.hosting-care-view{display:grid;gap:14px;animation:hostingFade .22s ease}
+.hosting-care-picker{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:14px;padding:14px;border:1px solid var(--line);border-radius:14px;background:var(--surface)}
+.hosting-care-picker label{display:grid;gap:5px;color:var(--muted);font-size:11px;font-weight:800}
+.hosting-care-picker select{min-width:0;max-width:100%;border:1px solid var(--line);border-radius:10px;padding:10px 12px;background:var(--surface);color:var(--ink)}
+.hosting-care-plan-title{margin:0;color:var(--navy);text-align:right}
+.hosting-care-plan-title strong{display:block;font-size:17px}
+.hosting-care-plan-title span{color:var(--muted);font-size:12px}
+.hosting-benefit-sections{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.hosting-benefit-group{min-width:0;padding:15px;border:1px solid var(--line);border-radius:14px;background:var(--surface)}
+.hosting-benefit-group h4{margin:0 0 10px;color:var(--navy);font-size:13px}
+.hosting-benefit-list{display:grid;gap:9px;margin:0;padding:0;list-style:none}
+.hosting-benefit-list li{position:relative;padding-left:22px;color:var(--ink);font-size:12px}
+.hosting-benefit-list li:before{position:absolute;left:1px;top:0;color:var(--green);font-weight:900;content:"✓"}
+.hosting-benefit-list strong{display:block;font-size:12px}
+.hosting-benefit-list span{display:block;margin-top:2px;color:var(--muted);font-size:11px}
+.hosting-benefit-group[data-tier="enhanced"],.hosting-benefit-group[data-tier="premium"],.hosting-benefit-group[data-tier="advanced"]{border-color:color-mix(in srgb,var(--green) 36%,var(--line));background:color-mix(in srgb,var(--surface-mint) 48%,var(--surface))}
+.hosting-empty-state{padding:18px;border:1px dashed var(--line);border-radius:14px;color:var(--muted);font-size:13px;text-align:center}
+.hosting-data-status{margin:0;color:var(--muted);font-size:11px}
+.hosting-data-status:empty{display:none}
+.hosting-editor-overlay{
+ position:fixed;
+ z-index:40;
+ inset:0;
+ display:none;
+ align-items:center;
+ justify-content:center;
+ padding:18px;
+ background:rgba(7,15,28,.62);
+ backdrop-filter:blur(8px);
+}
+.hosting-editor-overlay.open{display:flex}
+.hosting-editor-dialog{
+ display:flex;
+ width:min(1120px,100%);
+ max-height:min(92vh,980px);
+ min-height:0;
+ flex-direction:column;
+ overflow:hidden;
+ border:1px solid var(--line);
+ border-radius:20px;
+ background:var(--surface);
+ color:var(--ink);
+ box-shadow:0 28px 90px rgba(0,0,0,.32);
+}
+.hosting-editor-header{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:18px 22px;border-bottom:1px solid var(--line)}
+.hosting-editor-header h2{margin:4px 0 0;color:var(--navy);font-size:22px}
+.hosting-editor-header .close{flex:none}
+.hosting-editor-actions{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:12px 22px;border-bottom:1px solid var(--line)}
+.hosting-editor-actions p{margin:0;color:var(--muted);font-size:11px}
+.hosting-editor-actions>div,.hosting-editor-footer>div{display:flex;gap:7px;flex-wrap:wrap}
+.hosting-editor-actions .controlbtn,.hosting-editor-footer .controlbtn,.hosting-editor-footer .btn{min-height:37px;padding:8px 11px;font-size:11px}
+.hosting-editor-layout{display:grid;grid-template-columns:180px minmax(0,1fr);min-height:0;flex:1}
+.hosting-editor-nav{display:flex;flex-direction:column;gap:5px;overflow:auto;padding:14px;border-right:1px solid var(--line)}
+.hosting-editor-nav button{border:0;border-radius:9px;padding:10px;text-align:left;background:transparent;color:var(--muted);font-size:12px;font-weight:750}
+.hosting-editor-nav button.active,.hosting-editor-nav button:hover{background:var(--surface-blue);color:var(--blue)}
+.hosting-editor-content{overflow:auto;padding:20px}
+.hosting-editor-content h3{margin:0 0 5px;color:var(--navy);font-size:18px}
+.hosting-editor-help{margin:0 0 16px;color:var(--muted);font-size:11px}
+.hosting-editor-section{display:grid;gap:12px}
+.hosting-editor-row{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.hosting-editor-field{display:grid;min-width:0;gap:4px}
+.hosting-editor-field.full{grid-column:1/-1}
+.hosting-editor-field>span{color:var(--muted);font-size:10px;font-weight:750}
+.hosting-editor-field input,.hosting-editor-field textarea,.hosting-editor-field select{
+ width:100%;
+ min-width:0;
+ border:1px solid var(--line);
+ border-radius:9px;
+ padding:9px 10px;
+ background:var(--surface);
+ color:var(--ink);
+ font-size:12px;
+}
+.hosting-editor-field textarea{min-height:62px;resize:vertical}
+.hosting-editor-card{display:grid;gap:12px;padding:14px;border:1px solid var(--line);border-radius:13px;background:color-mix(in srgb,var(--surface-blue) 28%,var(--surface))}
+.hosting-editor-card-head{display:flex;align-items:center;justify-content:space-between;gap:12px}
+.hosting-editor-card-head strong{color:var(--navy);font-size:13px}
+.hosting-editor-card-head>div{display:flex;gap:6px;flex-wrap:wrap}
+.hosting-editor-card-head button,.hosting-benefit-order button,.hosting-editor-content .controlbtn{padding:6px 9px;font-size:10px}
+.hosting-editor-group-picker{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.hosting-editor-group-picker select{max-width:320px}
+.hosting-editor-group-picker .controlbtn,.hosting-editor-add{min-height:36px;border:1px solid var(--line);border-radius:9px;background:var(--surface);color:var(--blue);font-size:11px;font-weight:800}
+.hosting-editor-check{display:flex;align-items:flex-start;gap:8px;color:var(--ink);font-size:11px}
+.hosting-editor-check input{margin-top:3px;accent-color:var(--green)}
+.hosting-benefit-picker{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:7px}
+.hosting-benefit-option{display:flex;align-items:flex-start;gap:7px;padding:8px;border:1px solid var(--line);border-radius:9px;background:var(--surface);font-size:10px}
+.hosting-benefit-option input{margin-top:2px;accent-color:var(--green)}
+.hosting-benefit-option small{display:block;margin-top:2px;color:var(--muted)}
+.hosting-benefit-order{display:grid;gap:6px}
+.hosting-benefit-order-item{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:8px 10px;border:1px solid var(--line);border-radius:9px;background:var(--surface);font-size:11px}
+.hosting-benefit-order-item>div{display:flex;gap:5px}
+.hosting-tier-label{display:inline-flex;align-self:start;border-radius:999px;padding:3px 7px;background:var(--surface-mint);color:var(--green);font-size:9px;font-weight:800}
+.hosting-editor-footer{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 20px;border-top:1px solid var(--line)}
+.hosting-editor-footer>span{color:var(--muted);font-size:10px}
+.hosting-editor-status-error{color:#c0392b!important}
+.hosting-editor-status-dirty{color:var(--blue)!important}
+.hosting-editor-status-saved{color:var(--green)!important}
+.hosting-explorer button:focus-visible,.hosting-editor-dialog button:focus-visible,.hosting-editor-dialog input:focus-visible,.hosting-editor-dialog textarea:focus-visible,.hosting-editor-dialog select:focus-visible{outline:3px solid color-mix(in srgb,var(--blue) 55%,transparent);outline-offset:2px}
+@media(max-width:900px){
+ .hosting-plan-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .hosting-editor-actions{align-items:flex-start;flex-direction:column}
+}
+@media(min-width:901px) and (min-height:660px){
+ .presentation-main .cost-slide.active{display:block;min-height:0;overflow-y:auto;overscroll-behavior:contain}
+}
+@media(max-width:760px){
+ .hosting-explorer{padding:16px}
+ .hosting-explorer-heading{align-items:flex-start;flex-direction:column}
+ .hosting-edit-button{width:100%}
+ .hosting-plan-grid,.hosting-benefit-sections{grid-template-columns:1fr}
+ .hosting-care-picker{grid-template-columns:1fr}
+ .hosting-care-plan-title{text-align:left}
+ .hosting-editor-overlay{padding:0}
+ .hosting-editor-dialog{width:100%;height:100%;max-height:100vh;border:0;border-radius:0}
+ .hosting-editor-header,.hosting-editor-actions{padding:13px 15px}
+ .hosting-editor-layout{grid-template-columns:1fr;grid-template-rows:auto minmax(0,1fr)}
+ .hosting-editor-nav{flex-direction:row;overflow-x:auto;border-right:0;border-bottom:1px solid var(--line);padding:8px 12px}
+ .hosting-editor-nav button{flex:none;white-space:nowrap}
+ .hosting-editor-content{padding:14px}
+ .hosting-editor-footer{align-items:stretch;flex-direction:column;padding:10px 14px}
+ .hosting-editor-footer>div{width:100%}
+ .hosting-editor-footer button{flex:1}
+ .hosting-editor-row,.hosting-benefit-picker{grid-template-columns:1fr}
+}
+@media(max-width:420px){
+ .hosting-price strong{font-size:14px}
+ .hosting-plan-card{padding:14px}
+ .hosting-spec-list{gap:5px}
+ .hosting-spec-list div{padding:6px}
+ .hosting-editor-actions>div{width:100%}
+ .hosting-editor-actions .controlbtn{flex:1}
+}
+@media(prefers-reduced-motion:reduce){
+ .hosting-service-tab,.hosting-group-tab,.hosting-plan-card,.hosting-group-panel,.hosting-care-view{animation:none;transition:none}
+}
+@media print{
+ .hosting-editor-overlay{display:none!important}
+ .hosting-explorer{box-shadow:none}
+}

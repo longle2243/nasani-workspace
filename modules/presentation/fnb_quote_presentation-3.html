@@ -7,6 +7,7 @@
 <title>Đề xuất giải pháp website | Báo giá</title>
 <link rel="stylesheet" href="fnb_quote_presentation-3.css">
 <link rel="stylesheet" href="fnb_quote_presentation-themes.css">
+<link rel="stylesheet" href="fnb_quote_presentation-hosting.css">
 </head>
 <body class="presentation-page">
 <header class="topbar">
@@ -70,6 +71,22 @@
       <p class="cost-emphasis">Chi phí được trao đổi và xác nhận theo nhu cầu thực tế.</p>
     </article>
   </div>
+  <section class="hosting-explorer" aria-labelledby="hostingExplorerTitle">
+    <div class="hosting-explorer-heading">
+      <div>
+        <div class="eyebrow">CHI PHÍ DUY TRÌ</div>
+        <h2 id="hostingExplorerTitle">Hosting &amp; chăm sóc website</h2>
+        <p>Chọn dịch vụ và gói hosting để xem chi phí, thông số cùng quyền lợi được áp dụng.</p>
+      </div>
+      <button class="controlbtn hosting-edit-button" id="openHostingEditor" type="button">Chỉnh sửa bảng giá</button>
+    </div>
+    <div class="hosting-service-tabs" id="hostingServiceTabs" role="tablist" aria-label="Dịch vụ duy trì">
+      <button type="button" class="hosting-service-tab active" role="tab" aria-selected="true" aria-controls="hostingDisplay" data-hosting-view="hosting">Hosting</button>
+      <button type="button" class="hosting-service-tab" role="tab" aria-selected="false" aria-controls="hostingDisplay" data-hosting-view="care">Chăm sóc website</button>
+    </div>
+    <div id="hostingDisplay" class="hosting-display" role="tabpanel" aria-live="polite"></div>
+    <p class="hosting-data-status" id="hostingDataStatus" role="status" aria-live="polite"></p>
+  </section>
   <div class="cost-next">
     <div><div class="eyebrow">TIẾP THEO: LỰA CHỌN GÓI THIẾT KẾ WEBSITE</div><p>Khám phá 3 phương án phù hợp với nhu cầu kinh doanh của bạn.</p></div>
     <button class="btn btn-primary" data-go="2">XEM 3 GÓI DỊCH VỤ →</button>
@@ -150,6 +167,34 @@
     </div>
   </div>
 </div>
+<div class="hosting-editor-overlay" id="hostingEditorOverlay" aria-hidden="true">
+  <section class="hosting-editor-dialog" role="dialog" aria-modal="true" aria-labelledby="hostingEditorTitle" tabindex="-1">
+    <header class="hosting-editor-header">
+      <div><div class="eyebrow">QUẢN LÝ DỮ LIỆU DUY TRÌ</div><h2 id="hostingEditorTitle">Chỉnh sửa bảng giá Hosting</h2></div>
+      <button class="close" id="closeHostingEditor" type="button" aria-label="Đóng trình chỉnh sửa">×</button>
+    </header>
+    <div class="hosting-editor-actions">
+      <p id="hostingEditorStatus" role="status" aria-live="polite">Thay đổi chỉ lưu trong trình duyệt này cho đến khi xuất file dữ liệu.</p>
+      <div>
+        <button class="controlbtn" id="importHostingData" type="button">Nhập dữ liệu</button>
+        <button class="controlbtn" id="exportHostingData" type="button">Xuất dữ liệu</button>
+        <button class="controlbtn" id="resetHostingData" type="button">Khôi phục mặc định</button>
+      </div>
+    </div>
+    <div class="hosting-editor-layout">
+      <nav class="hosting-editor-nav" id="hostingEditorNav" aria-label="Mục chỉnh sửa bảng giá"></nav>
+      <div class="hosting-editor-content" id="hostingEditorContent"></div>
+    </div>
+    <footer class="hosting-editor-footer">
+      <span>Dữ liệu mặc định được cập nhật bằng cách thay hosting-data.json trong repository.</span>
+      <div>
+        <button class="controlbtn" id="cancelHostingEditor" type="button">Hủy</button>
+        <button class="btn btn-primary" id="saveHostingEditor" type="button">Lưu thay đổi</button>
+      </div>
+    </footer>
+    <input id="hostingImportFile" type="file" accept="application/json,.json" hidden>
+  </section>
+</div>
 <div class="overlay demo-overlay" id="demoOverlay" aria-hidden="true">
   <section class="demo-dialog" role="dialog" aria-modal="true" aria-labelledby="demoTitle" tabindex="-1">
     <div class="demo-header">
@@ -161,5 +206,6 @@
 </div>
 <div class="toast" id="toast"></div>
 <script src="fnb_quote_presentation-3.js"></script>
+<script src="fnb_quote_presentation-hosting.js"></script>
 </body>
 </html>

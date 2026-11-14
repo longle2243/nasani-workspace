@@ -1,0 +1,404 @@
+{
+  "version": 1,
+  "initialSelectedPlanId": "common-50",
+  "groups": [
+    {
+      "id": "hosting-vip",
+      "name": "Hosting VIP",
+      "displayOrder": 0,
+      "plans": [
+        {
+          "id": "vip-350",
+          "name": "350GB",
+          "storage": "350GB",
+          "monthlyPrice": 9540000,
+          "yearlyPrice": 114480000,
+          "specifications": { "bandwidth": "KGH", "subdomain": "KGH", "mysql": "350", "email": "KGH", "backup": "Miễn phí" },
+          "care": {
+            "benefitIds": ["website-posts", "company-info", "website-images", "online-chat", "seo-tools", "robots-sitemap", "commerce-guidance", "seo-articles", "internal-links", "fanpage-management", "seo-onpage", "seo-adjustment", "search-console-review", "google-maps", "google-business", "social-accounts", "social-sharing", "facebook-fanpage", "fanpage-posts", "dmca", "advanced-care"],
+            "limits": { "website-posts": 50, "website-images": 5, "seo-articles": 15, "fanpage-management": 10, "fanpage-posts": 2 }
+          }
+        },
+        {
+          "id": "vip-200",
+          "name": "200GB",
+          "storage": "200GB",
+          "monthlyPrice": 6480000,
+          "yearlyPrice": 77760000,
+          "specifications": { "bandwidth": "KGH", "subdomain": "KGH", "mysql": "200", "email": "KGH", "backup": "Miễn phí" },
+          "care": {
+            "benefitIds": ["website-posts", "company-info", "website-images", "online-chat", "seo-tools", "robots-sitemap", "commerce-guidance", "seo-articles", "internal-links", "fanpage-management", "seo-onpage", "seo-adjustment", "search-console-review", "google-maps", "google-business", "social-accounts", "social-sharing", "facebook-fanpage", "fanpage-posts", "dmca", "advanced-care"],
+            "limits": { "website-posts": 50, "website-images": 5, "seo-articles": 15, "fanpage-management": 10, "fanpage-posts": 2 }
+          }
+        },
+        {
+          "id": "vip-150",
+          "name": "150GB",
+          "storage": "150GB",
+          "monthlyPrice": 5400000,
+          "yearlyPrice": 64800000,
+          "specifications": { "bandwidth": "KGH", "subdomain": "KGH", "mysql": "150", "email": "KGH", "backup": "Miễn phí" },
+          "care": {
+            "benefitIds": ["website-posts", "company-info", "website-images", "online-chat", "seo-tools", "robots-sitemap", "commerce-guidance", "seo-articles", "internal-links", "fanpage-management", "seo-onpage", "seo-adjustment", "search-console-review", "google-maps", "google-business", "social-accounts", "social-sharing", "facebook-fanpage", "fanpage-posts", "dmca", "advanced-care"],
+            "limits": { "website-posts": 40, "website-images": 5, "seo-articles": 10, "fanpage-management": 6, "fanpage-posts": 2 }
+          }
+        },
+        {
+          "id": "vip-120",
+          "name": "120GB",
+          "storage": "120GB",
+          "monthlyPrice": 4428000,
+          "yearlyPrice": 53136000,
+          "specifications": { "bandwidth": "KGH", "subdomain": "KGH", "mysql": "120", "email": "KGH", "backup": "Miễn phí" },
+          "care": {
+            "benefitIds": ["website-posts", "company-info", "website-images", "online-chat", "seo-tools", "robots-sitemap", "commerce-guidance", "seo-articles", "internal-links", "fanpage-management", "seo-onpage", "seo-adjustment", "search-console-review", "google-maps", "google-business", "social-accounts", "social-sharing", "facebook-fanpage", "fanpage-posts", "dmca", "advanced-care"],
+            "limits": { "website-posts": 40, "website-images": 5, "seo-articles": 10, "fanpage-management": 6, "fanpage-posts": 2 }
+          }
+        },
+        {
+          "id": "vip-100",
+          "name": "100GB",
+          "storage": "100GB",
+          "monthlyPrice": 3888000,
+          "yearlyPrice": 46656000,
+          "specifications": { "bandwidth": "KGH", "subdomain": "KGH", "mysql": "100", "email": "KGH", "backup": "Miễn phí" },
+          "care": {
+            "benefitIds": ["website-posts", "company-info", "website-images", "online-chat", "seo-tools", "robots-sitemap", "commerce-guidance", "seo-articles", "internal-links", "fanpage-management", "seo-onpage", "seo-adjustment", "search-console-review", "google-maps", "google-business", "social-accounts", "social-sharing", "facebook-fanpage", "fanpage-posts", "dmca", "advanced-care"],
+            "limits": { "website-posts": 40, "website-images": 5, "seo-articles": 10, "fanpage-management": 6, "fanpage-posts": 2 }
+          }
+        },
+        {
+          "id": "vip-90",
+          "name": "90GB",
+          "storage": "90GB",
+          "monthlyPrice": 3596400,
+          "yearlyPrice": 43156800,
+          "specifications": { "bandwidth": "KGH", "subdomain": "KGH", "mysql": "90", "email": "KGH", "backup": "Miễn phí" },
+          "care": {
+            "benefitIds": ["website-posts", "company-info", "website-images", "online-chat", "seo-tools", "robots-sitemap", "commerce-guidance", "seo-articles", "internal-links", "fanpage-management", "seo-onpage", "seo-adjustment", "search-console-review", "google-maps", "google-business", "social-accounts", "social-sharing", "facebook-fanpage", "fanpage-posts", "dmca", "advanced-care"],
+            "limits": { "website-posts": 35, "website-images": 5, "seo-articles": 6, "fanpage-management": 4, "fanpage-posts": 2 }
+          }
+        }
+      ]
+    },
+    {
+      "id": "hosting-common",
+      "name": "Hosting Phổ Thông",
+      "displayOrder": 1,
+      "plans": [
+        {
+          "id": "common-70",
+          "name": "70GB",
+          "storage": "70GB",
+          "monthlyPrice": 2883600,
+          "yearlyPrice": 34603200,
+          "specifications": { "bandwidth": "KGH", "subdomain": "KGH", "mysql": "70", "email": "KGH", "backup": "Miễn phí" },
+          "care": {
+            "benefitIds": ["website-posts", "company-info", "website-images", "online-chat", "seo-tools", "robots-sitemap", "commerce-guidance", "seo-articles", "internal-links", "fanpage-management", "seo-onpage", "seo-adjustment", "search-console-review", "google-maps", "google-business", "social-accounts", "social-sharing", "facebook-fanpage", "fanpage-posts", "dmca", "advanced-care"],
+            "limits": { "website-posts": 35, "website-images": 5, "seo-articles": 6, "fanpage-management": 4, "fanpage-posts": 2 }
+          }
+        },
+        {
+          "id": "common-60",
+          "name": "60GB",
+          "storage": "60GB",
+          "monthlyPrice": 2520720,
+          "yearlyPrice": 30248640,
+          "specifications": { "bandwidth": "KGH", "subdomain": "KGH", "mysql": "60", "email": "KGH", "backup": "Miễn phí" },
+          "care": {
+            "benefitIds": ["website-posts", "company-info", "website-images", "online-chat", "seo-tools", "robots-sitemap", "commerce-guidance", "seo-articles", "internal-links", "fanpage-management", "seo-onpage", "seo-adjustment", "search-console-review", "google-maps", "google-business", "social-accounts", "social-sharing", "facebook-fanpage", "fanpage-posts", "dmca", "advanced-care"],
+            "limits": { "website-posts": 35, "website-images": 5, "seo-articles": 6, "fanpage-management": 4, "fanpage-posts": 2 }
+          }
+        },
+        {
+          "id": "common-50",
+          "name": "50GB",
+          "storage": "50GB",
+          "monthlyPrice": 2160000,
+          "yearlyPrice": 25920000,
+          "specifications": { "bandwidth": "KGH", "subdomain": "KGH", "mysql": "50", "email": "KGH", "backup": "Miễn phí" },
+          "care": {
+            "benefitIds": ["website-posts", "company-info", "website-images", "online-chat", "seo-tools", "robots-sitemap", "commerce-guidance", "seo-articles", "internal-links", "fanpage-management", "seo-onpage", "seo-adjustment", "search-console-review", "google-maps", "google-business", "social-accounts", "social-sharing", "facebook-fanpage", "fanpage-posts", "dmca", "advanced-care"],
+            "limits": { "website-posts": 30, "website-images": 5, "seo-articles": 5, "fanpage-management": 2, "fanpage-posts": 2 }
+          }
+        },
+        {
+          "id": "common-40",
+          "name": "40GB",
+          "storage": "40GB",
+          "monthlyPrice": 1807200,
+          "yearlyPrice": 21686400,
+          "specifications": { "bandwidth": "KGH", "subdomain": "KGH", "mysql": "40", "email": "KGH", "backup": "Miễn phí" },
+          "care": {
+            "benefitIds": ["website-posts", "company-info", "website-images", "online-chat", "seo-tools", "robots-sitemap", "commerce-guidance", "seo-articles", "internal-links", "fanpage-management", "seo-onpage", "seo-adjustment", "search-console-review", "google-maps", "google-business", "social-accounts", "social-sharing", "facebook-fanpage", "advanced-care"],
+            "limits": { "website-posts": 25, "website-images": 3, "seo-articles": 4, "fanpage-management": 1 }
+          }
+        },
+        {
+          "id": "common-30",
+          "name": "30GB",
+          "storage": "30GB",
+          "monthlyPrice": 1447200,
+          "yearlyPrice": 17366400,
+          "specifications": { "bandwidth": "KGH", "subdomain": "KGH", "mysql": "30", "email": "KGH", "backup": "Miễn phí" },
+          "care": {
+            "benefitIds": ["website-posts", "company-info", "website-images", "online-chat", "seo-tools", "robots-sitemap", "commerce-guidance", "seo-articles", "internal-links", "fanpage-management", "seo-onpage", "seo-adjustment", "search-console-review", "google-maps", "google-business", "social-accounts", "social-sharing", "facebook-fanpage", "advanced-care"],
+            "limits": { "website-posts": 25, "website-images": 3, "seo-articles": 4, "fanpage-management": 1 }
+          }
+        },
+        {
+          "id": "common-20",
+          "name": "20GB",
+          "storage": "20GB",
+          "monthlyPrice": 1080000,
+          "yearlyPrice": 12960000,
+          "specifications": { "bandwidth": "KGH", "subdomain": "KGH", "mysql": "20", "email": "KGH", "backup": "Miễn phí" },
+          "care": {
+            "benefitIds": ["website-posts", "company-info", "website-images", "online-chat", "seo-tools", "robots-sitemap", "commerce-guidance", "seo-articles", "internal-links", "seo-onpage", "seo-adjustment", "search-console-review", "google-maps", "google-business", "social-accounts", "social-sharing", "facebook-fanpage", "advanced-care"],
+            "limits": { "website-posts": 20, "website-images": 3, "seo-articles": 3 }
+          }
+        },
+        {
+          "id": "common-16",
+          "name": "16GB",
+          "storage": "16GB",
+          "monthlyPrice": 907200,
+          "yearlyPrice": 10886400,
+          "specifications": { "bandwidth": "KGH", "subdomain": "300", "mysql": "16", "email": "KGH", "backup": "Miễn phí" },
+          "care": {
+            "benefitIds": ["website-posts", "company-info", "website-images", "online-chat", "seo-tools", "robots-sitemap", "commerce-guidance", "seo-articles", "internal-links"],
+            "limits": { "website-posts": 15, "website-images": 2, "seo-articles": 1 }
+          }
+        },
+        {
+          "id": "common-12",
+          "name": "12GB",
+          "storage": "12GB",
+          "monthlyPrice": 734400,
+          "yearlyPrice": 8812800,
+          "specifications": { "bandwidth": "KGH", "subdomain": "300", "mysql": "12", "email": "KGH", "backup": "Miễn phí" },
+          "care": {
+            "benefitIds": ["website-posts", "company-info", "website-images", "online-chat", "seo-tools", "robots-sitemap", "commerce-guidance", "seo-articles", "internal-links"],
+            "limits": { "website-posts": 15, "website-images": 2, "seo-articles": 1 }
+          }
+        },
+        {
+          "id": "common-10",
+          "name": "10GB",
+          "storage": "10GB",
+          "monthlyPrice": 648000,
+          "yearlyPrice": 7776000,
+          "specifications": { "bandwidth": "KGH", "subdomain": "300", "mysql": "10", "email": "KGH", "backup": "Miễn phí" },
+          "care": {
+            "benefitIds": ["website-posts", "company-info", "website-images", "online-chat", "seo-tools", "robots-sitemap", "commerce-guidance", "seo-articles", "internal-links"],
+            "limits": { "website-posts": 15, "website-images": 2, "seo-articles": 1 }
+          }
+        }
+      ]
+    },
+    {
+      "id": "hosting-personal",
+      "name": "Hosting Cá Nhân",
+      "displayOrder": 2,
+      "plans": [
+        {
+          "id": "personal-7",
+          "name": "7GB",
+          "storage": "7GB",
+          "monthlyPrice": 540000,
+          "yearlyPrice": 6480000,
+          "specifications": { "bandwidth": "KGH", "subdomain": "200", "mysql": "7", "email": "KGH", "backup": "Miễn phí" },
+          "care": null
+        },
+        {
+          "id": "personal-5",
+          "name": "5GB",
+          "storage": "5GB",
+          "monthlyPrice": 438480,
+          "yearlyPrice": 5261760,
+          "specifications": { "bandwidth": "KGH", "subdomain": "100", "mysql": "5", "email": "KGH", "backup": "Miễn phí" },
+          "care": null
+        },
+        {
+          "id": "personal-3",
+          "name": "3GB",
+          "storage": "3GB",
+          "monthlyPrice": 301320,
+          "yearlyPrice": 3615840,
+          "specifications": { "bandwidth": "70GB", "subdomain": "50", "mysql": "3", "email": "120", "backup": "Miễn phí" },
+          "care": null
+        }
+      ]
+    }
+  ],
+  "benefitCatalog": [
+    {
+      "id": "website-posts",
+      "name": "Hỗ trợ đăng sản phẩm / bài viết lên website",
+      "description": "Khách hàng cung cấp nội dung, thông tin và hình ảnh.",
+      "category": "content",
+      "tier": "basic",
+      "limitTemplate": "Tối đa {value} bài"
+    },
+    {
+      "id": "company-info",
+      "name": "Cập nhật thông tin công ty trên website",
+      "description": "Hỗ trợ cập nhật tên công ty, địa chỉ, số điện thoại, email và các thông tin liên quan.",
+      "category": "content",
+      "tier": "basic",
+      "limitTemplate": ""
+    },
+    {
+      "id": "website-images",
+      "name": "Thiết kế hình ảnh và cập nhật lên website",
+      "description": "Thiết kế hình ảnh chuyên nghiệp, cập nhật tại các vị trí quan trọng như slideshow, banner, popup.",
+      "category": "design",
+      "tier": "basic",
+      "limitTemplate": "Tối đa {value} hình"
+    },
+    {
+      "id": "online-chat",
+      "name": "Cài đặt tiện ích chat trực tuyến",
+      "description": "Thiết lập script bên thứ ba, Messenger, Zalo và các tiện ích chat online.",
+      "category": "tools",
+      "tier": "basic",
+      "limitTemplate": ""
+    },
+    {
+      "id": "seo-tools",
+      "name": "Cài đặt công cụ quản lý SEO",
+      "description": "Cài đặt các công cụ cần thiết như Google Analytics và Search Console.",
+      "category": "seo",
+      "tier": "basic",
+      "limitTemplate": ""
+    },
+    {
+      "id": "robots-sitemap",
+      "name": "Tạo robots.txt và sitemap.xml",
+      "description": "Tạo các tệp robots.txt, sitemap.xml và các tệp liên quan.",
+      "category": "seo",
+      "tier": "basic",
+      "limitTemplate": ""
+    },
+    {
+      "id": "commerce-guidance",
+      "name": "Hướng dẫn khai báo website với Bộ Công Thương",
+      "description": "Áp dụng với các trường hợp cần thiết.",
+      "category": "content",
+      "tier": "basic",
+      "limitTemplate": ""
+    },
+    {
+      "id": "seo-articles",
+      "name": "Viết bài chuẩn SEO trên 1.000 từ",
+      "description": "Số lượng bài theo định mức của gói hosting.",
+      "category": "seo",
+      "tier": "basic",
+      "limitTemplate": "{value} bài/tháng"
+    },
+    {
+      "id": "internal-links",
+      "name": "Tạo liên kết nội bộ giữa các bài viết",
+      "description": "Giúp website có cấu trúc bền vững và tăng thời gian onsite.",
+      "category": "seo",
+      "tier": "basic",
+      "limitTemplate": ""
+    },
+    {
+      "id": "fanpage-management",
+      "name": "Quản lý nội dung Fanpage / Mạng xã hội",
+      "description": "Hỗ trợ quản lý nội dung theo định mức của gói.",
+      "category": "social",
+      "tier": "basic",
+      "limitTemplate": "{value} bài/tháng"
+    },
+    {
+      "id": "seo-onpage",
+      "name": "Kiểm tra và đánh giá SEO On-Page của website",
+      "description": "",
+      "category": "seo",
+      "tier": "enhanced",
+      "limitTemplate": ""
+    },
+    {
+      "id": "seo-adjustment",
+      "name": "Hỗ trợ tối ưu và điều chỉnh website đáp ứng SEO tốt nhất",
+      "description": "Thời gian hỗ trợ: 2 tháng sau bàn giao.",
+      "category": "seo",
+      "tier": "enhanced",
+      "limitTemplate": ""
+    },
+    {
+      "id": "search-console-review",
+      "name": "Kiểm tra và đánh giá hiệu suất tìm kiếm trên Google Search Console",
+      "description": "Thời gian hỗ trợ: 2 tháng sau bàn giao.",
+      "category": "seo",
+      "tier": "enhanced",
+      "limitTemplate": ""
+    },
+    {
+      "id": "google-maps",
+      "name": "Hỗ trợ tạo địa chỉ mới của công ty trên Google Maps",
+      "description": "",
+      "category": "tools",
+      "tier": "enhanced",
+      "limitTemplate": ""
+    },
+    {
+      "id": "google-business",
+      "name": "Hỗ trợ đăng ký Google Business",
+      "description": "Liên kết quản lý địa điểm trên Google Maps.",
+      "category": "tools",
+      "tier": "enhanced",
+      "limitTemplate": ""
+    },
+    {
+      "id": "social-accounts",
+      "name": "Hỗ trợ đăng ký tài khoản mạng xã hội",
+      "description": "Pinterest, Instagram, X (Twitter), TikTok và các nền tảng khác.",
+      "category": "social",
+      "tier": "enhanced",
+      "limitTemplate": ""
+    },
+    {
+      "id": "social-sharing",
+      "name": "Hướng dẫn liên kết và chia sẻ trên mạng xã hội",
+      "description": "Hướng dẫn tạo liên kết và chia sẻ nhằm tăng lưu lượng truy cập website.",
+      "category": "social",
+      "tier": "enhanced",
+      "limitTemplate": ""
+    },
+    {
+      "id": "facebook-fanpage",
+      "name": "Hỗ trợ tạo Fanpage Facebook",
+      "description": "",
+      "category": "social",
+      "tier": "enhanced",
+      "limitTemplate": ""
+    },
+    {
+      "id": "fanpage-posts",
+      "name": "Viết bài đăng Fanpage có hình ảnh",
+      "description": "",
+      "category": "social",
+      "tier": "premium",
+      "limitTemplate": "{value} bài/tháng"
+    },
+    {
+      "id": "dmca",
+      "name": "Hỗ trợ đăng ký DMCA",
+      "description": "",
+      "category": "seo",
+      "tier": "premium",
+      "limitTemplate": ""
+    },
+    {
+      "id": "advanced-care",
+      "name": "Gói chăm sóc nâng cao",
+      "description": "Bao gồm phân tích nội dung, tối ưu tốc độ và bảo mật.",
+      "category": "advanced",
+      "tier": "advanced",
+      "limitTemplate": ""
+    }
+  ]
+}

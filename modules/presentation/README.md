@@ -12,6 +12,9 @@ Website tĩnh HTML, CSS, JavaScript thuần. Không cần build, package manager
 | `fnb_quote_presentation-themes.css` | Bộ chọn theme và giao diện bổ sung, cô lập theo theme |
 | `fnb_quote_presentation-3.js` | Chuyển màn hình, chỉnh sửa, lưu và xuất JSON |
 | `fnb_quote_presentation-3.json` | Dữ liệu báo giá mặc định |
+| `fnb_quote_presentation-hosting.css` | Giao diện bảng Hosting và trình quản lý dữ liệu |
+| `fnb_quote_presentation-hosting.js` | Hiển thị, chỉnh sửa, lưu và nhập/xuất dữ liệu Hosting |
+| `data/hosting-data.json` | Dữ liệu mặc định của các gói Hosting và quyền lợi chăm sóc |
 
 Các tài nguyên được tham chiếu bằng đường dẫn tương đối để hoạt động tại cả domain gốc lẫn URL GitHub Pages dạng `/ten-repository/`.
 
@@ -46,3 +49,9 @@ Mở `http://localhost:8000/` hoặc `http://localhost:8000/fnb_quote_presentati
 Không có upload tự động tới GitHub. Thay đổi chỉ được lưu trong trình duyệt cho tới khi JSON được xuất và cập nhật thủ công trong repository. Không đưa dữ liệu nhạy cảm vào repository công khai.
 
 Màn hình giá có minh họa nội bộ cho Website cơ bản, Responsive và SSL; không tải website bên ngoài. JSON cũ không có cấu hình mới vẫn được mở với Web gói tắt, danh sách Web gói rỗng và các minh họa bật. Chỉ nhập giá, thông tin hosting, ảnh và liên kết mẫu đã được xác nhận; giá Web gói để trống sẽ hiển thị là chưa cấu hình. Giá đã nhập phải thấp hơn gói thiết kế được chọn làm đối chiếu.
+
+## Bảng Hosting và chăm sóc website
+
+Trong màn hình **02 / Chi phí**, chọn **Hosting** hoặc **Chăm sóc website** để xem dữ liệu theo gói. Gói đang chọn được giữ khi chuyển giữa hai mục; các gói không có dữ liệu chăm sóc sẽ hiển thị rõ trạng thái chưa cấu hình thay vì mượn quyền lợi của gói khác.
+
+Nút **Chỉnh sửa bảng giá** mở trình quản lý riêng. Có thể sửa nhóm, giá, thông số, quyền lợi/định mức; thêm, nhân bản hoặc xóa gói; chỉnh sửa, sắp xếp và gán quyền lợi. **Lưu thay đổi** lưu trong `localStorage` bằng key `fnbPresentationHostingDataV1`, độc lập với dữ liệu báo giá cũ `webQuoteDataV2`. **Hủy** bỏ bản nháp chưa lưu. Có thể xuất/nhập riêng `hosting-data.json` hoặc khôi phục dữ liệu mặc định. Việc lưu trình duyệt không tự cập nhật repository; để thay đổi thành dữ liệu mặc định cho mọi người, hãy xuất file rồi thay `data/hosting-data.json` trong repository.
