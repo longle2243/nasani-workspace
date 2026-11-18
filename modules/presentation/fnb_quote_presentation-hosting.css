@@ -45,11 +45,13 @@
 .hosting-plan-card.selected{border-color:var(--green);box-shadow:0 0 0 2px color-mix(in srgb,var(--green) 18%,transparent)}
 .hosting-plan-card-head{display:flex;align-items:flex-start;justify-content:space-between;gap:12px}
 .hosting-plan-card h3{margin:0;color:var(--navy);font-size:23px;letter-spacing:-.04em}
+.hosting-plan-card-head h3{min-width:0;overflow-wrap:normal}
 .hosting-care-badge{align-self:flex-start;border-radius:999px;padding:5px 8px;background:var(--surface-mint);color:var(--green);font-size:10px;font-weight:800}
 .hosting-plan-prices{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:12px 0}
 .hosting-price{padding:10px;border-radius:12px;background:var(--surface-blue)}
 .hosting-price span{display:block;color:var(--muted);font-size:10px;font-weight:750}
 .hosting-price strong{display:block;margin-top:3px;color:var(--navy);font-size:17px;line-height:1.25}
+.hosting-price strong{white-space:nowrap;font-variant-numeric:tabular-nums}
 .hosting-spec-list{display:grid;grid-template-columns:1fr 1fr;gap:7px;margin:0 0 14px}
 .hosting-spec-list div{min-width:0;padding:7px 9px;border-radius:10px;background:color-mix(in srgb,var(--surface-blue) 56%,transparent)}
 .hosting-spec-list dt{color:var(--muted);font-size:10px}
@@ -217,10 +219,18 @@
  .hosting-editor-actions{align-items:flex-start;flex-direction:column}
 }
 @media(min-width:901px) and (min-height:660px){
- .presentation-main .cost-slide.active{display:block;min-height:0;overflow-y:auto;overscroll-behavior:contain}
+ .presentation-main .hosting-slide.active{display:flex;min-height:0;overflow-y:auto;overflow-x:hidden;overscroll-behavior:contain}
+ .presentation-main .hosting-slide.active .hosting-explorer{flex:none;width:100%}
+ .presentation-main .hosting-screen-intro,.presentation-main .hosting-slide .presentation-footer{flex:none}
+ .presentation-main .cost-slide.active{display:block;min-height:0;overflow-y:auto;overflow-x:hidden;overscroll-behavior:contain}
+}
+@media(min-width:901px) and (max-width:1200px){
+ .hosting-plan-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .hosting-explorer{padding:clamp(16px,2vw,24px)}
+ .hosting-care-modal{width:min(820px,calc(100% - 36px))}
 }
 @media(max-width:760px){
- .hosting-explorer{padding:16px}
+ .hosting-explorer{margin-top:16px;padding:16px}
  .hosting-explorer-heading{align-items:flex-start;flex-direction:column}
  .hosting-edit-button{width:100%}
  .hosting-plan-grid,.hosting-benefit-sections{grid-template-columns:1fr}

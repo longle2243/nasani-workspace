@@ -235,6 +235,25 @@ html[data-theme="verdelo-inspired"] .payment,
 html[data-theme="verdelo-inspired"] .hosting-explorer{padding:20px}
 .theme-options{grid-template-columns:1fr}
 }
+@media screen and (min-width:901px) and (min-height:660px){
+html[data-theme="verdelo-inspired"] .hosting-slide.active{display:flex;min-height:0;overflow-y:auto;overflow-x:hidden;overscroll-behavior:contain}
+html[data-theme="verdelo-inspired"] .hosting-screen-intro,
+html[data-theme="verdelo-inspired"] .hosting-slide .presentation-footer{flex:none}
+html[data-theme="verdelo-inspired"] .hosting-explorer{width:100%;flex:none}
+html[data-theme="verdelo-inspired"] .hosting-plan-grid{align-items:stretch}
+html[data-theme="verdelo-inspired"] .hosting-plan-card{height:auto}
+html[data-theme="verdelo-inspired"] .hosting-plan-actions button{min-width:0}
+}
+@media screen and (min-width:901px) and (max-width:1400px){
+html[data-theme="verdelo-inspired"] .hosting-plan-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media screen and (max-height:820px){
+html[data-theme="verdelo-inspired"] .hosting-care-modal-overlay,
+html[data-theme="verdelo-inspired"] .hosting-editor-overlay{padding:12px}
+html[data-theme="verdelo-inspired"] .hosting-care-modal{max-height:calc(100dvh - 24px)}
+html[data-theme="verdelo-inspired"] .hosting-care-modal-header{flex-shrink:0;padding:14px 18px}
+html[data-theme="verdelo-inspired"] .hosting-care-modal-content{min-height:0}
+}
 @media screen and (hover:hover){
 html[data-theme="verdelo-inspired"] :is(.service-card,.price-card,.price-card.featured,.process-steps .step,.hosting-plan-card):hover{transform:translateY(-3px);border-color:#afb79d;box-shadow:0 14px 28px -20px #272e1970}
 html[data-theme="verdelo-inspired"] .btn:hover,
