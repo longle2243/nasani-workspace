@@ -18,6 +18,7 @@
       <button data-go="1">02 <span>Chi phí</span></button>
       <button data-go="2">03 <span>Gói giá</span></button>
       <button data-go="3">04 <span>Quy trình</span></button>
+      <button data-go="4">05 <span>Hosting</span></button>
     </div>
     <button class="gear" id="openEditor" title="Chỉnh sửa nội dung" aria-label="Chỉnh sửa">⚙</button>
   </nav>
@@ -71,22 +72,6 @@
       <p class="cost-emphasis">Chi phí được trao đổi và xác nhận theo nhu cầu thực tế.</p>
     </article>
   </div>
-  <section class="hosting-explorer" aria-labelledby="hostingExplorerTitle">
-    <div class="hosting-explorer-heading">
-      <div>
-        <div class="eyebrow">CHI PHÍ DUY TRÌ</div>
-        <h2 id="hostingExplorerTitle">Hosting &amp; chăm sóc website</h2>
-        <p>Chọn dịch vụ và gói hosting để xem chi phí, thông số cùng quyền lợi được áp dụng.</p>
-      </div>
-      <button class="controlbtn hosting-edit-button" id="openHostingEditor" type="button">Chỉnh sửa bảng giá</button>
-    </div>
-    <div class="hosting-service-tabs" id="hostingServiceTabs" role="tablist" aria-label="Dịch vụ duy trì">
-      <button type="button" class="hosting-service-tab active" role="tab" aria-selected="true" aria-controls="hostingDisplay" data-hosting-view="hosting">Hosting</button>
-      <button type="button" class="hosting-service-tab" role="tab" aria-selected="false" aria-controls="hostingDisplay" data-hosting-view="care">Chăm sóc website</button>
-    </div>
-    <div id="hostingDisplay" class="hosting-display" role="tabpanel" aria-live="polite"></div>
-    <p class="hosting-data-status" id="hostingDataStatus" role="status" aria-live="polite"></p>
-  </section>
   <div class="cost-next">
     <div><div class="eyebrow">TIẾP THEO: LỰA CHỌN GÓI THIẾT KẾ WEBSITE</div><p>Khám phá 3 phương án phù hợp với nhu cầu kinh doanh của bạn.</p></div>
     <button class="btn btn-primary" data-go="2">XEM 3 GÓI DỊCH VỤ →</button>
@@ -128,7 +113,26 @@
   <div class="note process-note" id="processNote"></div>
   <div class="footer presentation-footer"><span id="footerBrand3">WEB SOLUTIONS · LỘ TRÌNH TRIỂN KHAI</span><span>04 / 04</span></div>
 </section>
-<div class="controls"><button class="controlbtn" id="prevBtn">← Quay lại</button><div class="dots"><span class="dot active"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span></div><button class="controlbtn" id="nextBtn">Tiếp theo →</button></div>
+<section class="slide hosting-slide" id="slide4">
+  <div class="section-intro hosting-screen-intro">
+    <div><div class="eyebrow">05 / BẢNG GIÁ HOSTING</div><h2>Chọn gói Hosting phù hợp</h2></div>
+    <p>Bảng giá lưu trữ website theo dung lượng và tài nguyên thực tế. Chọn từng gói để xem quyền lợi chăm sóc website áp dụng.</p>
+  </div>
+  <section class="hosting-explorer" aria-labelledby="hostingExplorerTitle">
+    <div class="hosting-explorer-heading">
+      <div>
+        <div class="eyebrow">CHI PHÍ DUY TRÌ</div>
+        <h2 id="hostingExplorerTitle">Hosting</h2>
+        <p>Chọn nhóm và gói Hosting để xem thông số hoặc quyền lợi chăm sóc.</p>
+      </div>
+      <button class="controlbtn hosting-edit-button" id="openHostingEditor" type="button">Chỉnh sửa bảng giá</button>
+    </div>
+    <div id="hostingDisplay" class="hosting-display" role="region" aria-live="polite"></div>
+    <p class="hosting-data-status" id="hostingDataStatus" role="status" aria-live="polite"></p>
+  </section>
+  <div class="footer presentation-footer"><span id="footerBrandHosting">WEB SOLUTIONS · BẢNG GIÁ HOSTING</span><span>05 / 05</span></div>
+</section>
+<div class="controls"><button class="controlbtn" id="prevBtn">← Quay lại</button><div class="dots"><span class="dot active"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span></div><button class="controlbtn" id="nextBtn">Tiếp theo →</button></div>
 </main>
 <div class="overlay" id="editorOverlay">
   <div class="panel">
@@ -202,6 +206,19 @@
       <button class="close" id="closeDemo" type="button" aria-label="Đóng minh họa">×</button>
     </div>
     <div id="demoContent" class="demo-content"></div>
+  </section>
+</div>
+<div class="hosting-care-modal-overlay" id="hostingCareModal" aria-hidden="true">
+  <section class="hosting-care-modal" role="dialog" aria-modal="true" aria-labelledby="hostingCareModalTitle" tabindex="-1">
+    <header class="hosting-care-modal-header">
+      <div>
+        <div class="eyebrow">QUYỀN LỢI DUY TRÌ WEBSITE</div>
+        <h2 id="hostingCareModalTitle">Chăm sóc website</h2>
+        <p id="hostingCareModalSummary"></p>
+      </div>
+      <button class="close" id="closeHostingCareModal" type="button" aria-label="Đóng quyền lợi chăm sóc">×</button>
+    </header>
+    <div class="hosting-care-modal-content" id="hostingCareModalContent"></div>
   </section>
 </div>
 <div class="toast" id="toast"></div>

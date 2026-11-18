@@ -27,6 +27,7 @@
  let editorSection="plans";
  let editorGroupId="";
  let editorReturnFocus=null;
+ let careModalReturnFocus=null;
 
  function makeId(prefix){
   if(crypto?.randomUUID)return prefix+"-"+crypto.randomUUID();
@@ -128,7 +129,7 @@
    ["Địa chỉ Mail",plan.specifications.email],
    ["Backup",plan.specifications.backup]
   ];
-  return `<article class="hosting-plan-card${selected?" selected":""}${plan.care?" has-care":""}" data-plan-card="${escapeHTML(plan.id)}">
+  return `<article class="hosting-plan-card${selected?" selected":""}${plan.care?" has-care":""}" data-plan-card="${escapeHTML(plan.id)}" role="button" tabindex="0" aria-label="Xem quyền lợi chăm sóc của gói ${escapeHTML(plan.name)}">
    <div class="hosting-plan-card-head"><div><span class="tag">${escapeHTML(group.name)}</span><h3>${escapeHTML(plan.name)}</h3></div>${plan.care?'<span class="hosting-care-badge">Có chăm sóc</span>':""}</div>
    <div class="hosting-plan-prices">
     <div class="hosting-price"><span>THEO THÁNG</span><strong>${formatMoney(plan.monthlyPrice)}</strong></div>
@@ -136,8 +137,7 @@
    </div>
    <dl class="hosting-spec-list"><div><dt>Dung lượng</dt><dd>${escapeHTML(plan.storage)}</dd></div>${specs.map(([label,value])=>`<div><dt>${label}</dt><dd>${escapeHTML(value)}</dd></div>`).join("")}</dl>
    <div class="hosting-plan-actions">
-    <button class="hosting-select-plan" type="button" data-action="select-plan" data-plan-id="${escapeHTML(plan.id)}" aria-pressed="${selected}">${selected?"Đang xem gói":"Chọn gói"}</button>
-    ${plan.care?`<button class="hosting-view-care" type="button" data-action="view-plan-care" data-plan-id="${escapeHTML(plan.id)}">Xem chăm sóc</button>`:""}
+    <button class="hosting-view-care" type="button" data-action="view-plan-care" data-plan-id="${escapeHTML(plan.id)}">Xem chăm sóc website</button>
    </div>
   </article>`;
  }
@@ -190,14 +190,49 @@
    ${content}
   </div>`;
  }
+ function openCareModal(planId,trigger){
+  const selected=findPlan(planId);
+  if(!selected)return;
+  selectedPlanId=planId;
+  careModalReturnFocus=trigger||document.activeElement;
+  const {group,plan}=selected;
+  $("hostingCareModalTitle").textContent="Chăm sóc website";
+  $("hostingCareModalSummary").textContent=`${group.name} · ${plan.name} · ${plan.storage} · ${formatMoney(plan.monthlyPrice)} / tháng · ${formatMoney(plan.yearlyPrice)} / năm`;
+  let content="";
+  if(plan.care===null){
+   content='<div class="hosting-empty-state">Quyền lợi chăm sóc website chưa được cấu hình cho gói này.</div>';
+  }else{
+   const assigned=plan.care.benefitIds.map(id=>featureById(id)).filter(Boolean);
+   if(!assigned.length){
+    content='<div class="hosting-empty-state">Gói này chưa có quyền lợi chăm sóc nào được cấu hình.</div>';
+   }else{
+    content=`<div class="hosting-benefit-sections">${Object.keys(CATEGORY_LABELS).map(category=>{
+     const features=assigned.filter(feature=>feature.category===category);
+     if(!features.length)return "";
+     return `<section class="hosting-benefit-group">
+      <h4>${escapeHTML(CATEGORY_LABELS[category])}</h4>
+      <ul class="hosting-benefit-list">${features.map(feature=>`<li><strong>${escapeHTML(feature.name)}${feature.tier!=="basic"?` <span class="hosting-tier-label">${escapeHTML(TIER_LABELS[feature.tier]||"Bổ sung")}</span>`:""}</strong>${feature.description?`<span>${escapeHTML(feature.description)}</span>`:""}${feature.limitTemplate?`<span>${escapeHTML(featureLimit(feature,plan))}</span>`:""}</li>`).join("")}</ul>
+     </section>`;
+    }).join("")}</div>`;
+   }
+  }
+  $("hostingCareModalContent").innerHTML=content;
+  $("hostingCareModal").classList.add("open");
+  $("hostingCareModal").setAttribute("aria-hidden","false");
+  document.body.classList.add("hosting-modal-open");
+  $("hostingCareModal .hosting-care-modal").setAttribute("tabindex","-1");
+  $("hostingCareModal .hosting-care-modal").focus();
+ }
+ function closeCareModal(){
+  if(!$("hostingCareModal").classList.contains("open"))return;
+  $("hostingCareModal").classList.remove("open");
+  $("hostingCareModal").setAttribute("aria-hidden","true");
+  document.body.classList.remove("hosting-modal-open");
+  if(careModalReturnFocus?.isConnected)careModalReturnFocus.focus();
+  careModalReturnFocus=null;
+ }
  function render(){
-  document.querySelectorAll("[data-hosting-view]").forEach(button=>{
-   const selected=button.dataset.hostingView===activeView;
-   button.classList.toggle("active",selected);
-   button.setAttribute("aria-selected",String(selected));
-  });
-  if(activeView==="care")renderCareView();
-  else renderHostingView();
+  renderHostingView();
  }
  function setEditorStatus(message,state="saved"){
   const status=$("hostingEditorStatus");
@@ -509,33 +544,26 @@
    renderEditor();
    setEditorStatus("Dữ liệu mặc định đã được khôi phục trong bản nháp. Bấm “Lưu thay đổi” để áp dụng.","dirty");
   });
-  $("hostingServiceTabs").addEventListener("click",event=>{
-   const button=event.target.closest("[data-hosting-view]");
-   if(!button)return;
-   activeView=button.dataset.hostingView;
-   render();
-  });
   $("hostingDisplay").addEventListener("click",event=>{
    const button=event.target.closest("[data-action]");
-   if(!button)return;
-   if(button.dataset.action==="select-group"){
-    activeGroupId=button.dataset.groupId;
-    render();
-   }else if(button.dataset.action==="select-plan"){
-    selectedPlanId=button.dataset.planId;
-    render();
-   }else if(button.dataset.action==="view-plan-care"){
-    selectedPlanId=button.dataset.planId;
-    activeView="care";
-    render();
+   if(button){
+    if(button.dataset.action==="select-group"){
+     activeGroupId=button.dataset.groupId;
+     render();
+    }else if(button.dataset.action==="view-plan-care"){
+     openCareModal(button.dataset.planId,button);
+    }
+    return;
    }
+   const card=event.target.closest("[data-plan-card]");
+   if(card)openCareModal(card.dataset.planCard,card);
   });
-  $("hostingDisplay").addEventListener("change",event=>{
-   if(event.target.id==="carePlanPicker"){
-    selectedPlanId=event.target.value;
-    activeGroupId=findPlan(selectedPlanId)?.group.id||activeGroupId;
-    render();
-   }
+  $("hostingDisplay").addEventListener("keydown",event=>{
+   if(event.key!=="Enter"&&event.key!==" ")return;
+   const card=event.target.closest("[data-plan-card]");
+   if(!card)return;
+   event.preventDefault();
+   openCareModal(card.dataset.planCard,card);
   });
   $("hostingEditorNav").addEventListener("click",event=>{
    const button=event.target.closest("[data-editor-section]");
@@ -573,6 +601,11 @@
   });
   document.addEventListener("keydown",event=>{
    if(event.key==="Escape"&&$("hostingEditorOverlay").classList.contains("open"))closeEditor();
+   if(event.key==="Escape"&&$("hostingCareModal").classList.contains("open"))closeCareModal();
+  });
+  $("closeHostingCareModal").addEventListener("click",closeCareModal);
+  $("hostingCareModal").addEventListener("click",event=>{
+   if(event.target===$("hostingCareModal"))closeCareModal();
   });
  }
  async function initialize(){
